@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TermsApp.MainPage"
+             BackgroundColor="LightGray">
+
+
+    <VerticalStackLayout>
+        <!-- Top Navigation Bar -->
+        <Grid HeightRequest="40" Margin="15,5,15,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+            <Label Text="TERMS" VerticalOptions="Center" FontSize="18" Margin="10,0,0,0"/>
+            <Button x:Name="addTerm" Text="ADD" Grid.Column="1" Clicked="OnAddTerm" TextColor="Black" BackgroundColor="White"/>
+        </Grid>
+        <!-- Separator Line -->
+        <BoxView HeightRequest="2" BackgroundColor="Black" Margin="0,5,0,10"/>
+
+        <!-- Terms List -->
+        <CollectionView ItemsSource="{Binding Terms}" SelectionMode="Single" SelectedItem="{Binding SelectedTerm}" Margin="15,0,15,0">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Button Text="{Binding}" 
+                        Command="{Binding Source={RelativeSource AncestorType={x:Type ContentPage}}, Path=BindingContext.ButtonCommand}" 
+                        CommandParameter="{Binding}" 
+                        BackgroundColor="LightSlateGray" 
+                        CornerRadius="10"
+                        Clicked="OnTermClicked"
+                        Margin="0,5,0,5"
+                        TextColor="Black"
+                        HeightRequest="70"/>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </VerticalStackLayout>
+
+
+</ContentPage>

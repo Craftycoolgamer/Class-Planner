@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TermsApp.TermPage"
+             BackgroundColor="LightGray">
+
+    <Grid RowDefinitions="Auto, * , Auto">
+        <VerticalStackLayout>
+        
+            <!-- Top Navigation Bar -->
+            <StackLayout Grid.Row="0">
+                <Grid HeightRequest="40"  Margin="15,5,15,0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+
+                    <Button Text="←" FontSize="18" Clicked="OnBack"/>
+                    <Label Text="Term Title" Grid.Column="1" VerticalOptions="Center" HorizontalOptions="Center" FontSize="18" Margin="10,0,0,0"/>
+                    <Button x:Name="addCourse" Text="ADD" Grid.Column="2" Clicked="OnAddCourse" TextColor="Black" BackgroundColor="White"/>
+                </Grid>
+            
+
+                <!-- Separator Line -->
+                <BoxView HeightRequest="2" BackgroundColor="Black" Margin="0,5,0,10"/>
+
+                <!-- Term Input Section -->
+                <Frame Padding="10" CornerRadius="5" BackgroundColor="White" Margin="15,0,15,10">
+                    <VerticalStackLayout>
+                        <Entry x:Name="TermTitleEntry" Placeholder="Enter Term Title" FontAttributes="Bold" HorizontalOptions="Fill" HorizontalTextAlignment="Center"/>
+
+                        <Grid ColumnDefinitions="Auto, * , auto" Margin="10,0,10,0">
+                            <Label Text="Start Date" VerticalOptions="Center"/>
+                            <DatePicker Grid.Column="2"/>
+                        </Grid>
+
+                        <Grid ColumnDefinitions="Auto, * , auto" Margin="10,0,10,0">
+                            <Label Text="End Date" VerticalOptions="Center" Grid.Column="0"/>
+                            <DatePicker Grid.Column="2"/>
+                        </Grid>
+                    </VerticalStackLayout>
+                </Frame>
+            </StackLayout>
+
+            <!-- Course List Section -->
+            <CollectionView Grid.Row="1" ItemsSource="{Binding Courses}" SelectionMode="Single" SelectedItem="{Binding SelectedCourse}" Margin="15,0,15,10">
+                <CollectionView.ItemTemplate >
+                    <DataTemplate>
+                        <Button Text="{Binding}" 
+                            Command="{Binding Source={RelativeSource AncestorType={x:Type ContentPage}}, Path=BindingContext.ButtonCommand}" 
+                            CommandParameter="{Binding}" 
+                            BackgroundColor="LightSlateGray"  
+                            CornerRadius="10"
+                            Clicked="OnAddCourse"
+                            Margin="0,5,0,0"
+                            TextColor="Black"
+                            HeightRequest="70"
+                            Padding="0"/>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+            <!-- Bottom Buttons -->
+            
+        
+        </VerticalStackLayout>
+        <Grid Grid.Row="2">
+            <Grid RowDefinitions="Auto, *">
+                <BoxView HeightRequest="2" BackgroundColor="Black" Margin="0,10,0,5" Grid.Row="0"/>
+                <Grid ColumnDefinitions="*, *" Margin="15,0,15,10" Grid.Row="1">
+                    <Button Text="SAVE" Grid.Column="0" Margin="0,0,5,0" BackgroundColor="White" CornerRadius="5" Clicked="OnSave" TextColor="Black"/>
+                    <Button Text="DELETE" Grid.Column="1" Margin="5,0,0,0" BackgroundColor="White" CornerRadius="5" Clicked="OnDelete" TextColor="Black"/>
+                </Grid>
+            </Grid>
+        </Grid>
+
+    </Grid>
+</ContentPage>

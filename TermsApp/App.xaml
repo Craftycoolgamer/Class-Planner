@@ -6,6 +6,7 @@
              x:Class="TermsApp.App">
     <Application.Resources>
         <ResourceDictionary>
+            <!--<local:SelectedTermConverter x:Key="SelectedTermConverter"/>-->
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="Resources/Styles/Colors.xaml" />
                 <ResourceDictionary Source="Resources/Styles/Styles.xaml" />
