@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\crafty\\Desktop\\C971\\TermsApp\\TermsApp.csproj": {}
+    "C:\\Users\\crafty\\Desktop\\Take3\\TermsApp\\TermsApp.csproj": {}
   },
   "projects": {
-    "C:\\Users\\crafty\\Desktop\\C971\\TermsApp\\TermsApp.csproj": {
+    "C:\\Users\\crafty\\Desktop\\Take3\\TermsApp\\TermsApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\crafty\\Desktop\\C971\\TermsApp\\TermsApp.csproj",
+        "projectUniqueName": "C:\\Users\\crafty\\Desktop\\Take3\\TermsApp\\TermsApp.csproj",
         "projectName": "TermsApp",
-        "projectPath": "C:\\Users\\crafty\\Desktop\\C971\\TermsApp\\TermsApp.csproj",
+        "projectPath": "C:\\Users\\crafty\\Desktop\\Take3\\TermsApp\\TermsApp.csproj",
         "packagesPath": "C:\\Users\\crafty\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\crafty\\Desktop\\C971\\TermsApp\\obj\\",
+        "outputPath": "C:\\Users\\crafty\\Desktop\\Take3\\TermsApp\\obj\\",
         "projectStyle": "PackageReference",
         "crossTargeting": true,
         "fallbackFolders": [
@@ -29,7 +29,9 @@
           "net8.0-windows10.0.19041.0"
         ],
         "sources": {
-          "C:\\Program Files\\dotnet\\library-packs": {}
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net8.0-android34.0": {
@@ -65,10 +67,6 @@
         "net8.0-android34.0": {
           "targetAlias": "net8.0-android",
           "dependencies": {
-            "CommunityToolkit.Maui": {
-              "target": "Package",
-              "version": "[9.1.1, )"
-            },
             "Microsoft.Extensions.Logging.Debug": {
               "target": "Package",
               "version": "[8.0.1, )"
@@ -87,9 +85,9 @@
               "version": "[8.0.13, )",
               "autoReferenced": true
             },
-            "SQLitePCLRaw.bundle_green": {
+            "Plugin.LocalNotification": {
               "target": "Package",
-              "version": "[2.1.10, )"
+              "version": "[10.1.8, )"
             },
             "sqlite-net-pcl": {
               "target": "Package",
@@ -142,10 +140,6 @@
         "net8.0-ios18.0": {
           "targetAlias": "net8.0-ios",
           "dependencies": {
-            "CommunityToolkit.Maui": {
-              "target": "Package",
-              "version": "[9.1.1, )"
-            },
             "Microsoft.Extensions.Logging.Debug": {
               "target": "Package",
               "version": "[8.0.1, )"
@@ -164,9 +158,9 @@
               "version": "[8.0.13, )",
               "autoReferenced": true
             },
-            "SQLitePCLRaw.bundle_green": {
+            "Plugin.LocalNotification": {
               "target": "Package",
-              "version": "[2.1.10, )"
+              "version": "[10.1.8, )"
             },
             "sqlite-net-pcl": {
               "target": "Package",
@@ -207,10 +201,6 @@
         "net8.0-maccatalyst18.0": {
           "targetAlias": "net8.0-maccatalyst",
           "dependencies": {
-            "CommunityToolkit.Maui": {
-              "target": "Package",
-              "version": "[9.1.1, )"
-            },
             "Microsoft.Extensions.Logging.Debug": {
               "target": "Package",
               "version": "[8.0.1, )"
@@ -229,9 +219,9 @@
               "version": "[8.0.13, )",
               "autoReferenced": true
             },
-            "SQLitePCLRaw.bundle_green": {
+            "Plugin.LocalNotification": {
               "target": "Package",
-              "version": "[2.1.10, )"
+              "version": "[10.1.8, )"
             },
             "sqlite-net-pcl": {
               "target": "Package",
@@ -273,10 +263,6 @@
         "net8.0-windows10.0.19041": {
           "targetAlias": "net8.0-windows10.0.19041.0",
           "dependencies": {
-            "CommunityToolkit.Maui": {
-              "target": "Package",
-              "version": "[9.1.1, )"
-            },
             "Microsoft.Extensions.Logging.Debug": {
               "target": "Package",
               "version": "[8.0.1, )"
@@ -289,9 +275,9 @@
               "target": "Package",
               "version": "[8.0.100, )"
             },
-            "SQLitePCLRaw.bundle_green": {
+            "Plugin.LocalNotification": {
               "target": "Package",
-              "version": "[2.1.10, )"
+              "version": "[10.1.8, )"
             },
             "sqlite-net-pcl": {
               "target": "Package",

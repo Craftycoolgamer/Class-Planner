@@ -3,8 +3,6 @@ public class MonoPackageManager_Resources {
 	public static String[] Assemblies = new String[]{
 		/* We need to ensure that "TermsApp.dll" comes first in this list. */
 		"TermsApp.dll",
-		"CommunityToolkit.Maui.dll",
-		"CommunityToolkit.Maui.Core.dll",
 		"GoogleGson.dll",
 		"Microsoft.Extensions.Configuration.dll",
 		"Microsoft.Extensions.Configuration.Abstractions.dll",
@@ -21,6 +19,7 @@ public class MonoPackageManager_Resources {
 		"Microsoft.Maui.dll",
 		"Microsoft.Maui.Essentials.dll",
 		"Microsoft.Maui.Graphics.dll",
+		"Plugin.LocalNotification.dll",
 		"SQLite-net.dll",
 		"SQLitePCLRaw.batteries_v2.dll",
 		"SQLitePCLRaw.core.dll",
@@ -102,6 +101,10 @@ public class MonoPackageManager_Resources {
 		"Xamarin.Google.Crypto.Tink.Android.dll",
 		"Xamarin.Google.ErrorProne.Annotations.dll",
 		"Xamarin.Google.Guava.ListenableFuture.dll",
+		"Xamarin.GooglePlayServices.Base.dll",
+		"Xamarin.GooglePlayServices.Basement.dll",
+		"Xamarin.GooglePlayServices.Location.dll",
+		"Xamarin.GooglePlayServices.Tasks.dll",
 		"Xamarin.Jetbrains.Annotations.dll",
 		"Xamarin.Kotlin.StdLib.dll",
 		"Xamarin.Kotlin.StdLib.Common.dll",

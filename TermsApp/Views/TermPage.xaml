@@ -4,26 +4,19 @@
              x:Class="TermsApp.TermPage"
              BackgroundColor="LightGray">
 
-    <Grid RowDefinitions="Auto, * , Auto">
+    <Shell.TitleView>
+        <Grid>
+            <Label Text="TERMS" VerticalOptions="Center" FontSize="18" TextColor="Black"/>
+            <Button x:Name="AddCourse" Text="ADD" Clicked="AddCourseClicked" HeightRequest="40" WidthRequest="80" HorizontalOptions="End" Margin="0,0,10,0"/>
+        </Grid>
+    </Shell.TitleView>
+
+    <Grid RowDefinitions=" * , Auto">
         <VerticalStackLayout>
-        
             <!-- Top Navigation Bar -->
             <StackLayout Grid.Row="0">
-                <Grid HeightRequest="40"  Margin="15,5,15,0">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="Auto" />
-                        <ColumnDefinition Width="*" />
-                        <ColumnDefinition Width="Auto" />
-                    </Grid.ColumnDefinitions>
-
-                    <Button Text="←" FontSize="18" Clicked="OnBack"/>
-                    <Label Text="Term Title" Grid.Column="1" VerticalOptions="Center" HorizontalOptions="Center" FontSize="18" Margin="10,0,0,0"/>
-                    <Button x:Name="addCourse" Text="ADD" Grid.Column="2" Clicked="OnAddCourse" TextColor="Black" BackgroundColor="White"/>
-                </Grid>
-            
-
                 <!-- Separator Line -->
-                <BoxView HeightRequest="2" BackgroundColor="Black" Margin="0,5,0,10"/>
+                <BoxView HeightRequest="2" BackgroundColor="Black" Margin="0,0,0,10"/>
 
                 <!-- Term Input Section -->
                 <Frame Padding="10" CornerRadius="5" BackgroundColor="White" Margin="15,0,15,10">
@@ -44,22 +37,9 @@
             </StackLayout>
 
             <!-- Course List Section -->
-            <CollectionView Grid.Row="1" ItemsSource="{Binding Courses}" SelectionMode="Single" SelectedItem="{Binding SelectedCourse}" Margin="15,0,15,10">
-                <CollectionView.ItemTemplate >
-                    <DataTemplate>
-                        <Button Text="{Binding}" 
-                            Command="{Binding Source={RelativeSource AncestorType={x:Type ContentPage}}, Path=BindingContext.ButtonCommand}" 
-                            CommandParameter="{Binding}" 
-                            BackgroundColor="LightSlateGray"  
-                            CornerRadius="10"
-                            Clicked="OnAddCourse"
-                            Margin="0,5,0,0"
-                            TextColor="Black"
-                            HeightRequest="70"
-                            Padding="0"/>
-                    </DataTemplate>
-                </CollectionView.ItemTemplate>
-            </CollectionView>
+            <VerticalStackLayout x:Name="CourseStack"  Margin="15,0,15,0">
+                <!-- Changed to programatically create Term buttons-->
+            </VerticalStackLayout>
 
             <!-- Bottom Buttons -->
             

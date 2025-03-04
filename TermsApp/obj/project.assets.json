@@ -2,40 +2,6 @@
   "version": 3,
   "targets": {
     "net8.0-android34.0": {
-      "CommunityToolkit.Maui/9.1.1": {
-        "type": "package",
-        "dependencies": {
-          "CommunityToolkit.Maui.Core": "9.1.1",
-          "Microsoft.Maui.Controls": "8.0.71"
-        },
-        "compile": {
-          "lib/net8.0-android34.0/CommunityToolkit.Maui.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0-android34.0/CommunityToolkit.Maui.dll": {
-            "related": ".xml"
-          }
-        }
-      },
-      "CommunityToolkit.Maui.Core/9.1.1": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Maui.Core": "8.0.71",
-          "Microsoft.Maui.Essentials": "8.0.71"
-        },
-        "compile": {
-          "lib/net8.0-android34.0/CommunityToolkit.Maui.Core.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0-android34.0/CommunityToolkit.Maui.Core.dll": {
-            "related": ".xml"
-          }
-        }
-      },
       "GoogleGson/2.10.1.4": {
         "type": "package",
         "compile": {
@@ -479,6 +445,22 @@
           "build/Microsoft.NET.ILLink.Tasks.props": {}
         }
       },
+      "Plugin.LocalNotification/10.1.8": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.GooglePlayServices.Location": "120.0.0.1"
+        },
+        "compile": {
+          "lib/net7.0-android33.0/Plugin.LocalNotification.dll": {
+            "related": ".aar;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net7.0-android33.0/Plugin.LocalNotification.dll": {
+            "related": ".aar;.xml"
+          }
+        }
+      },
       "sqlite-net-pcl/1.9.172": {
         "type": "package",
         "dependencies": {
@@ -495,11 +477,11 @@
           }
         }
       },
-      "SQLitePCLRaw.bundle_green/2.1.10": {
+      "SQLitePCLRaw.bundle_green/2.1.2": {
         "type": "package",
         "dependencies": {
-          "SQLitePCLRaw.lib.e_sqlite3.android": "2.1.10",
-          "SQLitePCLRaw.provider.e_sqlite3": "2.1.10"
+          "SQLitePCLRaw.lib.e_sqlite3.android": "2.1.2",
+          "SQLitePCLRaw.provider.e_sqlite3": "2.1.2"
         },
         "compile": {
           "lib/net6.0-android31.0/SQLitePCLRaw.batteries_v2.dll": {
@@ -512,7 +494,7 @@
           }
         }
       },
-      "SQLitePCLRaw.core/2.1.10": {
+      "SQLitePCLRaw.core/2.1.2": {
         "type": "package",
         "dependencies": {
           "System.Memory": "4.5.3"
@@ -524,7 +506,7 @@
           "lib/netstandard2.0/SQLitePCLRaw.core.dll": {}
         }
       },
-      "SQLitePCLRaw.lib.e_sqlite3.android/2.1.10": {
+      "SQLitePCLRaw.lib.e_sqlite3.android/2.1.2": {
         "type": "package",
         "compile": {
           "lib/net6.0-android31.0/SQLitePCLRaw.lib.e_sqlite3.android.dll": {
@@ -537,10 +519,10 @@
           }
         }
       },
-      "SQLitePCLRaw.provider.e_sqlite3/2.1.10": {
+      "SQLitePCLRaw.provider.e_sqlite3/2.1.2": {
         "type": "package",
         "dependencies": {
-          "SQLitePCLRaw.core": "2.1.10"
+          "SQLitePCLRaw.core": "2.1.2"
         },
         "compile": {
           "lib/net6.0/SQLitePCLRaw.provider.e_sqlite3.dll": {}
@@ -2119,6 +2101,13 @@
           "buildTransitive/net6.0-android31.0/Xamarin.AndroidX.Window.Extensions.Core.Core.targets": {}
         }
       },
+      "Xamarin.Build.Download/0.11.4": {
+        "type": "package",
+        "build": {
+          "buildTransitive/Xamarin.Build.Download.props": {},
+          "buildTransitive/Xamarin.Build.Download.targets": {}
+        }
+      },
       "Xamarin.Google.Android.Material/1.9.0.2": {
         "type": "package",
         "dependencies": {
@@ -2212,6 +2201,94 @@
         },
         "build": {
           "buildTransitive/net6.0-android31.0/Xamarin.Google.Guava.ListenableFuture.targets": {}
+        }
+      },
+      "Xamarin.GooglePlayServices.Base/118.1.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.AndroidX.Collection": "1.2.0.6",
+          "Xamarin.AndroidX.Core": "1.9.0.2",
+          "Xamarin.AndroidX.Fragment": "1.5.5.1",
+          "Xamarin.Build.Download": "0.11.4",
+          "Xamarin.GooglePlayServices.Basement": "118.1.0.2",
+          "Xamarin.GooglePlayServices.Tasks": "118.0.2.1"
+        },
+        "compile": {
+          "lib/net6.0-android31.0/Xamarin.GooglePlayServices.Base.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0-android31.0/Xamarin.GooglePlayServices.Base.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net6.0-android31.0/Xamarin.GooglePlayServices.Base.targets": {}
+        }
+      },
+      "Xamarin.GooglePlayServices.Basement/118.1.0.2": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.AndroidX.Collection": "1.2.0.6",
+          "Xamarin.AndroidX.Core": "1.9.0.2",
+          "Xamarin.AndroidX.Fragment": "1.5.5.1",
+          "Xamarin.Build.Download": "0.11.4"
+        },
+        "compile": {
+          "lib/net6.0-android31.0/Xamarin.GooglePlayServices.Basement.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0-android31.0/Xamarin.GooglePlayServices.Basement.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net6.0-android31.0/Xamarin.GooglePlayServices.Basement.targets": {}
+        }
+      },
+      "Xamarin.GooglePlayServices.Location/120.0.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.Build.Download": "0.11.4",
+          "Xamarin.GooglePlayServices.Base": "118.1.0.1",
+          "Xamarin.GooglePlayServices.Basement": "118.1.0.2",
+          "Xamarin.GooglePlayServices.Tasks": "118.0.2.1"
+        },
+        "compile": {
+          "lib/net6.0-android31.0/Xamarin.GooglePlayServices.Location.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0-android31.0/Xamarin.GooglePlayServices.Location.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net6.0-android31.0/Xamarin.GooglePlayServices.Location.targets": {}
+        }
+      },
+      "Xamarin.GooglePlayServices.Tasks/118.0.2.1": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.Build.Download": "0.11.4",
+          "Xamarin.GooglePlayServices.Basement": "118.1.0.2"
+        },
+        "compile": {
+          "lib/net6.0-android31.0/Xamarin.GooglePlayServices.Tasks.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0-android31.0/Xamarin.GooglePlayServices.Tasks.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net6.0-android31.0/Xamarin.GooglePlayServices.Tasks.targets": {}
         }
       },
       "Xamarin.Jetbrains.Annotations/24.0.1.3": {
@@ -2348,40 +2425,6 @@
       }
     },
     "net8.0-android34.0/android-arm": {
-      "CommunityToolkit.Maui/9.1.1": {
-        "type": "package",
-        "dependencies": {
-          "CommunityToolkit.Maui.Core": "9.1.1",
-          "Microsoft.Maui.Controls": "8.0.71"
-        },
-        "compile": {
-          "lib/net8.0-android34.0/CommunityToolkit.Maui.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0-android34.0/CommunityToolkit.Maui.dll": {
-            "related": ".xml"
-          }
-        }
-      },
-      "CommunityToolkit.Maui.Core/9.1.1": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Maui.Core": "8.0.71",
-          "Microsoft.Maui.Essentials": "8.0.71"
-        },
-        "compile": {
-          "lib/net8.0-android34.0/CommunityToolkit.Maui.Core.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0-android34.0/CommunityToolkit.Maui.Core.dll": {
-            "related": ".xml"
-          }
-        }
-      },
       "GoogleGson/2.10.1.4": {
         "type": "package",
         "compile": {
@@ -2825,6 +2868,22 @@
           "build/Microsoft.NET.ILLink.Tasks.props": {}
         }
       },
+      "Plugin.LocalNotification/10.1.8": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.GooglePlayServices.Location": "120.0.0.1"
+        },
+        "compile": {
+          "lib/net7.0-android33.0/Plugin.LocalNotification.dll": {
+            "related": ".aar;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net7.0-android33.0/Plugin.LocalNotification.dll": {
+            "related": ".aar;.xml"
+          }
+        }
+      },
       "sqlite-net-pcl/1.9.172": {
         "type": "package",
         "dependencies": {
@@ -2841,11 +2900,11 @@
           }
         }
       },
-      "SQLitePCLRaw.bundle_green/2.1.10": {
+      "SQLitePCLRaw.bundle_green/2.1.2": {
         "type": "package",
         "dependencies": {
-          "SQLitePCLRaw.lib.e_sqlite3.android": "2.1.10",
-          "SQLitePCLRaw.provider.e_sqlite3": "2.1.10"
+          "SQLitePCLRaw.lib.e_sqlite3.android": "2.1.2",
+          "SQLitePCLRaw.provider.e_sqlite3": "2.1.2"
         },
         "compile": {
           "lib/net6.0-android31.0/SQLitePCLRaw.batteries_v2.dll": {
@@ -2858,7 +2917,7 @@
           }
         }
       },
-      "SQLitePCLRaw.core/2.1.10": {
+      "SQLitePCLRaw.core/2.1.2": {
         "type": "package",
         "dependencies": {
           "System.Memory": "4.5.3"
@@ -2870,7 +2929,7 @@
           "lib/netstandard2.0/SQLitePCLRaw.core.dll": {}
         }
       },
-      "SQLitePCLRaw.lib.e_sqlite3.android/2.1.10": {
+      "SQLitePCLRaw.lib.e_sqlite3.android/2.1.2": {
         "type": "package",
         "compile": {
           "lib/net6.0-android31.0/SQLitePCLRaw.lib.e_sqlite3.android.dll": {
@@ -2883,10 +2942,10 @@
           }
         }
       },
-      "SQLitePCLRaw.provider.e_sqlite3/2.1.10": {
+      "SQLitePCLRaw.provider.e_sqlite3/2.1.2": {
         "type": "package",
         "dependencies": {
-          "SQLitePCLRaw.core": "2.1.10"
+          "SQLitePCLRaw.core": "2.1.2"
         },
         "compile": {
           "lib/net6.0/SQLitePCLRaw.provider.e_sqlite3.dll": {}
@@ -4465,6 +4524,13 @@
           "buildTransitive/net6.0-android31.0/Xamarin.AndroidX.Window.Extensions.Core.Core.targets": {}
         }
       },
+      "Xamarin.Build.Download/0.11.4": {
+        "type": "package",
+        "build": {
+          "buildTransitive/Xamarin.Build.Download.props": {},
+          "buildTransitive/Xamarin.Build.Download.targets": {}
+        }
+      },
       "Xamarin.Google.Android.Material/1.9.0.2": {
         "type": "package",
         "dependencies": {
@@ -4558,6 +4624,94 @@
         },
         "build": {
           "buildTransitive/net6.0-android31.0/Xamarin.Google.Guava.ListenableFuture.targets": {}
+        }
+      },
+      "Xamarin.GooglePlayServices.Base/118.1.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.AndroidX.Collection": "1.2.0.6",
+          "Xamarin.AndroidX.Core": "1.9.0.2",
+          "Xamarin.AndroidX.Fragment": "1.5.5.1",
+          "Xamarin.Build.Download": "0.11.4",
+          "Xamarin.GooglePlayServices.Basement": "118.1.0.2",
+          "Xamarin.GooglePlayServices.Tasks": "118.0.2.1"
+        },
+        "compile": {
+          "lib/net6.0-android31.0/Xamarin.GooglePlayServices.Base.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0-android31.0/Xamarin.GooglePlayServices.Base.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net6.0-android31.0/Xamarin.GooglePlayServices.Base.targets": {}
+        }
+      },
+      "Xamarin.GooglePlayServices.Basement/118.1.0.2": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.AndroidX.Collection": "1.2.0.6",
+          "Xamarin.AndroidX.Core": "1.9.0.2",
+          "Xamarin.AndroidX.Fragment": "1.5.5.1",
+          "Xamarin.Build.Download": "0.11.4"
+        },
+        "compile": {
+          "lib/net6.0-android31.0/Xamarin.GooglePlayServices.Basement.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0-android31.0/Xamarin.GooglePlayServices.Basement.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net6.0-android31.0/Xamarin.GooglePlayServices.Basement.targets": {}
+        }
+      },
+      "Xamarin.GooglePlayServices.Location/120.0.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.Build.Download": "0.11.4",
+          "Xamarin.GooglePlayServices.Base": "118.1.0.1",
+          "Xamarin.GooglePlayServices.Basement": "118.1.0.2",
+          "Xamarin.GooglePlayServices.Tasks": "118.0.2.1"
+        },
+        "compile": {
+          "lib/net6.0-android31.0/Xamarin.GooglePlayServices.Location.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0-android31.0/Xamarin.GooglePlayServices.Location.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net6.0-android31.0/Xamarin.GooglePlayServices.Location.targets": {}
+        }
+      },
+      "Xamarin.GooglePlayServices.Tasks/118.0.2.1": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.Build.Download": "0.11.4",
+          "Xamarin.GooglePlayServices.Basement": "118.1.0.2"
+        },
+        "compile": {
+          "lib/net6.0-android31.0/Xamarin.GooglePlayServices.Tasks.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0-android31.0/Xamarin.GooglePlayServices.Tasks.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net6.0-android31.0/Xamarin.GooglePlayServices.Tasks.targets": {}
         }
       },
       "Xamarin.Jetbrains.Annotations/24.0.1.3": {
@@ -4694,40 +4848,6 @@
       }
     },
     "net8.0-android34.0/android-arm64": {
-      "CommunityToolkit.Maui/9.1.1": {
-        "type": "package",
-        "dependencies": {
-          "CommunityToolkit.Maui.Core": "9.1.1",
-          "Microsoft.Maui.Controls": "8.0.71"
-        },
-        "compile": {
-          "lib/net8.0-android34.0/CommunityToolkit.Maui.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0-android34.0/CommunityToolkit.Maui.dll": {
-            "related": ".xml"
-          }
-        }
-      },
-      "CommunityToolkit.Maui.Core/9.1.1": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Maui.Core": "8.0.71",
-          "Microsoft.Maui.Essentials": "8.0.71"
-        },
-        "compile": {
-          "lib/net8.0-android34.0/CommunityToolkit.Maui.Core.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0-android34.0/CommunityToolkit.Maui.Core.dll": {
-            "related": ".xml"
-          }
-        }
-      },
       "GoogleGson/2.10.1.4": {
         "type": "package",
         "compile": {
@@ -5171,6 +5291,22 @@
           "build/Microsoft.NET.ILLink.Tasks.props": {}
         }
       },
+      "Plugin.LocalNotification/10.1.8": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.GooglePlayServices.Location": "120.0.0.1"
+        },
+        "compile": {
+          "lib/net7.0-android33.0/Plugin.LocalNotification.dll": {
+            "related": ".aar;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net7.0-android33.0/Plugin.LocalNotification.dll": {
+            "related": ".aar;.xml"
+          }
+        }
+      },
       "sqlite-net-pcl/1.9.172": {
         "type": "package",
         "dependencies": {
@@ -5187,11 +5323,11 @@
           }
         }
       },
-      "SQLitePCLRaw.bundle_green/2.1.10": {
+      "SQLitePCLRaw.bundle_green/2.1.2": {
         "type": "package",
         "dependencies": {
-          "SQLitePCLRaw.lib.e_sqlite3.android": "2.1.10",
-          "SQLitePCLRaw.provider.e_sqlite3": "2.1.10"
+          "SQLitePCLRaw.lib.e_sqlite3.android": "2.1.2",
+          "SQLitePCLRaw.provider.e_sqlite3": "2.1.2"
         },
         "compile": {
           "lib/net6.0-android31.0/SQLitePCLRaw.batteries_v2.dll": {
@@ -5204,7 +5340,7 @@
           }
         }
       },
-      "SQLitePCLRaw.core/2.1.10": {
+      "SQLitePCLRaw.core/2.1.2": {
         "type": "package",
         "dependencies": {
           "System.Memory": "4.5.3"
@@ -5216,7 +5352,7 @@
           "lib/netstandard2.0/SQLitePCLRaw.core.dll": {}
         }
       },
-      "SQLitePCLRaw.lib.e_sqlite3.android/2.1.10": {
+      "SQLitePCLRaw.lib.e_sqlite3.android/2.1.2": {
         "type": "package",
         "compile": {
           "lib/net6.0-android31.0/SQLitePCLRaw.lib.e_sqlite3.android.dll": {
@@ -5229,10 +5365,10 @@
           }
         }
       },
-      "SQLitePCLRaw.provider.e_sqlite3/2.1.10": {
+      "SQLitePCLRaw.provider.e_sqlite3/2.1.2": {
         "type": "package",
         "dependencies": {
-          "SQLitePCLRaw.core": "2.1.10"
+          "SQLitePCLRaw.core": "2.1.2"
         },
         "compile": {
           "lib/net6.0/SQLitePCLRaw.provider.e_sqlite3.dll": {}
@@ -6811,6 +6947,13 @@
           "buildTransitive/net6.0-android31.0/Xamarin.AndroidX.Window.Extensions.Core.Core.targets": {}
         }
       },
+      "Xamarin.Build.Download/0.11.4": {
+        "type": "package",
+        "build": {
+          "buildTransitive/Xamarin.Build.Download.props": {},
+          "buildTransitive/Xamarin.Build.Download.targets": {}
+        }
+      },
       "Xamarin.Google.Android.Material/1.9.0.2": {
         "type": "package",
         "dependencies": {
@@ -6904,6 +7047,94 @@
         },
         "build": {
           "buildTransitive/net6.0-android31.0/Xamarin.Google.Guava.ListenableFuture.targets": {}
+        }
+      },
+      "Xamarin.GooglePlayServices.Base/118.1.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.AndroidX.Collection": "1.2.0.6",
+          "Xamarin.AndroidX.Core": "1.9.0.2",
+          "Xamarin.AndroidX.Fragment": "1.5.5.1",
+          "Xamarin.Build.Download": "0.11.4",
+          "Xamarin.GooglePlayServices.Basement": "118.1.0.2",
+          "Xamarin.GooglePlayServices.Tasks": "118.0.2.1"
+        },
+        "compile": {
+          "lib/net6.0-android31.0/Xamarin.GooglePlayServices.Base.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0-android31.0/Xamarin.GooglePlayServices.Base.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net6.0-android31.0/Xamarin.GooglePlayServices.Base.targets": {}
+        }
+      },
+      "Xamarin.GooglePlayServices.Basement/118.1.0.2": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.AndroidX.Collection": "1.2.0.6",
+          "Xamarin.AndroidX.Core": "1.9.0.2",
+          "Xamarin.AndroidX.Fragment": "1.5.5.1",
+          "Xamarin.Build.Download": "0.11.4"
+        },
+        "compile": {
+          "lib/net6.0-android31.0/Xamarin.GooglePlayServices.Basement.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0-android31.0/Xamarin.GooglePlayServices.Basement.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net6.0-android31.0/Xamarin.GooglePlayServices.Basement.targets": {}
+        }
+      },
+      "Xamarin.GooglePlayServices.Location/120.0.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.Build.Download": "0.11.4",
+          "Xamarin.GooglePlayServices.Base": "118.1.0.1",
+          "Xamarin.GooglePlayServices.Basement": "118.1.0.2",
+          "Xamarin.GooglePlayServices.Tasks": "118.0.2.1"
+        },
+        "compile": {
+          "lib/net6.0-android31.0/Xamarin.GooglePlayServices.Location.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0-android31.0/Xamarin.GooglePlayServices.Location.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net6.0-android31.0/Xamarin.GooglePlayServices.Location.targets": {}
+        }
+      },
+      "Xamarin.GooglePlayServices.Tasks/118.0.2.1": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.Build.Download": "0.11.4",
+          "Xamarin.GooglePlayServices.Basement": "118.1.0.2"
+        },
+        "compile": {
+          "lib/net6.0-android31.0/Xamarin.GooglePlayServices.Tasks.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0-android31.0/Xamarin.GooglePlayServices.Tasks.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net6.0-android31.0/Xamarin.GooglePlayServices.Tasks.targets": {}
         }
       },
       "Xamarin.Jetbrains.Annotations/24.0.1.3": {
@@ -7040,40 +7271,6 @@
       }
     },
     "net8.0-android34.0/android-x64": {
-      "CommunityToolkit.Maui/9.1.1": {
-        "type": "package",
-        "dependencies": {
-          "CommunityToolkit.Maui.Core": "9.1.1",
-          "Microsoft.Maui.Controls": "8.0.71"
-        },
-        "compile": {
-          "lib/net8.0-android34.0/CommunityToolkit.Maui.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0-android34.0/CommunityToolkit.Maui.dll": {
-            "related": ".xml"
-          }
-        }
-      },
-      "CommunityToolkit.Maui.Core/9.1.1": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Maui.Core": "8.0.71",
-          "Microsoft.Maui.Essentials": "8.0.71"
-        },
-        "compile": {
-          "lib/net8.0-android34.0/CommunityToolkit.Maui.Core.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0-android34.0/CommunityToolkit.Maui.Core.dll": {
-            "related": ".xml"
-          }
-        }
-      },
       "GoogleGson/2.10.1.4": {
         "type": "package",
         "compile": {
@@ -7517,6 +7714,22 @@
           "build/Microsoft.NET.ILLink.Tasks.props": {}
         }
       },
+      "Plugin.LocalNotification/10.1.8": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.GooglePlayServices.Location": "120.0.0.1"
+        },
+        "compile": {
+          "lib/net7.0-android33.0/Plugin.LocalNotification.dll": {
+            "related": ".aar;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net7.0-android33.0/Plugin.LocalNotification.dll": {
+            "related": ".aar;.xml"
+          }
+        }
+      },
       "sqlite-net-pcl/1.9.172": {
         "type": "package",
         "dependencies": {
@@ -7533,11 +7746,11 @@
           }
         }
       },
-      "SQLitePCLRaw.bundle_green/2.1.10": {
+      "SQLitePCLRaw.bundle_green/2.1.2": {
         "type": "package",
         "dependencies": {
-          "SQLitePCLRaw.lib.e_sqlite3.android": "2.1.10",
-          "SQLitePCLRaw.provider.e_sqlite3": "2.1.10"
+          "SQLitePCLRaw.lib.e_sqlite3.android": "2.1.2",
+          "SQLitePCLRaw.provider.e_sqlite3": "2.1.2"
         },
         "compile": {
           "lib/net6.0-android31.0/SQLitePCLRaw.batteries_v2.dll": {
@@ -7550,7 +7763,7 @@
           }
         }
       },
-      "SQLitePCLRaw.core/2.1.10": {
+      "SQLitePCLRaw.core/2.1.2": {
         "type": "package",
         "dependencies": {
           "System.Memory": "4.5.3"
@@ -7562,7 +7775,7 @@
           "lib/netstandard2.0/SQLitePCLRaw.core.dll": {}
         }
       },
-      "SQLitePCLRaw.lib.e_sqlite3.android/2.1.10": {
+      "SQLitePCLRaw.lib.e_sqlite3.android/2.1.2": {
         "type": "package",
         "compile": {
           "lib/net6.0-android31.0/SQLitePCLRaw.lib.e_sqlite3.android.dll": {
@@ -7575,10 +7788,10 @@
           }
         }
       },
-      "SQLitePCLRaw.provider.e_sqlite3/2.1.10": {
+      "SQLitePCLRaw.provider.e_sqlite3/2.1.2": {
         "type": "package",
         "dependencies": {
-          "SQLitePCLRaw.core": "2.1.10"
+          "SQLitePCLRaw.core": "2.1.2"
         },
         "compile": {
           "lib/net6.0/SQLitePCLRaw.provider.e_sqlite3.dll": {}
@@ -9157,6 +9370,13 @@
           "buildTransitive/net6.0-android31.0/Xamarin.AndroidX.Window.Extensions.Core.Core.targets": {}
         }
       },
+      "Xamarin.Build.Download/0.11.4": {
+        "type": "package",
+        "build": {
+          "buildTransitive/Xamarin.Build.Download.props": {},
+          "buildTransitive/Xamarin.Build.Download.targets": {}
+        }
+      },
       "Xamarin.Google.Android.Material/1.9.0.2": {
         "type": "package",
         "dependencies": {
@@ -9250,6 +9470,94 @@
         },
         "build": {
           "buildTransitive/net6.0-android31.0/Xamarin.Google.Guava.ListenableFuture.targets": {}
+        }
+      },
+      "Xamarin.GooglePlayServices.Base/118.1.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.AndroidX.Collection": "1.2.0.6",
+          "Xamarin.AndroidX.Core": "1.9.0.2",
+          "Xamarin.AndroidX.Fragment": "1.5.5.1",
+          "Xamarin.Build.Download": "0.11.4",
+          "Xamarin.GooglePlayServices.Basement": "118.1.0.2",
+          "Xamarin.GooglePlayServices.Tasks": "118.0.2.1"
+        },
+        "compile": {
+          "lib/net6.0-android31.0/Xamarin.GooglePlayServices.Base.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0-android31.0/Xamarin.GooglePlayServices.Base.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net6.0-android31.0/Xamarin.GooglePlayServices.Base.targets": {}
+        }
+      },
+      "Xamarin.GooglePlayServices.Basement/118.1.0.2": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.AndroidX.Collection": "1.2.0.6",
+          "Xamarin.AndroidX.Core": "1.9.0.2",
+          "Xamarin.AndroidX.Fragment": "1.5.5.1",
+          "Xamarin.Build.Download": "0.11.4"
+        },
+        "compile": {
+          "lib/net6.0-android31.0/Xamarin.GooglePlayServices.Basement.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0-android31.0/Xamarin.GooglePlayServices.Basement.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net6.0-android31.0/Xamarin.GooglePlayServices.Basement.targets": {}
+        }
+      },
+      "Xamarin.GooglePlayServices.Location/120.0.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.Build.Download": "0.11.4",
+          "Xamarin.GooglePlayServices.Base": "118.1.0.1",
+          "Xamarin.GooglePlayServices.Basement": "118.1.0.2",
+          "Xamarin.GooglePlayServices.Tasks": "118.0.2.1"
+        },
+        "compile": {
+          "lib/net6.0-android31.0/Xamarin.GooglePlayServices.Location.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0-android31.0/Xamarin.GooglePlayServices.Location.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net6.0-android31.0/Xamarin.GooglePlayServices.Location.targets": {}
+        }
+      },
+      "Xamarin.GooglePlayServices.Tasks/118.0.2.1": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.Build.Download": "0.11.4",
+          "Xamarin.GooglePlayServices.Basement": "118.1.0.2"
+        },
+        "compile": {
+          "lib/net6.0-android31.0/Xamarin.GooglePlayServices.Tasks.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0-android31.0/Xamarin.GooglePlayServices.Tasks.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net6.0-android31.0/Xamarin.GooglePlayServices.Tasks.targets": {}
         }
       },
       "Xamarin.Jetbrains.Annotations/24.0.1.3": {
@@ -9386,40 +9694,6 @@
       }
     },
     "net8.0-android34.0/android-x86": {
-      "CommunityToolkit.Maui/9.1.1": {
-        "type": "package",
-        "dependencies": {
-          "CommunityToolkit.Maui.Core": "9.1.1",
-          "Microsoft.Maui.Controls": "8.0.71"
-        },
-        "compile": {
-          "lib/net8.0-android34.0/CommunityToolkit.Maui.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0-android34.0/CommunityToolkit.Maui.dll": {
-            "related": ".xml"
-          }
-        }
-      },
-      "CommunityToolkit.Maui.Core/9.1.1": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Maui.Core": "8.0.71",
-          "Microsoft.Maui.Essentials": "8.0.71"
-        },
-        "compile": {
-          "lib/net8.0-android34.0/CommunityToolkit.Maui.Core.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0-android34.0/CommunityToolkit.Maui.Core.dll": {
-            "related": ".xml"
-          }
-        }
-      },
       "GoogleGson/2.10.1.4": {
         "type": "package",
         "compile": {
@@ -9863,6 +10137,22 @@
           "build/Microsoft.NET.ILLink.Tasks.props": {}
         }
       },
+      "Plugin.LocalNotification/10.1.8": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.GooglePlayServices.Location": "120.0.0.1"
+        },
+        "compile": {
+          "lib/net7.0-android33.0/Plugin.LocalNotification.dll": {
+            "related": ".aar;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net7.0-android33.0/Plugin.LocalNotification.dll": {
+            "related": ".aar;.xml"
+          }
+        }
+      },
       "sqlite-net-pcl/1.9.172": {
         "type": "package",
         "dependencies": {
@@ -9879,11 +10169,11 @@
           }
         }
       },
-      "SQLitePCLRaw.bundle_green/2.1.10": {
+      "SQLitePCLRaw.bundle_green/2.1.2": {
         "type": "package",
         "dependencies": {
-          "SQLitePCLRaw.lib.e_sqlite3.android": "2.1.10",
-          "SQLitePCLRaw.provider.e_sqlite3": "2.1.10"
+          "SQLitePCLRaw.lib.e_sqlite3.android": "2.1.2",
+          "SQLitePCLRaw.provider.e_sqlite3": "2.1.2"
         },
         "compile": {
           "lib/net6.0-android31.0/SQLitePCLRaw.batteries_v2.dll": {
@@ -9896,7 +10186,7 @@
           }
         }
       },
-      "SQLitePCLRaw.core/2.1.10": {
+      "SQLitePCLRaw.core/2.1.2": {
         "type": "package",
         "dependencies": {
           "System.Memory": "4.5.3"
@@ -9908,7 +10198,7 @@
           "lib/netstandard2.0/SQLitePCLRaw.core.dll": {}
         }
       },
-      "SQLitePCLRaw.lib.e_sqlite3.android/2.1.10": {
+      "SQLitePCLRaw.lib.e_sqlite3.android/2.1.2": {
         "type": "package",
         "compile": {
           "lib/net6.0-android31.0/SQLitePCLRaw.lib.e_sqlite3.android.dll": {
@@ -9921,10 +10211,10 @@
           }
         }
       },
-      "SQLitePCLRaw.provider.e_sqlite3/2.1.10": {
+      "SQLitePCLRaw.provider.e_sqlite3/2.1.2": {
         "type": "package",
         "dependencies": {
-          "SQLitePCLRaw.core": "2.1.10"
+          "SQLitePCLRaw.core": "2.1.2"
         },
         "compile": {
           "lib/net6.0/SQLitePCLRaw.provider.e_sqlite3.dll": {}
@@ -11503,6 +11793,13 @@
           "buildTransitive/net6.0-android31.0/Xamarin.AndroidX.Window.Extensions.Core.Core.targets": {}
         }
       },
+      "Xamarin.Build.Download/0.11.4": {
+        "type": "package",
+        "build": {
+          "buildTransitive/Xamarin.Build.Download.props": {},
+          "buildTransitive/Xamarin.Build.Download.targets": {}
+        }
+      },
       "Xamarin.Google.Android.Material/1.9.0.2": {
         "type": "package",
         "dependencies": {
@@ -11596,6 +11893,94 @@
         },
         "build": {
           "buildTransitive/net6.0-android31.0/Xamarin.Google.Guava.ListenableFuture.targets": {}
+        }
+      },
+      "Xamarin.GooglePlayServices.Base/118.1.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.AndroidX.Collection": "1.2.0.6",
+          "Xamarin.AndroidX.Core": "1.9.0.2",
+          "Xamarin.AndroidX.Fragment": "1.5.5.1",
+          "Xamarin.Build.Download": "0.11.4",
+          "Xamarin.GooglePlayServices.Basement": "118.1.0.2",
+          "Xamarin.GooglePlayServices.Tasks": "118.0.2.1"
+        },
+        "compile": {
+          "lib/net6.0-android31.0/Xamarin.GooglePlayServices.Base.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0-android31.0/Xamarin.GooglePlayServices.Base.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net6.0-android31.0/Xamarin.GooglePlayServices.Base.targets": {}
+        }
+      },
+      "Xamarin.GooglePlayServices.Basement/118.1.0.2": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.AndroidX.Collection": "1.2.0.6",
+          "Xamarin.AndroidX.Core": "1.9.0.2",
+          "Xamarin.AndroidX.Fragment": "1.5.5.1",
+          "Xamarin.Build.Download": "0.11.4"
+        },
+        "compile": {
+          "lib/net6.0-android31.0/Xamarin.GooglePlayServices.Basement.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0-android31.0/Xamarin.GooglePlayServices.Basement.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net6.0-android31.0/Xamarin.GooglePlayServices.Basement.targets": {}
+        }
+      },
+      "Xamarin.GooglePlayServices.Location/120.0.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.Build.Download": "0.11.4",
+          "Xamarin.GooglePlayServices.Base": "118.1.0.1",
+          "Xamarin.GooglePlayServices.Basement": "118.1.0.2",
+          "Xamarin.GooglePlayServices.Tasks": "118.0.2.1"
+        },
+        "compile": {
+          "lib/net6.0-android31.0/Xamarin.GooglePlayServices.Location.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0-android31.0/Xamarin.GooglePlayServices.Location.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net6.0-android31.0/Xamarin.GooglePlayServices.Location.targets": {}
+        }
+      },
+      "Xamarin.GooglePlayServices.Tasks/118.0.2.1": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.Build.Download": "0.11.4",
+          "Xamarin.GooglePlayServices.Basement": "118.1.0.2"
+        },
+        "compile": {
+          "lib/net6.0-android31.0/Xamarin.GooglePlayServices.Tasks.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0-android31.0/Xamarin.GooglePlayServices.Tasks.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net6.0-android31.0/Xamarin.GooglePlayServices.Tasks.targets": {}
         }
       },
       "Xamarin.Jetbrains.Annotations/24.0.1.3": {
@@ -11732,40 +12117,6 @@
       }
     },
     "net8.0-android34.0/iossimulator-x64": {
-      "CommunityToolkit.Maui/9.1.1": {
-        "type": "package",
-        "dependencies": {
-          "CommunityToolkit.Maui.Core": "9.1.1",
-          "Microsoft.Maui.Controls": "8.0.71"
-        },
-        "compile": {
-          "lib/net8.0-android34.0/CommunityToolkit.Maui.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0-android34.0/CommunityToolkit.Maui.dll": {
-            "related": ".xml"
-          }
-        }
-      },
-      "CommunityToolkit.Maui.Core/9.1.1": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Maui.Core": "8.0.71",
-          "Microsoft.Maui.Essentials": "8.0.71"
-        },
-        "compile": {
-          "lib/net8.0-android34.0/CommunityToolkit.Maui.Core.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0-android34.0/CommunityToolkit.Maui.Core.dll": {
-            "related": ".xml"
-          }
-        }
-      },
       "GoogleGson/2.10.1.4": {
         "type": "package",
         "compile": {
@@ -12209,6 +12560,22 @@
           "build/Microsoft.NET.ILLink.Tasks.props": {}
         }
       },
+      "Plugin.LocalNotification/10.1.8": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.GooglePlayServices.Location": "120.0.0.1"
+        },
+        "compile": {
+          "lib/net7.0-android33.0/Plugin.LocalNotification.dll": {
+            "related": ".aar;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net7.0-android33.0/Plugin.LocalNotification.dll": {
+            "related": ".aar;.xml"
+          }
+        }
+      },
       "sqlite-net-pcl/1.9.172": {
         "type": "package",
         "dependencies": {
@@ -12225,11 +12592,11 @@
           }
         }
       },
-      "SQLitePCLRaw.bundle_green/2.1.10": {
+      "SQLitePCLRaw.bundle_green/2.1.2": {
         "type": "package",
         "dependencies": {
-          "SQLitePCLRaw.lib.e_sqlite3.android": "2.1.10",
-          "SQLitePCLRaw.provider.e_sqlite3": "2.1.10"
+          "SQLitePCLRaw.lib.e_sqlite3.android": "2.1.2",
+          "SQLitePCLRaw.provider.e_sqlite3": "2.1.2"
         },
         "compile": {
           "lib/net6.0-android31.0/SQLitePCLRaw.batteries_v2.dll": {
@@ -12242,7 +12609,7 @@
           }
         }
       },
-      "SQLitePCLRaw.core/2.1.10": {
+      "SQLitePCLRaw.core/2.1.2": {
         "type": "package",
         "dependencies": {
           "System.Memory": "4.5.3"
@@ -12254,7 +12621,7 @@
           "lib/netstandard2.0/SQLitePCLRaw.core.dll": {}
         }
       },
-      "SQLitePCLRaw.lib.e_sqlite3.android/2.1.10": {
+      "SQLitePCLRaw.lib.e_sqlite3.android/2.1.2": {
         "type": "package",
         "compile": {
           "lib/net6.0-android31.0/SQLitePCLRaw.lib.e_sqlite3.android.dll": {
@@ -12267,10 +12634,10 @@
           }
         }
       },
-      "SQLitePCLRaw.provider.e_sqlite3/2.1.10": {
+      "SQLitePCLRaw.provider.e_sqlite3/2.1.2": {
         "type": "package",
         "dependencies": {
-          "SQLitePCLRaw.core": "2.1.10"
+          "SQLitePCLRaw.core": "2.1.2"
         },
         "compile": {
           "lib/net6.0/SQLitePCLRaw.provider.e_sqlite3.dll": {}
@@ -13849,6 +14216,13 @@
           "buildTransitive/net6.0-android31.0/Xamarin.AndroidX.Window.Extensions.Core.Core.targets": {}
         }
       },
+      "Xamarin.Build.Download/0.11.4": {
+        "type": "package",
+        "build": {
+          "buildTransitive/Xamarin.Build.Download.props": {},
+          "buildTransitive/Xamarin.Build.Download.targets": {}
+        }
+      },
       "Xamarin.Google.Android.Material/1.9.0.2": {
         "type": "package",
         "dependencies": {
@@ -13942,6 +14316,94 @@
         },
         "build": {
           "buildTransitive/net6.0-android31.0/Xamarin.Google.Guava.ListenableFuture.targets": {}
+        }
+      },
+      "Xamarin.GooglePlayServices.Base/118.1.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.AndroidX.Collection": "1.2.0.6",
+          "Xamarin.AndroidX.Core": "1.9.0.2",
+          "Xamarin.AndroidX.Fragment": "1.5.5.1",
+          "Xamarin.Build.Download": "0.11.4",
+          "Xamarin.GooglePlayServices.Basement": "118.1.0.2",
+          "Xamarin.GooglePlayServices.Tasks": "118.0.2.1"
+        },
+        "compile": {
+          "lib/net6.0-android31.0/Xamarin.GooglePlayServices.Base.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0-android31.0/Xamarin.GooglePlayServices.Base.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net6.0-android31.0/Xamarin.GooglePlayServices.Base.targets": {}
+        }
+      },
+      "Xamarin.GooglePlayServices.Basement/118.1.0.2": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.AndroidX.Collection": "1.2.0.6",
+          "Xamarin.AndroidX.Core": "1.9.0.2",
+          "Xamarin.AndroidX.Fragment": "1.5.5.1",
+          "Xamarin.Build.Download": "0.11.4"
+        },
+        "compile": {
+          "lib/net6.0-android31.0/Xamarin.GooglePlayServices.Basement.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0-android31.0/Xamarin.GooglePlayServices.Basement.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net6.0-android31.0/Xamarin.GooglePlayServices.Basement.targets": {}
+        }
+      },
+      "Xamarin.GooglePlayServices.Location/120.0.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.Build.Download": "0.11.4",
+          "Xamarin.GooglePlayServices.Base": "118.1.0.1",
+          "Xamarin.GooglePlayServices.Basement": "118.1.0.2",
+          "Xamarin.GooglePlayServices.Tasks": "118.0.2.1"
+        },
+        "compile": {
+          "lib/net6.0-android31.0/Xamarin.GooglePlayServices.Location.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0-android31.0/Xamarin.GooglePlayServices.Location.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net6.0-android31.0/Xamarin.GooglePlayServices.Location.targets": {}
+        }
+      },
+      "Xamarin.GooglePlayServices.Tasks/118.0.2.1": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.Build.Download": "0.11.4",
+          "Xamarin.GooglePlayServices.Basement": "118.1.0.2"
+        },
+        "compile": {
+          "lib/net6.0-android31.0/Xamarin.GooglePlayServices.Tasks.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0-android31.0/Xamarin.GooglePlayServices.Tasks.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net6.0-android31.0/Xamarin.GooglePlayServices.Tasks.targets": {}
         }
       },
       "Xamarin.Jetbrains.Annotations/24.0.1.3": {
@@ -14078,40 +14540,6 @@
       }
     },
     "net8.0-android34.0/maccatalyst-x64": {
-      "CommunityToolkit.Maui/9.1.1": {
-        "type": "package",
-        "dependencies": {
-          "CommunityToolkit.Maui.Core": "9.1.1",
-          "Microsoft.Maui.Controls": "8.0.71"
-        },
-        "compile": {
-          "lib/net8.0-android34.0/CommunityToolkit.Maui.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0-android34.0/CommunityToolkit.Maui.dll": {
-            "related": ".xml"
-          }
-        }
-      },
-      "CommunityToolkit.Maui.Core/9.1.1": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Maui.Core": "8.0.71",
-          "Microsoft.Maui.Essentials": "8.0.71"
-        },
-        "compile": {
-          "lib/net8.0-android34.0/CommunityToolkit.Maui.Core.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0-android34.0/CommunityToolkit.Maui.Core.dll": {
-            "related": ".xml"
-          }
-        }
-      },
       "GoogleGson/2.10.1.4": {
         "type": "package",
         "compile": {
@@ -14555,6 +14983,22 @@
           "build/Microsoft.NET.ILLink.Tasks.props": {}
         }
       },
+      "Plugin.LocalNotification/10.1.8": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.GooglePlayServices.Location": "120.0.0.1"
+        },
+        "compile": {
+          "lib/net7.0-android33.0/Plugin.LocalNotification.dll": {
+            "related": ".aar;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net7.0-android33.0/Plugin.LocalNotification.dll": {
+            "related": ".aar;.xml"
+          }
+        }
+      },
       "sqlite-net-pcl/1.9.172": {
         "type": "package",
         "dependencies": {
@@ -14571,11 +15015,11 @@
           }
         }
       },
-      "SQLitePCLRaw.bundle_green/2.1.10": {
+      "SQLitePCLRaw.bundle_green/2.1.2": {
         "type": "package",
         "dependencies": {
-          "SQLitePCLRaw.lib.e_sqlite3.android": "2.1.10",
-          "SQLitePCLRaw.provider.e_sqlite3": "2.1.10"
+          "SQLitePCLRaw.lib.e_sqlite3.android": "2.1.2",
+          "SQLitePCLRaw.provider.e_sqlite3": "2.1.2"
         },
         "compile": {
           "lib/net6.0-android31.0/SQLitePCLRaw.batteries_v2.dll": {
@@ -14588,7 +15032,7 @@
           }
         }
       },
-      "SQLitePCLRaw.core/2.1.10": {
+      "SQLitePCLRaw.core/2.1.2": {
         "type": "package",
         "dependencies": {
           "System.Memory": "4.5.3"
@@ -14600,7 +15044,7 @@
           "lib/netstandard2.0/SQLitePCLRaw.core.dll": {}
         }
       },
-      "SQLitePCLRaw.lib.e_sqlite3.android/2.1.10": {
+      "SQLitePCLRaw.lib.e_sqlite3.android/2.1.2": {
         "type": "package",
         "compile": {
           "lib/net6.0-android31.0/SQLitePCLRaw.lib.e_sqlite3.android.dll": {
@@ -14613,10 +15057,10 @@
           }
         }
       },
-      "SQLitePCLRaw.provider.e_sqlite3/2.1.10": {
+      "SQLitePCLRaw.provider.e_sqlite3/2.1.2": {
         "type": "package",
         "dependencies": {
-          "SQLitePCLRaw.core": "2.1.10"
+          "SQLitePCLRaw.core": "2.1.2"
         },
         "compile": {
           "lib/net6.0/SQLitePCLRaw.provider.e_sqlite3.dll": {}
@@ -16195,6 +16639,13 @@
           "buildTransitive/net6.0-android31.0/Xamarin.AndroidX.Window.Extensions.Core.Core.targets": {}
         }
       },
+      "Xamarin.Build.Download/0.11.4": {
+        "type": "package",
+        "build": {
+          "buildTransitive/Xamarin.Build.Download.props": {},
+          "buildTransitive/Xamarin.Build.Download.targets": {}
+        }
+      },
       "Xamarin.Google.Android.Material/1.9.0.2": {
         "type": "package",
         "dependencies": {
@@ -16288,6 +16739,94 @@
         },
         "build": {
           "buildTransitive/net6.0-android31.0/Xamarin.Google.Guava.ListenableFuture.targets": {}
+        }
+      },
+      "Xamarin.GooglePlayServices.Base/118.1.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.AndroidX.Collection": "1.2.0.6",
+          "Xamarin.AndroidX.Core": "1.9.0.2",
+          "Xamarin.AndroidX.Fragment": "1.5.5.1",
+          "Xamarin.Build.Download": "0.11.4",
+          "Xamarin.GooglePlayServices.Basement": "118.1.0.2",
+          "Xamarin.GooglePlayServices.Tasks": "118.0.2.1"
+        },
+        "compile": {
+          "lib/net6.0-android31.0/Xamarin.GooglePlayServices.Base.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0-android31.0/Xamarin.GooglePlayServices.Base.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net6.0-android31.0/Xamarin.GooglePlayServices.Base.targets": {}
+        }
+      },
+      "Xamarin.GooglePlayServices.Basement/118.1.0.2": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.AndroidX.Collection": "1.2.0.6",
+          "Xamarin.AndroidX.Core": "1.9.0.2",
+          "Xamarin.AndroidX.Fragment": "1.5.5.1",
+          "Xamarin.Build.Download": "0.11.4"
+        },
+        "compile": {
+          "lib/net6.0-android31.0/Xamarin.GooglePlayServices.Basement.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0-android31.0/Xamarin.GooglePlayServices.Basement.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net6.0-android31.0/Xamarin.GooglePlayServices.Basement.targets": {}
+        }
+      },
+      "Xamarin.GooglePlayServices.Location/120.0.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.Build.Download": "0.11.4",
+          "Xamarin.GooglePlayServices.Base": "118.1.0.1",
+          "Xamarin.GooglePlayServices.Basement": "118.1.0.2",
+          "Xamarin.GooglePlayServices.Tasks": "118.0.2.1"
+        },
+        "compile": {
+          "lib/net6.0-android31.0/Xamarin.GooglePlayServices.Location.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0-android31.0/Xamarin.GooglePlayServices.Location.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net6.0-android31.0/Xamarin.GooglePlayServices.Location.targets": {}
+        }
+      },
+      "Xamarin.GooglePlayServices.Tasks/118.0.2.1": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.Build.Download": "0.11.4",
+          "Xamarin.GooglePlayServices.Basement": "118.1.0.2"
+        },
+        "compile": {
+          "lib/net6.0-android31.0/Xamarin.GooglePlayServices.Tasks.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0-android31.0/Xamarin.GooglePlayServices.Tasks.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net6.0-android31.0/Xamarin.GooglePlayServices.Tasks.targets": {}
         }
       },
       "Xamarin.Jetbrains.Annotations/24.0.1.3": {
@@ -16424,40 +16963,6 @@
       }
     },
     "net8.0-android34.0/win10-x64": {
-      "CommunityToolkit.Maui/9.1.1": {
-        "type": "package",
-        "dependencies": {
-          "CommunityToolkit.Maui.Core": "9.1.1",
-          "Microsoft.Maui.Controls": "8.0.71"
-        },
-        "compile": {
-          "lib/net8.0-android34.0/CommunityToolkit.Maui.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0-android34.0/CommunityToolkit.Maui.dll": {
-            "related": ".xml"
-          }
-        }
-      },
-      "CommunityToolkit.Maui.Core/9.1.1": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Maui.Core": "8.0.71",
-          "Microsoft.Maui.Essentials": "8.0.71"
-        },
-        "compile": {
-          "lib/net8.0-android34.0/CommunityToolkit.Maui.Core.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0-android34.0/CommunityToolkit.Maui.Core.dll": {
-            "related": ".xml"
-          }
-        }
-      },
       "GoogleGson/2.10.1.4": {
         "type": "package",
         "compile": {
@@ -16901,6 +17406,22 @@
           "build/Microsoft.NET.ILLink.Tasks.props": {}
         }
       },
+      "Plugin.LocalNotification/10.1.8": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.GooglePlayServices.Location": "120.0.0.1"
+        },
+        "compile": {
+          "lib/net7.0-android33.0/Plugin.LocalNotification.dll": {
+            "related": ".aar;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net7.0-android33.0/Plugin.LocalNotification.dll": {
+            "related": ".aar;.xml"
+          }
+        }
+      },
       "sqlite-net-pcl/1.9.172": {
         "type": "package",
         "dependencies": {
@@ -16917,11 +17438,11 @@
           }
         }
       },
-      "SQLitePCLRaw.bundle_green/2.1.10": {
+      "SQLitePCLRaw.bundle_green/2.1.2": {
         "type": "package",
         "dependencies": {
-          "SQLitePCLRaw.lib.e_sqlite3.android": "2.1.10",
-          "SQLitePCLRaw.provider.e_sqlite3": "2.1.10"
+          "SQLitePCLRaw.lib.e_sqlite3.android": "2.1.2",
+          "SQLitePCLRaw.provider.e_sqlite3": "2.1.2"
         },
         "compile": {
           "lib/net6.0-android31.0/SQLitePCLRaw.batteries_v2.dll": {
@@ -16934,7 +17455,7 @@
           }
         }
       },
-      "SQLitePCLRaw.core/2.1.10": {
+      "SQLitePCLRaw.core/2.1.2": {
         "type": "package",
         "dependencies": {
           "System.Memory": "4.5.3"
@@ -16946,7 +17467,7 @@
           "lib/netstandard2.0/SQLitePCLRaw.core.dll": {}
         }
       },
-      "SQLitePCLRaw.lib.e_sqlite3.android/2.1.10": {
+      "SQLitePCLRaw.lib.e_sqlite3.android/2.1.2": {
         "type": "package",
         "compile": {
           "lib/net6.0-android31.0/SQLitePCLRaw.lib.e_sqlite3.android.dll": {
@@ -16959,10 +17480,10 @@
           }
         }
       },
-      "SQLitePCLRaw.provider.e_sqlite3/2.1.10": {
+      "SQLitePCLRaw.provider.e_sqlite3/2.1.2": {
         "type": "package",
         "dependencies": {
-          "SQLitePCLRaw.core": "2.1.10"
+          "SQLitePCLRaw.core": "2.1.2"
         },
         "compile": {
           "lib/net6.0/SQLitePCLRaw.provider.e_sqlite3.dll": {}
@@ -18541,6 +19062,13 @@
           "buildTransitive/net6.0-android31.0/Xamarin.AndroidX.Window.Extensions.Core.Core.targets": {}
         }
       },
+      "Xamarin.Build.Download/0.11.4": {
+        "type": "package",
+        "build": {
+          "buildTransitive/Xamarin.Build.Download.props": {},
+          "buildTransitive/Xamarin.Build.Download.targets": {}
+        }
+      },
       "Xamarin.Google.Android.Material/1.9.0.2": {
         "type": "package",
         "dependencies": {
@@ -18634,6 +19162,94 @@
         },
         "build": {
           "buildTransitive/net6.0-android31.0/Xamarin.Google.Guava.ListenableFuture.targets": {}
+        }
+      },
+      "Xamarin.GooglePlayServices.Base/118.1.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.AndroidX.Collection": "1.2.0.6",
+          "Xamarin.AndroidX.Core": "1.9.0.2",
+          "Xamarin.AndroidX.Fragment": "1.5.5.1",
+          "Xamarin.Build.Download": "0.11.4",
+          "Xamarin.GooglePlayServices.Basement": "118.1.0.2",
+          "Xamarin.GooglePlayServices.Tasks": "118.0.2.1"
+        },
+        "compile": {
+          "lib/net6.0-android31.0/Xamarin.GooglePlayServices.Base.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0-android31.0/Xamarin.GooglePlayServices.Base.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net6.0-android31.0/Xamarin.GooglePlayServices.Base.targets": {}
+        }
+      },
+      "Xamarin.GooglePlayServices.Basement/118.1.0.2": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.AndroidX.Collection": "1.2.0.6",
+          "Xamarin.AndroidX.Core": "1.9.0.2",
+          "Xamarin.AndroidX.Fragment": "1.5.5.1",
+          "Xamarin.Build.Download": "0.11.4"
+        },
+        "compile": {
+          "lib/net6.0-android31.0/Xamarin.GooglePlayServices.Basement.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0-android31.0/Xamarin.GooglePlayServices.Basement.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net6.0-android31.0/Xamarin.GooglePlayServices.Basement.targets": {}
+        }
+      },
+      "Xamarin.GooglePlayServices.Location/120.0.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.Build.Download": "0.11.4",
+          "Xamarin.GooglePlayServices.Base": "118.1.0.1",
+          "Xamarin.GooglePlayServices.Basement": "118.1.0.2",
+          "Xamarin.GooglePlayServices.Tasks": "118.0.2.1"
+        },
+        "compile": {
+          "lib/net6.0-android31.0/Xamarin.GooglePlayServices.Location.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0-android31.0/Xamarin.GooglePlayServices.Location.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net6.0-android31.0/Xamarin.GooglePlayServices.Location.targets": {}
+        }
+      },
+      "Xamarin.GooglePlayServices.Tasks/118.0.2.1": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.Build.Download": "0.11.4",
+          "Xamarin.GooglePlayServices.Basement": "118.1.0.2"
+        },
+        "compile": {
+          "lib/net6.0-android31.0/Xamarin.GooglePlayServices.Tasks.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0-android31.0/Xamarin.GooglePlayServices.Tasks.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net6.0-android31.0/Xamarin.GooglePlayServices.Tasks.targets": {}
         }
       },
       "Xamarin.Jetbrains.Annotations/24.0.1.3": {
@@ -18770,40 +19386,6 @@
       }
     },
     "net8.0-ios18.0": {
-      "CommunityToolkit.Maui/9.1.1": {
-        "type": "package",
-        "dependencies": {
-          "CommunityToolkit.Maui.Core": "9.1.1",
-          "Microsoft.Maui.Controls": "8.0.71"
-        },
-        "compile": {
-          "lib/net8.0-ios18.0/CommunityToolkit.Maui.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0-ios18.0/CommunityToolkit.Maui.dll": {
-            "related": ".xml"
-          }
-        }
-      },
-      "CommunityToolkit.Maui.Core/9.1.1": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Maui.Core": "8.0.71",
-          "Microsoft.Maui.Essentials": "8.0.71"
-        },
-        "compile": {
-          "lib/net8.0-ios18.0/CommunityToolkit.Maui.Core.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0-ios18.0/CommunityToolkit.Maui.Core.dll": {
-            "related": ".xml"
-          }
-        }
-      },
       "Microsoft.Extensions.Configuration/8.0.0": {
         "type": "package",
         "dependencies": {
@@ -19223,6 +19805,19 @@
           "build/Microsoft.NET.ILLink.Tasks.props": {}
         }
       },
+      "Plugin.LocalNotification/10.1.8": {
+        "type": "package",
+        "compile": {
+          "lib/net7.0-ios16.1/Plugin.LocalNotification.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net7.0-ios16.1/Plugin.LocalNotification.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "sqlite-net-pcl/1.9.172": {
         "type": "package",
         "dependencies": {
@@ -19239,10 +19834,10 @@
           }
         }
       },
-      "SQLitePCLRaw.bundle_green/2.1.10": {
+      "SQLitePCLRaw.bundle_green/2.1.2": {
         "type": "package",
         "dependencies": {
-          "SQLitePCLRaw.provider.sqlite3": "2.1.10",
+          "SQLitePCLRaw.provider.sqlite3": "2.1.2",
           "System.Runtime.InteropServices.NFloat.Internal": "6.0.1"
         },
         "compile": {
@@ -19252,7 +19847,7 @@
           "lib/net6.0-ios14.2/SQLitePCLRaw.batteries_v2.dll": {}
         }
       },
-      "SQLitePCLRaw.core/2.1.10": {
+      "SQLitePCLRaw.core/2.1.2": {
         "type": "package",
         "dependencies": {
           "System.Memory": "4.5.3"
@@ -19264,10 +19859,10 @@
           "lib/netstandard2.0/SQLitePCLRaw.core.dll": {}
         }
       },
-      "SQLitePCLRaw.provider.sqlite3/2.1.10": {
+      "SQLitePCLRaw.provider.sqlite3/2.1.2": {
         "type": "package",
         "dependencies": {
-          "SQLitePCLRaw.core": "2.1.10"
+          "SQLitePCLRaw.core": "2.1.2"
         },
         "compile": {
           "lib/net6.0/SQLitePCLRaw.provider.sqlite3.dll": {}
@@ -19295,40 +19890,6 @@
       }
     },
     "net8.0-ios18.0/android-arm": {
-      "CommunityToolkit.Maui/9.1.1": {
-        "type": "package",
-        "dependencies": {
-          "CommunityToolkit.Maui.Core": "9.1.1",
-          "Microsoft.Maui.Controls": "8.0.71"
-        },
-        "compile": {
-          "lib/net8.0-ios18.0/CommunityToolkit.Maui.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0-ios18.0/CommunityToolkit.Maui.dll": {
-            "related": ".xml"
-          }
-        }
-      },
-      "CommunityToolkit.Maui.Core/9.1.1": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Maui.Core": "8.0.71",
-          "Microsoft.Maui.Essentials": "8.0.71"
-        },
-        "compile": {
-          "lib/net8.0-ios18.0/CommunityToolkit.Maui.Core.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0-ios18.0/CommunityToolkit.Maui.Core.dll": {
-            "related": ".xml"
-          }
-        }
-      },
       "Microsoft.Extensions.Configuration/8.0.0": {
         "type": "package",
         "dependencies": {
@@ -19748,6 +20309,19 @@
           "build/Microsoft.NET.ILLink.Tasks.props": {}
         }
       },
+      "Plugin.LocalNotification/10.1.8": {
+        "type": "package",
+        "compile": {
+          "lib/net7.0-ios16.1/Plugin.LocalNotification.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net7.0-ios16.1/Plugin.LocalNotification.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "sqlite-net-pcl/1.9.172": {
         "type": "package",
         "dependencies": {
@@ -19764,10 +20338,10 @@
           }
         }
       },
-      "SQLitePCLRaw.bundle_green/2.1.10": {
+      "SQLitePCLRaw.bundle_green/2.1.2": {
         "type": "package",
         "dependencies": {
-          "SQLitePCLRaw.provider.sqlite3": "2.1.10",
+          "SQLitePCLRaw.provider.sqlite3": "2.1.2",
           "System.Runtime.InteropServices.NFloat.Internal": "6.0.1"
         },
         "compile": {
@@ -19777,7 +20351,7 @@
           "lib/net6.0-ios14.2/SQLitePCLRaw.batteries_v2.dll": {}
         }
       },
-      "SQLitePCLRaw.core/2.1.10": {
+      "SQLitePCLRaw.core/2.1.2": {
         "type": "package",
         "dependencies": {
           "System.Memory": "4.5.3"
@@ -19789,10 +20363,10 @@
           "lib/netstandard2.0/SQLitePCLRaw.core.dll": {}
         }
       },
-      "SQLitePCLRaw.provider.sqlite3/2.1.10": {
+      "SQLitePCLRaw.provider.sqlite3/2.1.2": {
         "type": "package",
         "dependencies": {
-          "SQLitePCLRaw.core": "2.1.10"
+          "SQLitePCLRaw.core": "2.1.2"
         },
         "compile": {
           "lib/net6.0/SQLitePCLRaw.provider.sqlite3.dll": {}
@@ -19820,40 +20394,6 @@
       }
     },
     "net8.0-ios18.0/android-arm64": {
-      "CommunityToolkit.Maui/9.1.1": {
-        "type": "package",
-        "dependencies": {
-          "CommunityToolkit.Maui.Core": "9.1.1",
-          "Microsoft.Maui.Controls": "8.0.71"
-        },
-        "compile": {
-          "lib/net8.0-ios18.0/CommunityToolkit.Maui.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0-ios18.0/CommunityToolkit.Maui.dll": {
-            "related": ".xml"
-          }
-        }
-      },
-      "CommunityToolkit.Maui.Core/9.1.1": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Maui.Core": "8.0.71",
-          "Microsoft.Maui.Essentials": "8.0.71"
-        },
-        "compile": {
-          "lib/net8.0-ios18.0/CommunityToolkit.Maui.Core.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0-ios18.0/CommunityToolkit.Maui.Core.dll": {
-            "related": ".xml"
-          }
-        }
-      },
       "Microsoft.Extensions.Configuration/8.0.0": {
         "type": "package",
         "dependencies": {
@@ -20273,6 +20813,19 @@
           "build/Microsoft.NET.ILLink.Tasks.props": {}
         }
       },
+      "Plugin.LocalNotification/10.1.8": {
+        "type": "package",
+        "compile": {
+          "lib/net7.0-ios16.1/Plugin.LocalNotification.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net7.0-ios16.1/Plugin.LocalNotification.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "sqlite-net-pcl/1.9.172": {
         "type": "package",
         "dependencies": {
@@ -20289,10 +20842,10 @@
           }
         }
       },
-      "SQLitePCLRaw.bundle_green/2.1.10": {
+      "SQLitePCLRaw.bundle_green/2.1.2": {
         "type": "package",
         "dependencies": {
-          "SQLitePCLRaw.provider.sqlite3": "2.1.10",
+          "SQLitePCLRaw.provider.sqlite3": "2.1.2",
           "System.Runtime.InteropServices.NFloat.Internal": "6.0.1"
         },
         "compile": {
@@ -20302,7 +20855,7 @@
           "lib/net6.0-ios14.2/SQLitePCLRaw.batteries_v2.dll": {}
         }
       },
-      "SQLitePCLRaw.core/2.1.10": {
+      "SQLitePCLRaw.core/2.1.2": {
         "type": "package",
         "dependencies": {
           "System.Memory": "4.5.3"
@@ -20314,10 +20867,10 @@
           "lib/netstandard2.0/SQLitePCLRaw.core.dll": {}
         }
       },
-      "SQLitePCLRaw.provider.sqlite3/2.1.10": {
+      "SQLitePCLRaw.provider.sqlite3/2.1.2": {
         "type": "package",
         "dependencies": {
-          "SQLitePCLRaw.core": "2.1.10"
+          "SQLitePCLRaw.core": "2.1.2"
         },
         "compile": {
           "lib/net6.0/SQLitePCLRaw.provider.sqlite3.dll": {}
@@ -20345,40 +20898,6 @@
       }
     },
     "net8.0-ios18.0/android-x64": {
-      "CommunityToolkit.Maui/9.1.1": {
-        "type": "package",
-        "dependencies": {
-          "CommunityToolkit.Maui.Core": "9.1.1",
-          "Microsoft.Maui.Controls": "8.0.71"
-        },
-        "compile": {
-          "lib/net8.0-ios18.0/CommunityToolkit.Maui.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0-ios18.0/CommunityToolkit.Maui.dll": {
-            "related": ".xml"
-          }
-        }
-      },
-      "CommunityToolkit.Maui.Core/9.1.1": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Maui.Core": "8.0.71",
-          "Microsoft.Maui.Essentials": "8.0.71"
-        },
-        "compile": {
-          "lib/net8.0-ios18.0/CommunityToolkit.Maui.Core.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0-ios18.0/CommunityToolkit.Maui.Core.dll": {
-            "related": ".xml"
-          }
-        }
-      },
       "Microsoft.Extensions.Configuration/8.0.0": {
         "type": "package",
         "dependencies": {
@@ -20798,6 +21317,19 @@
           "build/Microsoft.NET.ILLink.Tasks.props": {}
         }
       },
+      "Plugin.LocalNotification/10.1.8": {
+        "type": "package",
+        "compile": {
+          "lib/net7.0-ios16.1/Plugin.LocalNotification.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net7.0-ios16.1/Plugin.LocalNotification.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "sqlite-net-pcl/1.9.172": {
         "type": "package",
         "dependencies": {
@@ -20814,10 +21346,10 @@
           }
         }
       },
-      "SQLitePCLRaw.bundle_green/2.1.10": {
+      "SQLitePCLRaw.bundle_green/2.1.2": {
         "type": "package",
         "dependencies": {
-          "SQLitePCLRaw.provider.sqlite3": "2.1.10",
+          "SQLitePCLRaw.provider.sqlite3": "2.1.2",
           "System.Runtime.InteropServices.NFloat.Internal": "6.0.1"
         },
         "compile": {
@@ -20827,7 +21359,7 @@
           "lib/net6.0-ios14.2/SQLitePCLRaw.batteries_v2.dll": {}
         }
       },
-      "SQLitePCLRaw.core/2.1.10": {
+      "SQLitePCLRaw.core/2.1.2": {
         "type": "package",
         "dependencies": {
           "System.Memory": "4.5.3"
@@ -20839,10 +21371,10 @@
           "lib/netstandard2.0/SQLitePCLRaw.core.dll": {}
         }
       },
-      "SQLitePCLRaw.provider.sqlite3/2.1.10": {
+      "SQLitePCLRaw.provider.sqlite3/2.1.2": {
         "type": "package",
         "dependencies": {
-          "SQLitePCLRaw.core": "2.1.10"
+          "SQLitePCLRaw.core": "2.1.2"
         },
         "compile": {
           "lib/net6.0/SQLitePCLRaw.provider.sqlite3.dll": {}
@@ -20870,40 +21402,6 @@
       }
     },
     "net8.0-ios18.0/android-x86": {
-      "CommunityToolkit.Maui/9.1.1": {
-        "type": "package",
-        "dependencies": {
-          "CommunityToolkit.Maui.Core": "9.1.1",
-          "Microsoft.Maui.Controls": "8.0.71"
-        },
-        "compile": {
-          "lib/net8.0-ios18.0/CommunityToolkit.Maui.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0-ios18.0/CommunityToolkit.Maui.dll": {
-            "related": ".xml"
-          }
-        }
-      },
-      "CommunityToolkit.Maui.Core/9.1.1": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Maui.Core": "8.0.71",
-          "Microsoft.Maui.Essentials": "8.0.71"
-        },
-        "compile": {
-          "lib/net8.0-ios18.0/CommunityToolkit.Maui.Core.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0-ios18.0/CommunityToolkit.Maui.Core.dll": {
-            "related": ".xml"
-          }
-        }
-      },
       "Microsoft.Extensions.Configuration/8.0.0": {
         "type": "package",
         "dependencies": {
@@ -21323,6 +21821,19 @@
           "build/Microsoft.NET.ILLink.Tasks.props": {}
         }
       },
+      "Plugin.LocalNotification/10.1.8": {
+        "type": "package",
+        "compile": {
+          "lib/net7.0-ios16.1/Plugin.LocalNotification.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net7.0-ios16.1/Plugin.LocalNotification.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "sqlite-net-pcl/1.9.172": {
         "type": "package",
         "dependencies": {
@@ -21339,10 +21850,10 @@
           }
         }
       },
-      "SQLitePCLRaw.bundle_green/2.1.10": {
+      "SQLitePCLRaw.bundle_green/2.1.2": {
         "type": "package",
         "dependencies": {
-          "SQLitePCLRaw.provider.sqlite3": "2.1.10",
+          "SQLitePCLRaw.provider.sqlite3": "2.1.2",
           "System.Runtime.InteropServices.NFloat.Internal": "6.0.1"
         },
         "compile": {
@@ -21352,7 +21863,7 @@
           "lib/net6.0-ios14.2/SQLitePCLRaw.batteries_v2.dll": {}
         }
       },
-      "SQLitePCLRaw.core/2.1.10": {
+      "SQLitePCLRaw.core/2.1.2": {
         "type": "package",
         "dependencies": {
           "System.Memory": "4.5.3"
@@ -21364,10 +21875,10 @@
           "lib/netstandard2.0/SQLitePCLRaw.core.dll": {}
         }
       },
-      "SQLitePCLRaw.provider.sqlite3/2.1.10": {
+      "SQLitePCLRaw.provider.sqlite3/2.1.2": {
         "type": "package",
         "dependencies": {
-          "SQLitePCLRaw.core": "2.1.10"
+          "SQLitePCLRaw.core": "2.1.2"
         },
         "compile": {
           "lib/net6.0/SQLitePCLRaw.provider.sqlite3.dll": {}
@@ -21395,40 +21906,6 @@
       }
     },
     "net8.0-ios18.0/iossimulator-x64": {
-      "CommunityToolkit.Maui/9.1.1": {
-        "type": "package",
-        "dependencies": {
-          "CommunityToolkit.Maui.Core": "9.1.1",
-          "Microsoft.Maui.Controls": "8.0.71"
-        },
-        "compile": {
-          "lib/net8.0-ios18.0/CommunityToolkit.Maui.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0-ios18.0/CommunityToolkit.Maui.dll": {
-            "related": ".xml"
-          }
-        }
-      },
-      "CommunityToolkit.Maui.Core/9.1.1": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Maui.Core": "8.0.71",
-          "Microsoft.Maui.Essentials": "8.0.71"
-        },
-        "compile": {
-          "lib/net8.0-ios18.0/CommunityToolkit.Maui.Core.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0-ios18.0/CommunityToolkit.Maui.Core.dll": {
-            "related": ".xml"
-          }
-        }
-      },
       "Microsoft.Extensions.Configuration/8.0.0": {
         "type": "package",
         "dependencies": {
@@ -21848,6 +22325,19 @@
           "build/Microsoft.NET.ILLink.Tasks.props": {}
         }
       },
+      "Plugin.LocalNotification/10.1.8": {
+        "type": "package",
+        "compile": {
+          "lib/net7.0-ios16.1/Plugin.LocalNotification.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net7.0-ios16.1/Plugin.LocalNotification.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "sqlite-net-pcl/1.9.172": {
         "type": "package",
         "dependencies": {
@@ -21864,10 +22354,10 @@
           }
         }
       },
-      "SQLitePCLRaw.bundle_green/2.1.10": {
+      "SQLitePCLRaw.bundle_green/2.1.2": {
         "type": "package",
         "dependencies": {
-          "SQLitePCLRaw.provider.sqlite3": "2.1.10",
+          "SQLitePCLRaw.provider.sqlite3": "2.1.2",
           "System.Runtime.InteropServices.NFloat.Internal": "6.0.1"
         },
         "compile": {
@@ -21877,7 +22367,7 @@
           "lib/net6.0-ios14.2/SQLitePCLRaw.batteries_v2.dll": {}
         }
       },
-      "SQLitePCLRaw.core/2.1.10": {
+      "SQLitePCLRaw.core/2.1.2": {
         "type": "package",
         "dependencies": {
           "System.Memory": "4.5.3"
@@ -21889,10 +22379,10 @@
           "lib/netstandard2.0/SQLitePCLRaw.core.dll": {}
         }
       },
-      "SQLitePCLRaw.provider.sqlite3/2.1.10": {
+      "SQLitePCLRaw.provider.sqlite3/2.1.2": {
         "type": "package",
         "dependencies": {
-          "SQLitePCLRaw.core": "2.1.10"
+          "SQLitePCLRaw.core": "2.1.2"
         },
         "compile": {
           "lib/net6.0/SQLitePCLRaw.provider.sqlite3.dll": {}
@@ -21920,40 +22410,6 @@
       }
     },
     "net8.0-ios18.0/maccatalyst-x64": {
-      "CommunityToolkit.Maui/9.1.1": {
-        "type": "package",
-        "dependencies": {
-          "CommunityToolkit.Maui.Core": "9.1.1",
-          "Microsoft.Maui.Controls": "8.0.71"
-        },
-        "compile": {
-          "lib/net8.0-ios18.0/CommunityToolkit.Maui.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0-ios18.0/CommunityToolkit.Maui.dll": {
-            "related": ".xml"
-          }
-        }
-      },
-      "CommunityToolkit.Maui.Core/9.1.1": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Maui.Core": "8.0.71",
-          "Microsoft.Maui.Essentials": "8.0.71"
-        },
-        "compile": {
-          "lib/net8.0-ios18.0/CommunityToolkit.Maui.Core.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0-ios18.0/CommunityToolkit.Maui.Core.dll": {
-            "related": ".xml"
-          }
-        }
-      },
       "Microsoft.Extensions.Configuration/8.0.0": {
         "type": "package",
         "dependencies": {
@@ -22373,6 +22829,19 @@
           "build/Microsoft.NET.ILLink.Tasks.props": {}
         }
       },
+      "Plugin.LocalNotification/10.1.8": {
+        "type": "package",
+        "compile": {
+          "lib/net7.0-ios16.1/Plugin.LocalNotification.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net7.0-ios16.1/Plugin.LocalNotification.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "sqlite-net-pcl/1.9.172": {
         "type": "package",
         "dependencies": {
@@ -22389,10 +22858,10 @@
           }
         }
       },
-      "SQLitePCLRaw.bundle_green/2.1.10": {
+      "SQLitePCLRaw.bundle_green/2.1.2": {
         "type": "package",
         "dependencies": {
-          "SQLitePCLRaw.provider.sqlite3": "2.1.10",
+          "SQLitePCLRaw.provider.sqlite3": "2.1.2",
           "System.Runtime.InteropServices.NFloat.Internal": "6.0.1"
         },
         "compile": {
@@ -22402,7 +22871,7 @@
           "lib/net6.0-ios14.2/SQLitePCLRaw.batteries_v2.dll": {}
         }
       },
-      "SQLitePCLRaw.core/2.1.10": {
+      "SQLitePCLRaw.core/2.1.2": {
         "type": "package",
         "dependencies": {
           "System.Memory": "4.5.3"
@@ -22414,10 +22883,10 @@
           "lib/netstandard2.0/SQLitePCLRaw.core.dll": {}
         }
       },
-      "SQLitePCLRaw.provider.sqlite3/2.1.10": {
+      "SQLitePCLRaw.provider.sqlite3/2.1.2": {
         "type": "package",
         "dependencies": {
-          "SQLitePCLRaw.core": "2.1.10"
+          "SQLitePCLRaw.core": "2.1.2"
         },
         "compile": {
           "lib/net6.0/SQLitePCLRaw.provider.sqlite3.dll": {}
@@ -22445,40 +22914,6 @@
       }
     },
     "net8.0-ios18.0/win10-x64": {
-      "CommunityToolkit.Maui/9.1.1": {
-        "type": "package",
-        "dependencies": {
-          "CommunityToolkit.Maui.Core": "9.1.1",
-          "Microsoft.Maui.Controls": "8.0.71"
-        },
-        "compile": {
-          "lib/net8.0-ios18.0/CommunityToolkit.Maui.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0-ios18.0/CommunityToolkit.Maui.dll": {
-            "related": ".xml"
-          }
-        }
-      },
-      "CommunityToolkit.Maui.Core/9.1.1": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Maui.Core": "8.0.71",
-          "Microsoft.Maui.Essentials": "8.0.71"
-        },
-        "compile": {
-          "lib/net8.0-ios18.0/CommunityToolkit.Maui.Core.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0-ios18.0/CommunityToolkit.Maui.Core.dll": {
-            "related": ".xml"
-          }
-        }
-      },
       "Microsoft.Extensions.Configuration/8.0.0": {
         "type": "package",
         "dependencies": {
@@ -22898,6 +23333,19 @@
           "build/Microsoft.NET.ILLink.Tasks.props": {}
         }
       },
+      "Plugin.LocalNotification/10.1.8": {
+        "type": "package",
+        "compile": {
+          "lib/net7.0-ios16.1/Plugin.LocalNotification.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net7.0-ios16.1/Plugin.LocalNotification.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "sqlite-net-pcl/1.9.172": {
         "type": "package",
         "dependencies": {
@@ -22914,10 +23362,10 @@
           }
         }
       },
-      "SQLitePCLRaw.bundle_green/2.1.10": {
+      "SQLitePCLRaw.bundle_green/2.1.2": {
         "type": "package",
         "dependencies": {
-          "SQLitePCLRaw.provider.sqlite3": "2.1.10",
+          "SQLitePCLRaw.provider.sqlite3": "2.1.2",
           "System.Runtime.InteropServices.NFloat.Internal": "6.0.1"
         },
         "compile": {
@@ -22927,7 +23375,7 @@
           "lib/net6.0-ios14.2/SQLitePCLRaw.batteries_v2.dll": {}
         }
       },
-      "SQLitePCLRaw.core/2.1.10": {
+      "SQLitePCLRaw.core/2.1.2": {
         "type": "package",
         "dependencies": {
           "System.Memory": "4.5.3"
@@ -22939,10 +23387,10 @@
           "lib/netstandard2.0/SQLitePCLRaw.core.dll": {}
         }
       },
-      "SQLitePCLRaw.provider.sqlite3/2.1.10": {
+      "SQLitePCLRaw.provider.sqlite3/2.1.2": {
         "type": "package",
         "dependencies": {
-          "SQLitePCLRaw.core": "2.1.10"
+          "SQLitePCLRaw.core": "2.1.2"
         },
         "compile": {
           "lib/net6.0/SQLitePCLRaw.provider.sqlite3.dll": {}
@@ -22970,40 +23418,6 @@
       }
     },
     "net8.0-maccatalyst18.0": {
-      "CommunityToolkit.Maui/9.1.1": {
-        "type": "package",
-        "dependencies": {
-          "CommunityToolkit.Maui.Core": "9.1.1",
-          "Microsoft.Maui.Controls": "8.0.71"
-        },
-        "compile": {
-          "lib/net8.0-maccatalyst18.0/CommunityToolkit.Maui.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0-maccatalyst18.0/CommunityToolkit.Maui.dll": {
-            "related": ".xml"
-          }
-        }
-      },
-      "CommunityToolkit.Maui.Core/9.1.1": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Maui.Core": "8.0.71",
-          "Microsoft.Maui.Essentials": "8.0.71"
-        },
-        "compile": {
-          "lib/net8.0-maccatalyst18.0/CommunityToolkit.Maui.Core.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0-maccatalyst18.0/CommunityToolkit.Maui.Core.dll": {
-            "related": ".xml"
-          }
-        }
-      },
       "Microsoft.Extensions.Configuration/8.0.0": {
         "type": "package",
         "dependencies": {
@@ -23423,6 +23837,19 @@
           "build/Microsoft.NET.ILLink.Tasks.props": {}
         }
       },
+      "Plugin.LocalNotification/10.1.8": {
+        "type": "package",
+        "compile": {
+          "lib/net7.0/Plugin.LocalNotification.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net7.0/Plugin.LocalNotification.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "sqlite-net-pcl/1.9.172": {
         "type": "package",
         "dependencies": {
@@ -23439,11 +23866,11 @@
           }
         }
       },
-      "SQLitePCLRaw.bundle_green/2.1.10": {
+      "SQLitePCLRaw.bundle_green/2.1.2": {
         "type": "package",
         "dependencies": {
-          "SQLitePCLRaw.lib.e_sqlite3": "2.1.10",
-          "SQLitePCLRaw.provider.e_sqlite3": "2.1.10"
+          "SQLitePCLRaw.lib.e_sqlite3": "2.1.2",
+          "SQLitePCLRaw.provider.e_sqlite3": "2.1.2"
         },
         "compile": {
           "lib/netstandard2.0/SQLitePCLRaw.batteries_v2.dll": {}
@@ -23452,7 +23879,7 @@
           "lib/netstandard2.0/SQLitePCLRaw.batteries_v2.dll": {}
         }
       },
-      "SQLitePCLRaw.core/2.1.10": {
+      "SQLitePCLRaw.core/2.1.2": {
         "type": "package",
         "dependencies": {
           "System.Memory": "4.5.3"
@@ -23464,7 +23891,7 @@
           "lib/netstandard2.0/SQLitePCLRaw.core.dll": {}
         }
       },
-      "SQLitePCLRaw.lib.e_sqlite3/2.1.10": {
+      "SQLitePCLRaw.lib.e_sqlite3/2.1.2": {
         "type": "package",
         "compile": {
           "lib/netstandard2.0/_._": {}
@@ -23473,10 +23900,22 @@
           "lib/netstandard2.0/_._": {}
         },
         "build": {
-          "buildTransitive/net8.0/SQLitePCLRaw.lib.e_sqlite3.targets": {}
+          "buildTransitive/net7.0/SQLitePCLRaw.lib.e_sqlite3.targets": {}
         },
         "runtimeTargets": {
-          "runtimes/browser-wasm/nativeassets/net8.0/e_sqlite3.a": {
+          "runtimes/alpine-arm/native/libe_sqlite3.so": {
+            "assetType": "native",
+            "rid": "alpine-arm"
+          },
+          "runtimes/alpine-arm64/native/libe_sqlite3.so": {
+            "assetType": "native",
+            "rid": "alpine-arm64"
+          },
+          "runtimes/alpine-x64/native/libe_sqlite3.so": {
+            "assetType": "native",
+            "rid": "alpine-x64"
+          },
+          "runtimes/browser-wasm/nativeassets/net7.0/e_sqlite3.a": {
             "assetType": "native",
             "rid": "browser-wasm"
           },
@@ -23504,17 +23943,9 @@
             "assetType": "native",
             "rid": "linux-musl-arm64"
           },
-          "runtimes/linux-musl-s390x/native/libe_sqlite3.so": {
-            "assetType": "native",
-            "rid": "linux-musl-s390x"
-          },
           "runtimes/linux-musl-x64/native/libe_sqlite3.so": {
             "assetType": "native",
             "rid": "linux-musl-x64"
-          },
-          "runtimes/linux-ppc64le/native/libe_sqlite3.so": {
-            "assetType": "native",
-            "rid": "linux-ppc64le"
           },
           "runtimes/linux-s390x/native/libe_sqlite3.so": {
             "assetType": "native",
@@ -23562,10 +23993,10 @@
           }
         }
       },
-      "SQLitePCLRaw.provider.e_sqlite3/2.1.10": {
+      "SQLitePCLRaw.provider.e_sqlite3/2.1.2": {
         "type": "package",
         "dependencies": {
-          "SQLitePCLRaw.core": "2.1.10"
+          "SQLitePCLRaw.core": "2.1.2"
         },
         "compile": {
           "lib/net6.0/SQLitePCLRaw.provider.e_sqlite3.dll": {}
@@ -23585,40 +24016,6 @@
       }
     },
     "net8.0-maccatalyst18.0/android-arm": {
-      "CommunityToolkit.Maui/9.1.1": {
-        "type": "package",
-        "dependencies": {
-          "CommunityToolkit.Maui.Core": "9.1.1",
-          "Microsoft.Maui.Controls": "8.0.71"
-        },
-        "compile": {
-          "lib/net8.0-maccatalyst18.0/CommunityToolkit.Maui.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0-maccatalyst18.0/CommunityToolkit.Maui.dll": {
-            "related": ".xml"
-          }
-        }
-      },
-      "CommunityToolkit.Maui.Core/9.1.1": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Maui.Core": "8.0.71",
-          "Microsoft.Maui.Essentials": "8.0.71"
-        },
-        "compile": {
-          "lib/net8.0-maccatalyst18.0/CommunityToolkit.Maui.Core.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0-maccatalyst18.0/CommunityToolkit.Maui.Core.dll": {
-            "related": ".xml"
-          }
-        }
-      },
       "Microsoft.Extensions.Configuration/8.0.0": {
         "type": "package",
         "dependencies": {
@@ -24038,6 +24435,19 @@
           "build/Microsoft.NET.ILLink.Tasks.props": {}
         }
       },
+      "Plugin.LocalNotification/10.1.8": {
+        "type": "package",
+        "compile": {
+          "lib/net7.0/Plugin.LocalNotification.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net7.0/Plugin.LocalNotification.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "sqlite-net-pcl/1.9.172": {
         "type": "package",
         "dependencies": {
@@ -24054,11 +24464,11 @@
           }
         }
       },
-      "SQLitePCLRaw.bundle_green/2.1.10": {
+      "SQLitePCLRaw.bundle_green/2.1.2": {
         "type": "package",
         "dependencies": {
-          "SQLitePCLRaw.lib.e_sqlite3": "2.1.10",
-          "SQLitePCLRaw.provider.e_sqlite3": "2.1.10"
+          "SQLitePCLRaw.lib.e_sqlite3": "2.1.2",
+          "SQLitePCLRaw.provider.e_sqlite3": "2.1.2"
         },
         "compile": {
           "lib/netstandard2.0/SQLitePCLRaw.batteries_v2.dll": {}
@@ -24067,7 +24477,7 @@
           "lib/netstandard2.0/SQLitePCLRaw.batteries_v2.dll": {}
         }
       },
-      "SQLitePCLRaw.core/2.1.10": {
+      "SQLitePCLRaw.core/2.1.2": {
         "type": "package",
         "dependencies": {
           "System.Memory": "4.5.3"
@@ -24079,7 +24489,7 @@
           "lib/netstandard2.0/SQLitePCLRaw.core.dll": {}
         }
       },
-      "SQLitePCLRaw.lib.e_sqlite3/2.1.10": {
+      "SQLitePCLRaw.lib.e_sqlite3/2.1.2": {
         "type": "package",
         "compile": {
           "lib/netstandard2.0/_._": {}
@@ -24091,13 +24501,13 @@
           "runtimes/linux-arm/native/libe_sqlite3.so": {}
         },
         "build": {
-          "buildTransitive/net8.0/SQLitePCLRaw.lib.e_sqlite3.targets": {}
+          "buildTransitive/net7.0/SQLitePCLRaw.lib.e_sqlite3.targets": {}
         }
       },
-      "SQLitePCLRaw.provider.e_sqlite3/2.1.10": {
+      "SQLitePCLRaw.provider.e_sqlite3/2.1.2": {
         "type": "package",
         "dependencies": {
-          "SQLitePCLRaw.core": "2.1.10"
+          "SQLitePCLRaw.core": "2.1.2"
         },
         "compile": {
           "lib/net6.0/SQLitePCLRaw.provider.e_sqlite3.dll": {}
@@ -24117,40 +24527,6 @@
       }
     },
     "net8.0-maccatalyst18.0/android-arm64": {
-      "CommunityToolkit.Maui/9.1.1": {
-        "type": "package",
-        "dependencies": {
-          "CommunityToolkit.Maui.Core": "9.1.1",
-          "Microsoft.Maui.Controls": "8.0.71"
-        },
-        "compile": {
-          "lib/net8.0-maccatalyst18.0/CommunityToolkit.Maui.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0-maccatalyst18.0/CommunityToolkit.Maui.dll": {
-            "related": ".xml"
-          }
-        }
-      },
-      "CommunityToolkit.Maui.Core/9.1.1": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Maui.Core": "8.0.71",
-          "Microsoft.Maui.Essentials": "8.0.71"
-        },
-        "compile": {
-          "lib/net8.0-maccatalyst18.0/CommunityToolkit.Maui.Core.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0-maccatalyst18.0/CommunityToolkit.Maui.Core.dll": {
-            "related": ".xml"
-          }
-        }
-      },
       "Microsoft.Extensions.Configuration/8.0.0": {
         "type": "package",
         "dependencies": {
@@ -24570,6 +24946,19 @@
           "build/Microsoft.NET.ILLink.Tasks.props": {}
         }
       },
+      "Plugin.LocalNotification/10.1.8": {
+        "type": "package",
+        "compile": {
+          "lib/net7.0/Plugin.LocalNotification.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net7.0/Plugin.LocalNotification.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "sqlite-net-pcl/1.9.172": {
         "type": "package",
         "dependencies": {
@@ -24586,11 +24975,11 @@
           }
         }
       },
-      "SQLitePCLRaw.bundle_green/2.1.10": {
+      "SQLitePCLRaw.bundle_green/2.1.2": {
         "type": "package",
         "dependencies": {
-          "SQLitePCLRaw.lib.e_sqlite3": "2.1.10",
-          "SQLitePCLRaw.provider.e_sqlite3": "2.1.10"
+          "SQLitePCLRaw.lib.e_sqlite3": "2.1.2",
+          "SQLitePCLRaw.provider.e_sqlite3": "2.1.2"
         },
         "compile": {
           "lib/netstandard2.0/SQLitePCLRaw.batteries_v2.dll": {}
@@ -24599,7 +24988,7 @@
           "lib/netstandard2.0/SQLitePCLRaw.batteries_v2.dll": {}
         }
       },
-      "SQLitePCLRaw.core/2.1.10": {
+      "SQLitePCLRaw.core/2.1.2": {
         "type": "package",
         "dependencies": {
           "System.Memory": "4.5.3"
@@ -24611,7 +25000,7 @@
           "lib/netstandard2.0/SQLitePCLRaw.core.dll": {}
         }
       },
-      "SQLitePCLRaw.lib.e_sqlite3/2.1.10": {
+      "SQLitePCLRaw.lib.e_sqlite3/2.1.2": {
         "type": "package",
         "compile": {
           "lib/netstandard2.0/_._": {}
@@ -24623,13 +25012,13 @@
           "runtimes/linux-arm64/native/libe_sqlite3.so": {}
         },
         "build": {
-          "buildTransitive/net8.0/SQLitePCLRaw.lib.e_sqlite3.targets": {}
+          "buildTransitive/net7.0/SQLitePCLRaw.lib.e_sqlite3.targets": {}
         }
       },
-      "SQLitePCLRaw.provider.e_sqlite3/2.1.10": {
+      "SQLitePCLRaw.provider.e_sqlite3/2.1.2": {
         "type": "package",
         "dependencies": {
-          "SQLitePCLRaw.core": "2.1.10"
+          "SQLitePCLRaw.core": "2.1.2"
         },
         "compile": {
           "lib/net6.0/SQLitePCLRaw.provider.e_sqlite3.dll": {}
@@ -24649,40 +25038,6 @@
       }
     },
     "net8.0-maccatalyst18.0/android-x64": {
-      "CommunityToolkit.Maui/9.1.1": {
-        "type": "package",
-        "dependencies": {
-          "CommunityToolkit.Maui.Core": "9.1.1",
-          "Microsoft.Maui.Controls": "8.0.71"
-        },
-        "compile": {
-          "lib/net8.0-maccatalyst18.0/CommunityToolkit.Maui.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0-maccatalyst18.0/CommunityToolkit.Maui.dll": {
-            "related": ".xml"
-          }
-        }
-      },
-      "CommunityToolkit.Maui.Core/9.1.1": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Maui.Core": "8.0.71",
-          "Microsoft.Maui.Essentials": "8.0.71"
-        },
-        "compile": {
-          "lib/net8.0-maccatalyst18.0/CommunityToolkit.Maui.Core.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0-maccatalyst18.0/CommunityToolkit.Maui.Core.dll": {
-            "related": ".xml"
-          }
-        }
-      },
       "Microsoft.Extensions.Configuration/8.0.0": {
         "type": "package",
         "dependencies": {
@@ -25102,6 +25457,19 @@
           "build/Microsoft.NET.ILLink.Tasks.props": {}
         }
       },
+      "Plugin.LocalNotification/10.1.8": {
+        "type": "package",
+        "compile": {
+          "lib/net7.0/Plugin.LocalNotification.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net7.0/Plugin.LocalNotification.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "sqlite-net-pcl/1.9.172": {
         "type": "package",
         "dependencies": {
@@ -25118,11 +25486,11 @@
           }
         }
       },
-      "SQLitePCLRaw.bundle_green/2.1.10": {
+      "SQLitePCLRaw.bundle_green/2.1.2": {
         "type": "package",
         "dependencies": {
-          "SQLitePCLRaw.lib.e_sqlite3": "2.1.10",
-          "SQLitePCLRaw.provider.e_sqlite3": "2.1.10"
+          "SQLitePCLRaw.lib.e_sqlite3": "2.1.2",
+          "SQLitePCLRaw.provider.e_sqlite3": "2.1.2"
         },
         "compile": {
           "lib/netstandard2.0/SQLitePCLRaw.batteries_v2.dll": {}
@@ -25131,7 +25499,7 @@
           "lib/netstandard2.0/SQLitePCLRaw.batteries_v2.dll": {}
         }
       },
-      "SQLitePCLRaw.core/2.1.10": {
+      "SQLitePCLRaw.core/2.1.2": {
         "type": "package",
         "dependencies": {
           "System.Memory": "4.5.3"
@@ -25143,7 +25511,7 @@
           "lib/netstandard2.0/SQLitePCLRaw.core.dll": {}
         }
       },
-      "SQLitePCLRaw.lib.e_sqlite3/2.1.10": {
+      "SQLitePCLRaw.lib.e_sqlite3/2.1.2": {
         "type": "package",
         "compile": {
           "lib/netstandard2.0/_._": {}
@@ -25155,13 +25523,13 @@
           "runtimes/linux-x64/native/libe_sqlite3.so": {}
         },
         "build": {
-          "buildTransitive/net8.0/SQLitePCLRaw.lib.e_sqlite3.targets": {}
+          "buildTransitive/net7.0/SQLitePCLRaw.lib.e_sqlite3.targets": {}
         }
       },
-      "SQLitePCLRaw.provider.e_sqlite3/2.1.10": {
+      "SQLitePCLRaw.provider.e_sqlite3/2.1.2": {
         "type": "package",
         "dependencies": {
-          "SQLitePCLRaw.core": "2.1.10"
+          "SQLitePCLRaw.core": "2.1.2"
         },
         "compile": {
           "lib/net6.0/SQLitePCLRaw.provider.e_sqlite3.dll": {}
@@ -25181,40 +25549,6 @@
       }
     },
     "net8.0-maccatalyst18.0/android-x86": {
-      "CommunityToolkit.Maui/9.1.1": {
-        "type": "package",
-        "dependencies": {
-          "CommunityToolkit.Maui.Core": "9.1.1",
-          "Microsoft.Maui.Controls": "8.0.71"
-        },
-        "compile": {
-          "lib/net8.0-maccatalyst18.0/CommunityToolkit.Maui.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0-maccatalyst18.0/CommunityToolkit.Maui.dll": {
-            "related": ".xml"
-          }
-        }
-      },
-      "CommunityToolkit.Maui.Core/9.1.1": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Maui.Core": "8.0.71",
-          "Microsoft.Maui.Essentials": "8.0.71"
-        },
-        "compile": {
-          "lib/net8.0-maccatalyst18.0/CommunityToolkit.Maui.Core.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0-maccatalyst18.0/CommunityToolkit.Maui.Core.dll": {
-            "related": ".xml"
-          }
-        }
-      },
       "Microsoft.Extensions.Configuration/8.0.0": {
         "type": "package",
         "dependencies": {
@@ -25634,6 +25968,19 @@
           "build/Microsoft.NET.ILLink.Tasks.props": {}
         }
       },
+      "Plugin.LocalNotification/10.1.8": {
+        "type": "package",
+        "compile": {
+          "lib/net7.0/Plugin.LocalNotification.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net7.0/Plugin.LocalNotification.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "sqlite-net-pcl/1.9.172": {
         "type": "package",
         "dependencies": {
@@ -25650,11 +25997,11 @@
           }
         }
       },
-      "SQLitePCLRaw.bundle_green/2.1.10": {
+      "SQLitePCLRaw.bundle_green/2.1.2": {
         "type": "package",
         "dependencies": {
-          "SQLitePCLRaw.lib.e_sqlite3": "2.1.10",
-          "SQLitePCLRaw.provider.e_sqlite3": "2.1.10"
+          "SQLitePCLRaw.lib.e_sqlite3": "2.1.2",
+          "SQLitePCLRaw.provider.e_sqlite3": "2.1.2"
         },
         "compile": {
           "lib/netstandard2.0/SQLitePCLRaw.batteries_v2.dll": {}
@@ -25663,7 +26010,7 @@
           "lib/netstandard2.0/SQLitePCLRaw.batteries_v2.dll": {}
         }
       },
-      "SQLitePCLRaw.core/2.1.10": {
+      "SQLitePCLRaw.core/2.1.2": {
         "type": "package",
         "dependencies": {
           "System.Memory": "4.5.3"
@@ -25675,7 +26022,7 @@
           "lib/netstandard2.0/SQLitePCLRaw.core.dll": {}
         }
       },
-      "SQLitePCLRaw.lib.e_sqlite3/2.1.10": {
+      "SQLitePCLRaw.lib.e_sqlite3/2.1.2": {
         "type": "package",
         "compile": {
           "lib/netstandard2.0/_._": {}
@@ -25687,13 +26034,13 @@
           "runtimes/linux-x86/native/libe_sqlite3.so": {}
         },
         "build": {
-          "buildTransitive/net8.0/SQLitePCLRaw.lib.e_sqlite3.targets": {}
+          "buildTransitive/net7.0/SQLitePCLRaw.lib.e_sqlite3.targets": {}
         }
       },
-      "SQLitePCLRaw.provider.e_sqlite3/2.1.10": {
+      "SQLitePCLRaw.provider.e_sqlite3/2.1.2": {
         "type": "package",
         "dependencies": {
-          "SQLitePCLRaw.core": "2.1.10"
+          "SQLitePCLRaw.core": "2.1.2"
         },
         "compile": {
           "lib/net6.0/SQLitePCLRaw.provider.e_sqlite3.dll": {}
@@ -25713,40 +26060,6 @@
       }
     },
     "net8.0-maccatalyst18.0/iossimulator-x64": {
-      "CommunityToolkit.Maui/9.1.1": {
-        "type": "package",
-        "dependencies": {
-          "CommunityToolkit.Maui.Core": "9.1.1",
-          "Microsoft.Maui.Controls": "8.0.71"
-        },
-        "compile": {
-          "lib/net8.0-maccatalyst18.0/CommunityToolkit.Maui.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0-maccatalyst18.0/CommunityToolkit.Maui.dll": {
-            "related": ".xml"
-          }
-        }
-      },
-      "CommunityToolkit.Maui.Core/9.1.1": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Maui.Core": "8.0.71",
-          "Microsoft.Maui.Essentials": "8.0.71"
-        },
-        "compile": {
-          "lib/net8.0-maccatalyst18.0/CommunityToolkit.Maui.Core.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0-maccatalyst18.0/CommunityToolkit.Maui.Core.dll": {
-            "related": ".xml"
-          }
-        }
-      },
       "Microsoft.Extensions.Configuration/8.0.0": {
         "type": "package",
         "dependencies": {
@@ -26166,6 +26479,19 @@
           "build/Microsoft.NET.ILLink.Tasks.props": {}
         }
       },
+      "Plugin.LocalNotification/10.1.8": {
+        "type": "package",
+        "compile": {
+          "lib/net7.0/Plugin.LocalNotification.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net7.0/Plugin.LocalNotification.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "sqlite-net-pcl/1.9.172": {
         "type": "package",
         "dependencies": {
@@ -26182,11 +26508,11 @@
           }
         }
       },
-      "SQLitePCLRaw.bundle_green/2.1.10": {
+      "SQLitePCLRaw.bundle_green/2.1.2": {
         "type": "package",
         "dependencies": {
-          "SQLitePCLRaw.lib.e_sqlite3": "2.1.10",
-          "SQLitePCLRaw.provider.e_sqlite3": "2.1.10"
+          "SQLitePCLRaw.lib.e_sqlite3": "2.1.2",
+          "SQLitePCLRaw.provider.e_sqlite3": "2.1.2"
         },
         "compile": {
           "lib/netstandard2.0/SQLitePCLRaw.batteries_v2.dll": {}
@@ -26195,7 +26521,7 @@
           "lib/netstandard2.0/SQLitePCLRaw.batteries_v2.dll": {}
         }
       },
-      "SQLitePCLRaw.core/2.1.10": {
+      "SQLitePCLRaw.core/2.1.2": {
         "type": "package",
         "dependencies": {
           "System.Memory": "4.5.3"
@@ -26207,7 +26533,7 @@
           "lib/netstandard2.0/SQLitePCLRaw.core.dll": {}
         }
       },
-      "SQLitePCLRaw.lib.e_sqlite3/2.1.10": {
+      "SQLitePCLRaw.lib.e_sqlite3/2.1.2": {
         "type": "package",
         "compile": {
           "lib/netstandard2.0/_._": {}
@@ -26216,13 +26542,13 @@
           "lib/netstandard2.0/_._": {}
         },
         "build": {
-          "buildTransitive/net8.0/SQLitePCLRaw.lib.e_sqlite3.targets": {}
+          "buildTransitive/net7.0/SQLitePCLRaw.lib.e_sqlite3.targets": {}
         }
       },
-      "SQLitePCLRaw.provider.e_sqlite3/2.1.10": {
+      "SQLitePCLRaw.provider.e_sqlite3/2.1.2": {
         "type": "package",
         "dependencies": {
-          "SQLitePCLRaw.core": "2.1.10"
+          "SQLitePCLRaw.core": "2.1.2"
         },
         "compile": {
           "lib/net6.0/SQLitePCLRaw.provider.e_sqlite3.dll": {}
@@ -26242,40 +26568,6 @@
       }
     },
     "net8.0-maccatalyst18.0/maccatalyst-x64": {
-      "CommunityToolkit.Maui/9.1.1": {
-        "type": "package",
-        "dependencies": {
-          "CommunityToolkit.Maui.Core": "9.1.1",
-          "Microsoft.Maui.Controls": "8.0.71"
-        },
-        "compile": {
-          "lib/net8.0-maccatalyst18.0/CommunityToolkit.Maui.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0-maccatalyst18.0/CommunityToolkit.Maui.dll": {
-            "related": ".xml"
-          }
-        }
-      },
-      "CommunityToolkit.Maui.Core/9.1.1": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Maui.Core": "8.0.71",
-          "Microsoft.Maui.Essentials": "8.0.71"
-        },
-        "compile": {
-          "lib/net8.0-maccatalyst18.0/CommunityToolkit.Maui.Core.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0-maccatalyst18.0/CommunityToolkit.Maui.Core.dll": {
-            "related": ".xml"
-          }
-        }
-      },
       "Microsoft.Extensions.Configuration/8.0.0": {
         "type": "package",
         "dependencies": {
@@ -26695,6 +26987,19 @@
           "build/Microsoft.NET.ILLink.Tasks.props": {}
         }
       },
+      "Plugin.LocalNotification/10.1.8": {
+        "type": "package",
+        "compile": {
+          "lib/net7.0/Plugin.LocalNotification.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net7.0/Plugin.LocalNotification.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "sqlite-net-pcl/1.9.172": {
         "type": "package",
         "dependencies": {
@@ -26711,11 +27016,11 @@
           }
         }
       },
-      "SQLitePCLRaw.bundle_green/2.1.10": {
+      "SQLitePCLRaw.bundle_green/2.1.2": {
         "type": "package",
         "dependencies": {
-          "SQLitePCLRaw.lib.e_sqlite3": "2.1.10",
-          "SQLitePCLRaw.provider.e_sqlite3": "2.1.10"
+          "SQLitePCLRaw.lib.e_sqlite3": "2.1.2",
+          "SQLitePCLRaw.provider.e_sqlite3": "2.1.2"
         },
         "compile": {
           "lib/netstandard2.0/SQLitePCLRaw.batteries_v2.dll": {}
@@ -26724,7 +27029,7 @@
           "lib/netstandard2.0/SQLitePCLRaw.batteries_v2.dll": {}
         }
       },
-      "SQLitePCLRaw.core/2.1.10": {
+      "SQLitePCLRaw.core/2.1.2": {
         "type": "package",
         "dependencies": {
           "System.Memory": "4.5.3"
@@ -26736,7 +27041,7 @@
           "lib/netstandard2.0/SQLitePCLRaw.core.dll": {}
         }
       },
-      "SQLitePCLRaw.lib.e_sqlite3/2.1.10": {
+      "SQLitePCLRaw.lib.e_sqlite3/2.1.2": {
         "type": "package",
         "compile": {
           "lib/netstandard2.0/_._": {}
@@ -26748,13 +27053,13 @@
           "runtimes/maccatalyst-x64/native/libe_sqlite3.dylib": {}
         },
         "build": {
-          "buildTransitive/net8.0/SQLitePCLRaw.lib.e_sqlite3.targets": {}
+          "buildTransitive/net7.0/SQLitePCLRaw.lib.e_sqlite3.targets": {}
         }
       },
-      "SQLitePCLRaw.provider.e_sqlite3/2.1.10": {
+      "SQLitePCLRaw.provider.e_sqlite3/2.1.2": {
         "type": "package",
         "dependencies": {
-          "SQLitePCLRaw.core": "2.1.10"
+          "SQLitePCLRaw.core": "2.1.2"
         },
         "compile": {
           "lib/net6.0/SQLitePCLRaw.provider.e_sqlite3.dll": {}
@@ -26774,40 +27079,6 @@
       }
     },
     "net8.0-maccatalyst18.0/win10-x64": {
-      "CommunityToolkit.Maui/9.1.1": {
-        "type": "package",
-        "dependencies": {
-          "CommunityToolkit.Maui.Core": "9.1.1",
-          "Microsoft.Maui.Controls": "8.0.71"
-        },
-        "compile": {
-          "lib/net8.0-maccatalyst18.0/CommunityToolkit.Maui.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0-maccatalyst18.0/CommunityToolkit.Maui.dll": {
-            "related": ".xml"
-          }
-        }
-      },
-      "CommunityToolkit.Maui.Core/9.1.1": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Maui.Core": "8.0.71",
-          "Microsoft.Maui.Essentials": "8.0.71"
-        },
-        "compile": {
-          "lib/net8.0-maccatalyst18.0/CommunityToolkit.Maui.Core.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0-maccatalyst18.0/CommunityToolkit.Maui.Core.dll": {
-            "related": ".xml"
-          }
-        }
-      },
       "Microsoft.Extensions.Configuration/8.0.0": {
         "type": "package",
         "dependencies": {
@@ -27227,6 +27498,19 @@
           "build/Microsoft.NET.ILLink.Tasks.props": {}
         }
       },
+      "Plugin.LocalNotification/10.1.8": {
+        "type": "package",
+        "compile": {
+          "lib/net7.0/Plugin.LocalNotification.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net7.0/Plugin.LocalNotification.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "sqlite-net-pcl/1.9.172": {
         "type": "package",
         "dependencies": {
@@ -27243,11 +27527,11 @@
           }
         }
       },
-      "SQLitePCLRaw.bundle_green/2.1.10": {
+      "SQLitePCLRaw.bundle_green/2.1.2": {
         "type": "package",
         "dependencies": {
-          "SQLitePCLRaw.lib.e_sqlite3": "2.1.10",
-          "SQLitePCLRaw.provider.e_sqlite3": "2.1.10"
+          "SQLitePCLRaw.lib.e_sqlite3": "2.1.2",
+          "SQLitePCLRaw.provider.e_sqlite3": "2.1.2"
         },
         "compile": {
           "lib/netstandard2.0/SQLitePCLRaw.batteries_v2.dll": {}
@@ -27256,7 +27540,7 @@
           "lib/netstandard2.0/SQLitePCLRaw.batteries_v2.dll": {}
         }
       },
-      "SQLitePCLRaw.core/2.1.10": {
+      "SQLitePCLRaw.core/2.1.2": {
         "type": "package",
         "dependencies": {
           "System.Memory": "4.5.3"
@@ -27268,7 +27552,7 @@
           "lib/netstandard2.0/SQLitePCLRaw.core.dll": {}
         }
       },
-      "SQLitePCLRaw.lib.e_sqlite3/2.1.10": {
+      "SQLitePCLRaw.lib.e_sqlite3/2.1.2": {
         "type": "package",
         "compile": {
           "lib/netstandard2.0/_._": {}
@@ -27277,13 +27561,13 @@
           "lib/netstandard2.0/_._": {}
         },
         "build": {
-          "buildTransitive/net8.0/SQLitePCLRaw.lib.e_sqlite3.targets": {}
+          "buildTransitive/net7.0/SQLitePCLRaw.lib.e_sqlite3.targets": {}
         }
       },
-      "SQLitePCLRaw.provider.e_sqlite3/2.1.10": {
+      "SQLitePCLRaw.provider.e_sqlite3/2.1.2": {
         "type": "package",
         "dependencies": {
-          "SQLitePCLRaw.core": "2.1.10"
+          "SQLitePCLRaw.core": "2.1.2"
         },
         "compile": {
           "lib/net6.0/SQLitePCLRaw.provider.e_sqlite3.dll": {}
@@ -27303,41 +27587,6 @@
       }
     },
     "net8.0-windows10.0.19041": {
-      "CommunityToolkit.Maui/9.1.1": {
-        "type": "package",
-        "dependencies": {
-          "CommunityToolkit.Maui.Core": "9.1.1",
-          "Microsoft.Maui.Controls": "8.0.71"
-        },
-        "compile": {
-          "lib/net8.0-windows10.0.19041/CommunityToolkit.Maui.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0-windows10.0.19041/CommunityToolkit.Maui.dll": {
-            "related": ".xml"
-          }
-        }
-      },
-      "CommunityToolkit.Maui.Core/9.1.1": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Maui.Core": "8.0.71",
-          "Microsoft.Maui.Essentials": "8.0.71",
-          "System.Speech": "8.0.0"
-        },
-        "compile": {
-          "lib/net8.0-windows10.0.19041/CommunityToolkit.Maui.Core.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0-windows10.0.19041/CommunityToolkit.Maui.Core.dll": {
-            "related": ".xml"
-          }
-        }
-      },
       "Microsoft.Extensions.Configuration/8.0.0": {
         "type": "package",
         "dependencies": {
@@ -27926,6 +28175,19 @@
           }
         }
       },
+      "Plugin.LocalNotification/10.1.8": {
+        "type": "package",
+        "compile": {
+          "lib/net7.0/Plugin.LocalNotification.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net7.0/Plugin.LocalNotification.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "sqlite-net-pcl/1.9.172": {
         "type": "package",
         "dependencies": {
@@ -27942,11 +28204,11 @@
           }
         }
       },
-      "SQLitePCLRaw.bundle_green/2.1.10": {
+      "SQLitePCLRaw.bundle_green/2.1.2": {
         "type": "package",
         "dependencies": {
-          "SQLitePCLRaw.lib.e_sqlite3": "2.1.10",
-          "SQLitePCLRaw.provider.e_sqlite3": "2.1.10"
+          "SQLitePCLRaw.lib.e_sqlite3": "2.1.2",
+          "SQLitePCLRaw.provider.e_sqlite3": "2.1.2"
         },
         "compile": {
           "lib/netstandard2.0/SQLitePCLRaw.batteries_v2.dll": {}
@@ -27955,7 +28217,7 @@
           "lib/netstandard2.0/SQLitePCLRaw.batteries_v2.dll": {}
         }
       },
-      "SQLitePCLRaw.core/2.1.10": {
+      "SQLitePCLRaw.core/2.1.2": {
         "type": "package",
         "dependencies": {
           "System.Memory": "4.5.3"
@@ -27967,7 +28229,7 @@
           "lib/netstandard2.0/SQLitePCLRaw.core.dll": {}
         }
       },
-      "SQLitePCLRaw.lib.e_sqlite3/2.1.10": {
+      "SQLitePCLRaw.lib.e_sqlite3/2.1.2": {
         "type": "package",
         "compile": {
           "lib/netstandard2.0/_._": {}
@@ -27976,10 +28238,22 @@
           "lib/netstandard2.0/_._": {}
         },
         "build": {
-          "buildTransitive/net8.0/SQLitePCLRaw.lib.e_sqlite3.targets": {}
+          "buildTransitive/net7.0/SQLitePCLRaw.lib.e_sqlite3.targets": {}
         },
         "runtimeTargets": {
-          "runtimes/browser-wasm/nativeassets/net8.0/e_sqlite3.a": {
+          "runtimes/alpine-arm/native/libe_sqlite3.so": {
+            "assetType": "native",
+            "rid": "alpine-arm"
+          },
+          "runtimes/alpine-arm64/native/libe_sqlite3.so": {
+            "assetType": "native",
+            "rid": "alpine-arm64"
+          },
+          "runtimes/alpine-x64/native/libe_sqlite3.so": {
+            "assetType": "native",
+            "rid": "alpine-x64"
+          },
+          "runtimes/browser-wasm/nativeassets/net7.0/e_sqlite3.a": {
             "assetType": "native",
             "rid": "browser-wasm"
           },
@@ -28007,17 +28281,9 @@
             "assetType": "native",
             "rid": "linux-musl-arm64"
           },
-          "runtimes/linux-musl-s390x/native/libe_sqlite3.so": {
-            "assetType": "native",
-            "rid": "linux-musl-s390x"
-          },
           "runtimes/linux-musl-x64/native/libe_sqlite3.so": {
             "assetType": "native",
             "rid": "linux-musl-x64"
-          },
-          "runtimes/linux-ppc64le/native/libe_sqlite3.so": {
-            "assetType": "native",
-            "rid": "linux-ppc64le"
           },
           "runtimes/linux-s390x/native/libe_sqlite3.so": {
             "assetType": "native",
@@ -28065,10 +28331,10 @@
           }
         }
       },
-      "SQLitePCLRaw.provider.e_sqlite3/2.1.10": {
+      "SQLitePCLRaw.provider.e_sqlite3/2.1.2": {
         "type": "package",
         "dependencies": {
-          "SQLitePCLRaw.core": "2.1.10"
+          "SQLitePCLRaw.core": "2.1.2"
         },
         "compile": {
           "lib/net6.0-windows7.0/SQLitePCLRaw.provider.e_sqlite3.dll": {}
@@ -28085,62 +28351,9 @@
         "runtime": {
           "lib/netcoreapp2.1/_._": {}
         }
-      },
-      "System.Speech/8.0.0": {
-        "type": "package",
-        "compile": {
-          "lib/net8.0/System.Speech.dll": {}
-        },
-        "runtime": {
-          "lib/net8.0/System.Speech.dll": {}
-        },
-        "build": {
-          "buildTransitive/net6.0/_._": {}
-        },
-        "runtimeTargets": {
-          "runtimes/win/lib/net8.0/System.Speech.dll": {
-            "assetType": "runtime",
-            "rid": "win"
-          }
-        }
       }
     },
     "net8.0-windows10.0.19041/android-arm": {
-      "CommunityToolkit.Maui/9.1.1": {
-        "type": "package",
-        "dependencies": {
-          "CommunityToolkit.Maui.Core": "9.1.1",
-          "Microsoft.Maui.Controls": "8.0.71"
-        },
-        "compile": {
-          "lib/net8.0-windows10.0.19041/CommunityToolkit.Maui.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0-windows10.0.19041/CommunityToolkit.Maui.dll": {
-            "related": ".xml"
-          }
-        }
-      },
-      "CommunityToolkit.Maui.Core/9.1.1": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Maui.Core": "8.0.71",
-          "Microsoft.Maui.Essentials": "8.0.71",
-          "System.Speech": "8.0.0"
-        },
-        "compile": {
-          "lib/net8.0-windows10.0.19041/CommunityToolkit.Maui.Core.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0-windows10.0.19041/CommunityToolkit.Maui.Core.dll": {
-            "related": ".xml"
-          }
-        }
-      },
       "Microsoft.Extensions.Configuration/8.0.0": {
         "type": "package",
         "dependencies": {
@@ -28689,6 +28902,19 @@
           "buildTransitive/Microsoft.WindowsAppSDK.targets": {}
         }
       },
+      "Plugin.LocalNotification/10.1.8": {
+        "type": "package",
+        "compile": {
+          "lib/net7.0/Plugin.LocalNotification.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net7.0/Plugin.LocalNotification.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "sqlite-net-pcl/1.9.172": {
         "type": "package",
         "dependencies": {
@@ -28705,11 +28931,11 @@
           }
         }
       },
-      "SQLitePCLRaw.bundle_green/2.1.10": {
+      "SQLitePCLRaw.bundle_green/2.1.2": {
         "type": "package",
         "dependencies": {
-          "SQLitePCLRaw.lib.e_sqlite3": "2.1.10",
-          "SQLitePCLRaw.provider.e_sqlite3": "2.1.10"
+          "SQLitePCLRaw.lib.e_sqlite3": "2.1.2",
+          "SQLitePCLRaw.provider.e_sqlite3": "2.1.2"
         },
         "compile": {
           "lib/netstandard2.0/SQLitePCLRaw.batteries_v2.dll": {}
@@ -28718,7 +28944,7 @@
           "lib/netstandard2.0/SQLitePCLRaw.batteries_v2.dll": {}
         }
       },
-      "SQLitePCLRaw.core/2.1.10": {
+      "SQLitePCLRaw.core/2.1.2": {
         "type": "package",
         "dependencies": {
           "System.Memory": "4.5.3"
@@ -28730,7 +28956,7 @@
           "lib/netstandard2.0/SQLitePCLRaw.core.dll": {}
         }
       },
-      "SQLitePCLRaw.lib.e_sqlite3/2.1.10": {
+      "SQLitePCLRaw.lib.e_sqlite3/2.1.2": {
         "type": "package",
         "compile": {
           "lib/netstandard2.0/_._": {}
@@ -28742,13 +28968,13 @@
           "runtimes/linux-arm/native/libe_sqlite3.so": {}
         },
         "build": {
-          "buildTransitive/net8.0/SQLitePCLRaw.lib.e_sqlite3.targets": {}
+          "buildTransitive/net7.0/SQLitePCLRaw.lib.e_sqlite3.targets": {}
         }
       },
-      "SQLitePCLRaw.provider.e_sqlite3/2.1.10": {
+      "SQLitePCLRaw.provider.e_sqlite3/2.1.2": {
         "type": "package",
         "dependencies": {
-          "SQLitePCLRaw.core": "2.1.10"
+          "SQLitePCLRaw.core": "2.1.2"
         },
         "compile": {
           "lib/net6.0-windows7.0/SQLitePCLRaw.provider.e_sqlite3.dll": {}
@@ -28765,56 +28991,9 @@
         "runtime": {
           "lib/netcoreapp2.1/_._": {}
         }
-      },
-      "System.Speech/8.0.0": {
-        "type": "package",
-        "compile": {
-          "lib/net8.0/System.Speech.dll": {}
-        },
-        "runtime": {
-          "lib/net8.0/System.Speech.dll": {}
-        },
-        "build": {
-          "buildTransitive/net6.0/_._": {}
-        }
       }
     },
     "net8.0-windows10.0.19041/android-arm64": {
-      "CommunityToolkit.Maui/9.1.1": {
-        "type": "package",
-        "dependencies": {
-          "CommunityToolkit.Maui.Core": "9.1.1",
-          "Microsoft.Maui.Controls": "8.0.71"
-        },
-        "compile": {
-          "lib/net8.0-windows10.0.19041/CommunityToolkit.Maui.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0-windows10.0.19041/CommunityToolkit.Maui.dll": {
-            "related": ".xml"
-          }
-        }
-      },
-      "CommunityToolkit.Maui.Core/9.1.1": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Maui.Core": "8.0.71",
-          "Microsoft.Maui.Essentials": "8.0.71",
-          "System.Speech": "8.0.0"
-        },
-        "compile": {
-          "lib/net8.0-windows10.0.19041/CommunityToolkit.Maui.Core.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0-windows10.0.19041/CommunityToolkit.Maui.Core.dll": {
-            "related": ".xml"
-          }
-        }
-      },
       "Microsoft.Extensions.Configuration/8.0.0": {
         "type": "package",
         "dependencies": {
@@ -29363,6 +29542,19 @@
           "buildTransitive/Microsoft.WindowsAppSDK.targets": {}
         }
       },
+      "Plugin.LocalNotification/10.1.8": {
+        "type": "package",
+        "compile": {
+          "lib/net7.0/Plugin.LocalNotification.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net7.0/Plugin.LocalNotification.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "sqlite-net-pcl/1.9.172": {
         "type": "package",
         "dependencies": {
@@ -29379,11 +29571,11 @@
           }
         }
       },
-      "SQLitePCLRaw.bundle_green/2.1.10": {
+      "SQLitePCLRaw.bundle_green/2.1.2": {
         "type": "package",
         "dependencies": {
-          "SQLitePCLRaw.lib.e_sqlite3": "2.1.10",
-          "SQLitePCLRaw.provider.e_sqlite3": "2.1.10"
+          "SQLitePCLRaw.lib.e_sqlite3": "2.1.2",
+          "SQLitePCLRaw.provider.e_sqlite3": "2.1.2"
         },
         "compile": {
           "lib/netstandard2.0/SQLitePCLRaw.batteries_v2.dll": {}
@@ -29392,7 +29584,7 @@
           "lib/netstandard2.0/SQLitePCLRaw.batteries_v2.dll": {}
         }
       },
-      "SQLitePCLRaw.core/2.1.10": {
+      "SQLitePCLRaw.core/2.1.2": {
         "type": "package",
         "dependencies": {
           "System.Memory": "4.5.3"
@@ -29404,7 +29596,7 @@
           "lib/netstandard2.0/SQLitePCLRaw.core.dll": {}
         }
       },
-      "SQLitePCLRaw.lib.e_sqlite3/2.1.10": {
+      "SQLitePCLRaw.lib.e_sqlite3/2.1.2": {
         "type": "package",
         "compile": {
           "lib/netstandard2.0/_._": {}
@@ -29416,13 +29608,13 @@
           "runtimes/linux-arm64/native/libe_sqlite3.so": {}
         },
         "build": {
-          "buildTransitive/net8.0/SQLitePCLRaw.lib.e_sqlite3.targets": {}
+          "buildTransitive/net7.0/SQLitePCLRaw.lib.e_sqlite3.targets": {}
         }
       },
-      "SQLitePCLRaw.provider.e_sqlite3/2.1.10": {
+      "SQLitePCLRaw.provider.e_sqlite3/2.1.2": {
         "type": "package",
         "dependencies": {
-          "SQLitePCLRaw.core": "2.1.10"
+          "SQLitePCLRaw.core": "2.1.2"
         },
         "compile": {
           "lib/net6.0-windows7.0/SQLitePCLRaw.provider.e_sqlite3.dll": {}
@@ -29439,56 +29631,9 @@
         "runtime": {
           "lib/netcoreapp2.1/_._": {}
         }
-      },
-      "System.Speech/8.0.0": {
-        "type": "package",
-        "compile": {
-          "lib/net8.0/System.Speech.dll": {}
-        },
-        "runtime": {
-          "lib/net8.0/System.Speech.dll": {}
-        },
-        "build": {
-          "buildTransitive/net6.0/_._": {}
-        }
       }
     },
     "net8.0-windows10.0.19041/android-x64": {
-      "CommunityToolkit.Maui/9.1.1": {
-        "type": "package",
-        "dependencies": {
-          "CommunityToolkit.Maui.Core": "9.1.1",
-          "Microsoft.Maui.Controls": "8.0.71"
-        },
-        "compile": {
-          "lib/net8.0-windows10.0.19041/CommunityToolkit.Maui.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0-windows10.0.19041/CommunityToolkit.Maui.dll": {
-            "related": ".xml"
-          }
-        }
-      },
-      "CommunityToolkit.Maui.Core/9.1.1": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Maui.Core": "8.0.71",
-          "Microsoft.Maui.Essentials": "8.0.71",
-          "System.Speech": "8.0.0"
-        },
-        "compile": {
-          "lib/net8.0-windows10.0.19041/CommunityToolkit.Maui.Core.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0-windows10.0.19041/CommunityToolkit.Maui.Core.dll": {
-            "related": ".xml"
-          }
-        }
-      },
       "Microsoft.Extensions.Configuration/8.0.0": {
         "type": "package",
         "dependencies": {
@@ -30037,6 +30182,19 @@
           "buildTransitive/Microsoft.WindowsAppSDK.targets": {}
         }
       },
+      "Plugin.LocalNotification/10.1.8": {
+        "type": "package",
+        "compile": {
+          "lib/net7.0/Plugin.LocalNotification.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net7.0/Plugin.LocalNotification.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "sqlite-net-pcl/1.9.172": {
         "type": "package",
         "dependencies": {
@@ -30053,11 +30211,11 @@
           }
         }
       },
-      "SQLitePCLRaw.bundle_green/2.1.10": {
+      "SQLitePCLRaw.bundle_green/2.1.2": {
         "type": "package",
         "dependencies": {
-          "SQLitePCLRaw.lib.e_sqlite3": "2.1.10",
-          "SQLitePCLRaw.provider.e_sqlite3": "2.1.10"
+          "SQLitePCLRaw.lib.e_sqlite3": "2.1.2",
+          "SQLitePCLRaw.provider.e_sqlite3": "2.1.2"
         },
         "compile": {
           "lib/netstandard2.0/SQLitePCLRaw.batteries_v2.dll": {}
@@ -30066,7 +30224,7 @@
           "lib/netstandard2.0/SQLitePCLRaw.batteries_v2.dll": {}
         }
       },
-      "SQLitePCLRaw.core/2.1.10": {
+      "SQLitePCLRaw.core/2.1.2": {
         "type": "package",
         "dependencies": {
           "System.Memory": "4.5.3"
@@ -30078,7 +30236,7 @@
           "lib/netstandard2.0/SQLitePCLRaw.core.dll": {}
         }
       },
-      "SQLitePCLRaw.lib.e_sqlite3/2.1.10": {
+      "SQLitePCLRaw.lib.e_sqlite3/2.1.2": {
         "type": "package",
         "compile": {
           "lib/netstandard2.0/_._": {}
@@ -30090,13 +30248,13 @@
           "runtimes/linux-x64/native/libe_sqlite3.so": {}
         },
         "build": {
-          "buildTransitive/net8.0/SQLitePCLRaw.lib.e_sqlite3.targets": {}
+          "buildTransitive/net7.0/SQLitePCLRaw.lib.e_sqlite3.targets": {}
         }
       },
-      "SQLitePCLRaw.provider.e_sqlite3/2.1.10": {
+      "SQLitePCLRaw.provider.e_sqlite3/2.1.2": {
         "type": "package",
         "dependencies": {
-          "SQLitePCLRaw.core": "2.1.10"
+          "SQLitePCLRaw.core": "2.1.2"
         },
         "compile": {
           "lib/net6.0-windows7.0/SQLitePCLRaw.provider.e_sqlite3.dll": {}
@@ -30113,56 +30271,9 @@
         "runtime": {
           "lib/netcoreapp2.1/_._": {}
         }
-      },
-      "System.Speech/8.0.0": {
-        "type": "package",
-        "compile": {
-          "lib/net8.0/System.Speech.dll": {}
-        },
-        "runtime": {
-          "lib/net8.0/System.Speech.dll": {}
-        },
-        "build": {
-          "buildTransitive/net6.0/_._": {}
-        }
       }
     },
     "net8.0-windows10.0.19041/android-x86": {
-      "CommunityToolkit.Maui/9.1.1": {
-        "type": "package",
-        "dependencies": {
-          "CommunityToolkit.Maui.Core": "9.1.1",
-          "Microsoft.Maui.Controls": "8.0.71"
-        },
-        "compile": {
-          "lib/net8.0-windows10.0.19041/CommunityToolkit.Maui.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0-windows10.0.19041/CommunityToolkit.Maui.dll": {
-            "related": ".xml"
-          }
-        }
-      },
-      "CommunityToolkit.Maui.Core/9.1.1": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Maui.Core": "8.0.71",
-          "Microsoft.Maui.Essentials": "8.0.71",
-          "System.Speech": "8.0.0"
-        },
-        "compile": {
-          "lib/net8.0-windows10.0.19041/CommunityToolkit.Maui.Core.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0-windows10.0.19041/CommunityToolkit.Maui.Core.dll": {
-            "related": ".xml"
-          }
-        }
-      },
       "Microsoft.Extensions.Configuration/8.0.0": {
         "type": "package",
         "dependencies": {
@@ -30711,6 +30822,19 @@
           "buildTransitive/Microsoft.WindowsAppSDK.targets": {}
         }
       },
+      "Plugin.LocalNotification/10.1.8": {
+        "type": "package",
+        "compile": {
+          "lib/net7.0/Plugin.LocalNotification.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net7.0/Plugin.LocalNotification.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "sqlite-net-pcl/1.9.172": {
         "type": "package",
         "dependencies": {
@@ -30727,11 +30851,11 @@
           }
         }
       },
-      "SQLitePCLRaw.bundle_green/2.1.10": {
+      "SQLitePCLRaw.bundle_green/2.1.2": {
         "type": "package",
         "dependencies": {
-          "SQLitePCLRaw.lib.e_sqlite3": "2.1.10",
-          "SQLitePCLRaw.provider.e_sqlite3": "2.1.10"
+          "SQLitePCLRaw.lib.e_sqlite3": "2.1.2",
+          "SQLitePCLRaw.provider.e_sqlite3": "2.1.2"
         },
         "compile": {
           "lib/netstandard2.0/SQLitePCLRaw.batteries_v2.dll": {}
@@ -30740,7 +30864,7 @@
           "lib/netstandard2.0/SQLitePCLRaw.batteries_v2.dll": {}
         }
       },
-      "SQLitePCLRaw.core/2.1.10": {
+      "SQLitePCLRaw.core/2.1.2": {
         "type": "package",
         "dependencies": {
           "System.Memory": "4.5.3"
@@ -30752,7 +30876,7 @@
           "lib/netstandard2.0/SQLitePCLRaw.core.dll": {}
         }
       },
-      "SQLitePCLRaw.lib.e_sqlite3/2.1.10": {
+      "SQLitePCLRaw.lib.e_sqlite3/2.1.2": {
         "type": "package",
         "compile": {
           "lib/netstandard2.0/_._": {}
@@ -30764,13 +30888,13 @@
           "runtimes/linux-x86/native/libe_sqlite3.so": {}
         },
         "build": {
-          "buildTransitive/net8.0/SQLitePCLRaw.lib.e_sqlite3.targets": {}
+          "buildTransitive/net7.0/SQLitePCLRaw.lib.e_sqlite3.targets": {}
         }
       },
-      "SQLitePCLRaw.provider.e_sqlite3/2.1.10": {
+      "SQLitePCLRaw.provider.e_sqlite3/2.1.2": {
         "type": "package",
         "dependencies": {
-          "SQLitePCLRaw.core": "2.1.10"
+          "SQLitePCLRaw.core": "2.1.2"
         },
         "compile": {
           "lib/net6.0-windows7.0/SQLitePCLRaw.provider.e_sqlite3.dll": {}
@@ -30786,57 +30910,10 @@
         },
         "runtime": {
           "lib/netcoreapp2.1/_._": {}
-        }
-      },
-      "System.Speech/8.0.0": {
-        "type": "package",
-        "compile": {
-          "lib/net8.0/System.Speech.dll": {}
-        },
-        "runtime": {
-          "lib/net8.0/System.Speech.dll": {}
-        },
-        "build": {
-          "buildTransitive/net6.0/_._": {}
         }
       }
     },
     "net8.0-windows10.0.19041/iossimulator-x64": {
-      "CommunityToolkit.Maui/9.1.1": {
-        "type": "package",
-        "dependencies": {
-          "CommunityToolkit.Maui.Core": "9.1.1",
-          "Microsoft.Maui.Controls": "8.0.71"
-        },
-        "compile": {
-          "lib/net8.0-windows10.0.19041/CommunityToolkit.Maui.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0-windows10.0.19041/CommunityToolkit.Maui.dll": {
-            "related": ".xml"
-          }
-        }
-      },
-      "CommunityToolkit.Maui.Core/9.1.1": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Maui.Core": "8.0.71",
-          "Microsoft.Maui.Essentials": "8.0.71",
-          "System.Speech": "8.0.0"
-        },
-        "compile": {
-          "lib/net8.0-windows10.0.19041/CommunityToolkit.Maui.Core.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0-windows10.0.19041/CommunityToolkit.Maui.Core.dll": {
-            "related": ".xml"
-          }
-        }
-      },
       "Microsoft.Extensions.Configuration/8.0.0": {
         "type": "package",
         "dependencies": {
@@ -31385,6 +31462,19 @@
           "buildTransitive/Microsoft.WindowsAppSDK.targets": {}
         }
       },
+      "Plugin.LocalNotification/10.1.8": {
+        "type": "package",
+        "compile": {
+          "lib/net7.0/Plugin.LocalNotification.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net7.0/Plugin.LocalNotification.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "sqlite-net-pcl/1.9.172": {
         "type": "package",
         "dependencies": {
@@ -31401,11 +31491,11 @@
           }
         }
       },
-      "SQLitePCLRaw.bundle_green/2.1.10": {
+      "SQLitePCLRaw.bundle_green/2.1.2": {
         "type": "package",
         "dependencies": {
-          "SQLitePCLRaw.lib.e_sqlite3": "2.1.10",
-          "SQLitePCLRaw.provider.e_sqlite3": "2.1.10"
+          "SQLitePCLRaw.lib.e_sqlite3": "2.1.2",
+          "SQLitePCLRaw.provider.e_sqlite3": "2.1.2"
         },
         "compile": {
           "lib/netstandard2.0/SQLitePCLRaw.batteries_v2.dll": {}
@@ -31414,7 +31504,7 @@
           "lib/netstandard2.0/SQLitePCLRaw.batteries_v2.dll": {}
         }
       },
-      "SQLitePCLRaw.core/2.1.10": {
+      "SQLitePCLRaw.core/2.1.2": {
         "type": "package",
         "dependencies": {
           "System.Memory": "4.5.3"
@@ -31426,7 +31516,7 @@
           "lib/netstandard2.0/SQLitePCLRaw.core.dll": {}
         }
       },
-      "SQLitePCLRaw.lib.e_sqlite3/2.1.10": {
+      "SQLitePCLRaw.lib.e_sqlite3/2.1.2": {
         "type": "package",
         "compile": {
           "lib/netstandard2.0/_._": {}
@@ -31435,13 +31525,13 @@
           "lib/netstandard2.0/_._": {}
         },
         "build": {
-          "buildTransitive/net8.0/SQLitePCLRaw.lib.e_sqlite3.targets": {}
+          "buildTransitive/net7.0/SQLitePCLRaw.lib.e_sqlite3.targets": {}
         }
       },
-      "SQLitePCLRaw.provider.e_sqlite3/2.1.10": {
+      "SQLitePCLRaw.provider.e_sqlite3/2.1.2": {
         "type": "package",
         "dependencies": {
-          "SQLitePCLRaw.core": "2.1.10"
+          "SQLitePCLRaw.core": "2.1.2"
         },
         "compile": {
           "lib/net6.0-windows7.0/SQLitePCLRaw.provider.e_sqlite3.dll": {}
@@ -31458,56 +31548,9 @@
         "runtime": {
           "lib/netcoreapp2.1/_._": {}
         }
-      },
-      "System.Speech/8.0.0": {
-        "type": "package",
-        "compile": {
-          "lib/net8.0/System.Speech.dll": {}
-        },
-        "runtime": {
-          "lib/net8.0/System.Speech.dll": {}
-        },
-        "build": {
-          "buildTransitive/net6.0/_._": {}
-        }
       }
     },
     "net8.0-windows10.0.19041/maccatalyst-x64": {
-      "CommunityToolkit.Maui/9.1.1": {
-        "type": "package",
-        "dependencies": {
-          "CommunityToolkit.Maui.Core": "9.1.1",
-          "Microsoft.Maui.Controls": "8.0.71"
-        },
-        "compile": {
-          "lib/net8.0-windows10.0.19041/CommunityToolkit.Maui.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0-windows10.0.19041/CommunityToolkit.Maui.dll": {
-            "related": ".xml"
-          }
-        }
-      },
-      "CommunityToolkit.Maui.Core/9.1.1": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Maui.Core": "8.0.71",
-          "Microsoft.Maui.Essentials": "8.0.71",
-          "System.Speech": "8.0.0"
-        },
-        "compile": {
-          "lib/net8.0-windows10.0.19041/CommunityToolkit.Maui.Core.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0-windows10.0.19041/CommunityToolkit.Maui.Core.dll": {
-            "related": ".xml"
-          }
-        }
-      },
       "Microsoft.Extensions.Configuration/8.0.0": {
         "type": "package",
         "dependencies": {
@@ -32056,6 +32099,19 @@
           "buildTransitive/Microsoft.WindowsAppSDK.targets": {}
         }
       },
+      "Plugin.LocalNotification/10.1.8": {
+        "type": "package",
+        "compile": {
+          "lib/net7.0/Plugin.LocalNotification.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net7.0/Plugin.LocalNotification.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "sqlite-net-pcl/1.9.172": {
         "type": "package",
         "dependencies": {
@@ -32072,11 +32128,11 @@
           }
         }
       },
-      "SQLitePCLRaw.bundle_green/2.1.10": {
+      "SQLitePCLRaw.bundle_green/2.1.2": {
         "type": "package",
         "dependencies": {
-          "SQLitePCLRaw.lib.e_sqlite3": "2.1.10",
-          "SQLitePCLRaw.provider.e_sqlite3": "2.1.10"
+          "SQLitePCLRaw.lib.e_sqlite3": "2.1.2",
+          "SQLitePCLRaw.provider.e_sqlite3": "2.1.2"
         },
         "compile": {
           "lib/netstandard2.0/SQLitePCLRaw.batteries_v2.dll": {}
@@ -32085,7 +32141,7 @@
           "lib/netstandard2.0/SQLitePCLRaw.batteries_v2.dll": {}
         }
       },
-      "SQLitePCLRaw.core/2.1.10": {
+      "SQLitePCLRaw.core/2.1.2": {
         "type": "package",
         "dependencies": {
           "System.Memory": "4.5.3"
@@ -32097,7 +32153,7 @@
           "lib/netstandard2.0/SQLitePCLRaw.core.dll": {}
         }
       },
-      "SQLitePCLRaw.lib.e_sqlite3/2.1.10": {
+      "SQLitePCLRaw.lib.e_sqlite3/2.1.2": {
         "type": "package",
         "compile": {
           "lib/netstandard2.0/_._": {}
@@ -32109,13 +32165,13 @@
           "runtimes/maccatalyst-x64/native/libe_sqlite3.dylib": {}
         },
         "build": {
-          "buildTransitive/net8.0/SQLitePCLRaw.lib.e_sqlite3.targets": {}
+          "buildTransitive/net7.0/SQLitePCLRaw.lib.e_sqlite3.targets": {}
         }
       },
-      "SQLitePCLRaw.provider.e_sqlite3/2.1.10": {
+      "SQLitePCLRaw.provider.e_sqlite3/2.1.2": {
         "type": "package",
         "dependencies": {
-          "SQLitePCLRaw.core": "2.1.10"
+          "SQLitePCLRaw.core": "2.1.2"
         },
         "compile": {
           "lib/net6.0-windows7.0/SQLitePCLRaw.provider.e_sqlite3.dll": {}
@@ -32132,56 +32188,9 @@
         "runtime": {
           "lib/netcoreapp2.1/_._": {}
         }
-      },
-      "System.Speech/8.0.0": {
-        "type": "package",
-        "compile": {
-          "lib/net8.0/System.Speech.dll": {}
-        },
-        "runtime": {
-          "lib/net8.0/System.Speech.dll": {}
-        },
-        "build": {
-          "buildTransitive/net6.0/_._": {}
-        }
       }
     },
     "net8.0-windows10.0.19041/win10-x64": {
-      "CommunityToolkit.Maui/9.1.1": {
-        "type": "package",
-        "dependencies": {
-          "CommunityToolkit.Maui.Core": "9.1.1",
-          "Microsoft.Maui.Controls": "8.0.71"
-        },
-        "compile": {
-          "lib/net8.0-windows10.0.19041/CommunityToolkit.Maui.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0-windows10.0.19041/CommunityToolkit.Maui.dll": {
-            "related": ".xml"
-          }
-        }
-      },
-      "CommunityToolkit.Maui.Core/9.1.1": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Maui.Core": "8.0.71",
-          "Microsoft.Maui.Essentials": "8.0.71",
-          "System.Speech": "8.0.0"
-        },
-        "compile": {
-          "lib/net8.0-windows10.0.19041/CommunityToolkit.Maui.Core.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0-windows10.0.19041/CommunityToolkit.Maui.Core.dll": {
-            "related": ".xml"
-          }
-        }
-      },
       "Microsoft.Extensions.Configuration/8.0.0": {
         "type": "package",
         "dependencies": {
@@ -32736,6 +32745,19 @@
           "buildTransitive/Microsoft.WindowsAppSDK.targets": {}
         }
       },
+      "Plugin.LocalNotification/10.1.8": {
+        "type": "package",
+        "compile": {
+          "lib/net7.0/Plugin.LocalNotification.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net7.0/Plugin.LocalNotification.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "sqlite-net-pcl/1.9.172": {
         "type": "package",
         "dependencies": {
@@ -32752,11 +32774,11 @@
           }
         }
       },
-      "SQLitePCLRaw.bundle_green/2.1.10": {
+      "SQLitePCLRaw.bundle_green/2.1.2": {
         "type": "package",
         "dependencies": {
-          "SQLitePCLRaw.lib.e_sqlite3": "2.1.10",
-          "SQLitePCLRaw.provider.e_sqlite3": "2.1.10"
+          "SQLitePCLRaw.lib.e_sqlite3": "2.1.2",
+          "SQLitePCLRaw.provider.e_sqlite3": "2.1.2"
         },
         "compile": {
           "lib/netstandard2.0/SQLitePCLRaw.batteries_v2.dll": {}
@@ -32765,7 +32787,7 @@
           "lib/netstandard2.0/SQLitePCLRaw.batteries_v2.dll": {}
         }
       },
-      "SQLitePCLRaw.core/2.1.10": {
+      "SQLitePCLRaw.core/2.1.2": {
         "type": "package",
         "dependencies": {
           "System.Memory": "4.5.3"
@@ -32777,7 +32799,7 @@
           "lib/netstandard2.0/SQLitePCLRaw.core.dll": {}
         }
       },
-      "SQLitePCLRaw.lib.e_sqlite3/2.1.10": {
+      "SQLitePCLRaw.lib.e_sqlite3/2.1.2": {
         "type": "package",
         "compile": {
           "lib/netstandard2.0/_._": {}
@@ -32789,13 +32811,13 @@
           "runtimes/win-x64/native/e_sqlite3.dll": {}
         },
         "build": {
-          "buildTransitive/net8.0/SQLitePCLRaw.lib.e_sqlite3.targets": {}
+          "buildTransitive/net7.0/SQLitePCLRaw.lib.e_sqlite3.targets": {}
         }
       },
-      "SQLitePCLRaw.provider.e_sqlite3/2.1.10": {
+      "SQLitePCLRaw.provider.e_sqlite3/2.1.2": {
         "type": "package",
         "dependencies": {
-          "SQLitePCLRaw.core": "2.1.10"
+          "SQLitePCLRaw.core": "2.1.2"
         },
         "compile": {
           "lib/net6.0-windows7.0/SQLitePCLRaw.provider.e_sqlite3.dll": {}
@@ -32812,75 +32834,10 @@
         "runtime": {
           "lib/netcoreapp2.1/_._": {}
         }
-      },
-      "System.Speech/8.0.0": {
-        "type": "package",
-        "compile": {
-          "lib/net8.0/System.Speech.dll": {}
-        },
-        "runtime": {
-          "runtimes/win/lib/net8.0/System.Speech.dll": {}
-        },
-        "build": {
-          "buildTransitive/net6.0/_._": {}
-        }
       }
     }
   },
   "libraries": {
-    "CommunityToolkit.Maui/9.1.1": {
-      "sha512": "vDFIMhs/NRKEaHrrxq3AR3qEnfc0L6nno3/ZEFRUctDdwcYKNfmx8aof1lj8++dX+56c282SLHyuCnN6eH2Mpg==",
-      "type": "package",
-      "path": "communitytoolkit.maui/9.1.1",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "ReadMe.txt",
-        "analyzers/dotnet/cs/CommunityToolkit.Maui.Analyzers.CodeFixes.dll",
-        "analyzers/dotnet/cs/CommunityToolkit.Maui.Analyzers.dll",
-        "analyzers/dotnet/cs/CommunityToolkit.Maui.SourceGenerators.dll",
-        "communitytoolkit.maui.9.1.1.nupkg.sha512",
-        "communitytoolkit.maui.nuspec",
-        "icon.png",
-        "lib/net8.0-android34.0/CommunityToolkit.Maui.dll",
-        "lib/net8.0-android34.0/CommunityToolkit.Maui.xml",
-        "lib/net8.0-ios18.0/CommunityToolkit.Maui.dll",
-        "lib/net8.0-ios18.0/CommunityToolkit.Maui.xml",
-        "lib/net8.0-maccatalyst18.0/CommunityToolkit.Maui.dll",
-        "lib/net8.0-maccatalyst18.0/CommunityToolkit.Maui.xml",
-        "lib/net8.0-tizen8.0/CommunityToolkit.Maui.dll",
-        "lib/net8.0-tizen8.0/CommunityToolkit.Maui.xml",
-        "lib/net8.0-windows10.0.19041/CommunityToolkit.Maui.dll",
-        "lib/net8.0-windows10.0.19041/CommunityToolkit.Maui.xml",
-        "lib/net8.0/CommunityToolkit.Maui.dll",
-        "lib/net8.0/CommunityToolkit.Maui.xml"
-      ]
-    },
-    "CommunityToolkit.Maui.Core/9.1.1": {
-      "sha512": "2O5bgBnwYLKXUMSA4a0hd3ildtr9t5Rw109y7Lz0udnX4C9JrW8Xi1mLDuUcNmK+U37gulhJGLb2tCMc+cbo3w==",
-      "type": "package",
-      "path": "communitytoolkit.maui.core/9.1.1",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "ReadMe.txt",
-        "communitytoolkit.maui.core.9.1.1.nupkg.sha512",
-        "communitytoolkit.maui.core.nuspec",
-        "icon.png",
-        "lib/net8.0-android34.0/CommunityToolkit.Maui.Core.dll",
-        "lib/net8.0-android34.0/CommunityToolkit.Maui.Core.xml",
-        "lib/net8.0-ios18.0/CommunityToolkit.Maui.Core.dll",
-        "lib/net8.0-ios18.0/CommunityToolkit.Maui.Core.xml",
-        "lib/net8.0-maccatalyst18.0/CommunityToolkit.Maui.Core.dll",
-        "lib/net8.0-maccatalyst18.0/CommunityToolkit.Maui.Core.xml",
-        "lib/net8.0-tizen8.0/CommunityToolkit.Maui.Core.dll",
-        "lib/net8.0-tizen8.0/CommunityToolkit.Maui.Core.xml",
-        "lib/net8.0-windows10.0.19041/CommunityToolkit.Maui.Core.dll",
-        "lib/net8.0-windows10.0.19041/CommunityToolkit.Maui.Core.xml",
-        "lib/net8.0/CommunityToolkit.Maui.Core.dll",
-        "lib/net8.0/CommunityToolkit.Maui.Core.xml"
-      ]
-    },
     "GoogleGson/2.10.1.4": {
       "sha512": "L1vdbwbQzvKUoUGiMpMoJG5fqfLXaP6zMy1a26AYJQJSQKUO7Ojr2U5BAmgQoRxQ8J2GDjBfnfgnrsnorb4y5Q==",
       "type": "package",
@@ -35137,6 +35094,38 @@
         "tools/x86/GenXbf.dll"
       ]
     },
+    "Plugin.LocalNotification/10.1.8": {
+      "sha512": "LiZpaY0iA4aFhRY/Brkm//D8BQKrd/GtGfhx2lg7jQKlXb0lzlvWx/sax28D4ufJgkOGpiQqGKjZ8CMo8yuTiA==",
+      "type": "package",
+      "path": "plugin.localnotification/10.1.8",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "icon.png",
+        "lib/monoandroid12.0/Plugin.LocalNotification.dll",
+        "lib/monoandroid12.0/Plugin.LocalNotification.xml",
+        "lib/net6.0-android31.0/Plugin.LocalNotification.dll",
+        "lib/net6.0-android31.0/Plugin.LocalNotification.xml",
+        "lib/net6.0-ios16.1/Plugin.LocalNotification.dll",
+        "lib/net6.0-ios16.1/Plugin.LocalNotification.xml",
+        "lib/net6.0/Plugin.LocalNotification.dll",
+        "lib/net6.0/Plugin.LocalNotification.xml",
+        "lib/net7.0-android33.0/Plugin.LocalNotification.aar",
+        "lib/net7.0-android33.0/Plugin.LocalNotification.dll",
+        "lib/net7.0-android33.0/Plugin.LocalNotification.xml",
+        "lib/net7.0-ios16.1/Plugin.LocalNotification.dll",
+        "lib/net7.0-ios16.1/Plugin.LocalNotification.xml",
+        "lib/net7.0/Plugin.LocalNotification.dll",
+        "lib/net7.0/Plugin.LocalNotification.xml",
+        "lib/netstandard2.0/Plugin.LocalNotification.dll",
+        "lib/netstandard2.0/Plugin.LocalNotification.xml",
+        "lib/xamarinios10/Plugin.LocalNotification.dll",
+        "lib/xamarinios10/Plugin.LocalNotification.xml",
+        "plugin.localnotification.10.1.8.nupkg.sha512",
+        "plugin.localnotification.nuspec"
+      ]
+    },
     "sqlite-net-pcl/1.9.172": {
       "sha512": "go533+huyvg5bOMmCpX+DyvLrcVRiEBIpqEiDHgXRijWIBBNkWnyMr/w+5ZzrUArKY+4ApucsbBnFtP3QITrJg==",
       "type": "package",
@@ -35152,10 +35141,10 @@
         "sqlite-net-pcl.nuspec"
       ]
     },
-    "SQLitePCLRaw.bundle_green/2.1.10": {
-      "sha512": "u5p4k3su1ZvH1S3Wf3s17zxiPRSsJiG98sIwZv9dD3rzux/i1fccGLgXfltxA2+SUs802DZsJLb5Qpct5UE8nw==",
+    "SQLitePCLRaw.bundle_green/2.1.2": {
+      "sha512": "e2FRX87YHoSer+tLFX9P/povHLK0uH7UcdimHRPnfTSam+NZChVVXjBxe1MYnyBGlwX5dSs5sTlDg/yZBM7iVw==",
       "type": "package",
-      "path": "sqlitepclraw.bundle_green/2.1.10",
+      "path": "sqlitepclraw.bundle_green/2.1.2",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -35168,49 +35157,46 @@
         "lib/net6.0-tvos10.0/SQLitePCLRaw.batteries_v2.dll",
         "lib/netstandard2.0/SQLitePCLRaw.batteries_v2.dll",
         "lib/xamarinios10/SQLitePCLRaw.batteries_v2.dll",
-        "sqlitepclraw.bundle_green.2.1.10.nupkg.sha512",
+        "sqlitepclraw.bundle_green.2.1.2.nupkg.sha512",
         "sqlitepclraw.bundle_green.nuspec"
       ]
     },
-    "SQLitePCLRaw.core/2.1.10": {
-      "sha512": "Ii8JCbC7oiVclaE/mbDEK000EFIJ+ShRPwAvvV89GOZhQ+ZLtlnSWl6ksCNMKu/VGXA4Nfi2B7LhN/QFN9oBcw==",
+    "SQLitePCLRaw.core/2.1.2": {
+      "sha512": "A8EBepVqY2lnAp3a8jnhbgzF2tlj2S3HcJQGANTYg/TbYbKa8Z5cM1h74An/vy0svhfzT7tVY0sFmUglLgv+2g==",
       "type": "package",
-      "path": "sqlitepclraw.core/2.1.10",
+      "path": "sqlitepclraw.core/2.1.2",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "lib/netstandard2.0/SQLitePCLRaw.core.dll",
-        "sqlitepclraw.core.2.1.10.nupkg.sha512",
+        "sqlitepclraw.core.2.1.2.nupkg.sha512",
         "sqlitepclraw.core.nuspec"
       ]
     },
-    "SQLitePCLRaw.lib.e_sqlite3/2.1.10": {
-      "sha512": "mAr69tDbnf3QJpRy2nJz8Qdpebdil00fvycyByR58Cn9eARvR+UiG2Vzsp+4q1tV3ikwiYIjlXCQFc12GfebbA==",
+    "SQLitePCLRaw.lib.e_sqlite3/2.1.2": {
+      "sha512": "zibGtku8M4Eea1R3ZCAxc86QbNvyEN17mAcQkvWKBuHvRpMiK2g5anG4R5Be7cWKSd1i6baYz8y4dMMAKcXKPg==",
       "type": "package",
-      "path": "sqlitepclraw.lib.e_sqlite3/2.1.10",
+      "path": "sqlitepclraw.lib.e_sqlite3/2.1.2",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "buildTransitive/net461/SQLitePCLRaw.lib.e_sqlite3.targets",
         "buildTransitive/net6.0/SQLitePCLRaw.lib.e_sqlite3.targets",
         "buildTransitive/net7.0/SQLitePCLRaw.lib.e_sqlite3.targets",
-        "buildTransitive/net8.0/SQLitePCLRaw.lib.e_sqlite3.targets",
-        "buildTransitive/net9.0/SQLitePCLRaw.lib.e_sqlite3.targets",
         "lib/net461/_._",
         "lib/netstandard2.0/_._",
+        "runtimes/alpine-arm/native/libe_sqlite3.so",
+        "runtimes/alpine-arm64/native/libe_sqlite3.so",
+        "runtimes/alpine-x64/native/libe_sqlite3.so",
         "runtimes/browser-wasm/nativeassets/net6.0/e_sqlite3.a",
         "runtimes/browser-wasm/nativeassets/net7.0/e_sqlite3.a",
-        "runtimes/browser-wasm/nativeassets/net8.0/e_sqlite3.a",
-        "runtimes/browser-wasm/nativeassets/net9.0/e_sqlite3.a",
         "runtimes/linux-arm/native/libe_sqlite3.so",
         "runtimes/linux-arm64/native/libe_sqlite3.so",
         "runtimes/linux-armel/native/libe_sqlite3.so",
         "runtimes/linux-mips64/native/libe_sqlite3.so",
         "runtimes/linux-musl-arm/native/libe_sqlite3.so",
         "runtimes/linux-musl-arm64/native/libe_sqlite3.so",
-        "runtimes/linux-musl-s390x/native/libe_sqlite3.so",
         "runtimes/linux-musl-x64/native/libe_sqlite3.so",
-        "runtimes/linux-ppc64le/native/libe_sqlite3.so",
         "runtimes/linux-s390x/native/libe_sqlite3.so",
         "runtimes/linux-x64/native/libe_sqlite3.so",
         "runtimes/linux-x86/native/libe_sqlite3.so",
@@ -35226,14 +35212,14 @@
         "runtimes/win10-arm64/nativeassets/uap10.0/e_sqlite3.dll",
         "runtimes/win10-x64/nativeassets/uap10.0/e_sqlite3.dll",
         "runtimes/win10-x86/nativeassets/uap10.0/e_sqlite3.dll",
-        "sqlitepclraw.lib.e_sqlite3.2.1.10.nupkg.sha512",
+        "sqlitepclraw.lib.e_sqlite3.2.1.2.nupkg.sha512",
         "sqlitepclraw.lib.e_sqlite3.nuspec"
       ]
     },
-    "SQLitePCLRaw.lib.e_sqlite3.android/2.1.10": {
-      "sha512": "oUVzf9wwyi7ogDRNi2IkoDez8GJ48a0IbnTgnZL90a5DDK+pR6L/AIpAJRaVYJOxR+Wq1YijmNZghGZyq6Z3+g==",
+    "SQLitePCLRaw.lib.e_sqlite3.android/2.1.2": {
+      "sha512": "VyHa+17fyGHMgfTRorFlC4UrGaxoNZeJir/G5S8J0iqh34zPNPDfWZhrWpaPETGDvvP1eGIZ88397/Z6vo0qlg==",
       "type": "package",
-      "path": "sqlitepclraw.lib.e_sqlite3.android/2.1.10",
+      "path": "sqlitepclraw.lib.e_sqlite3.android/2.1.2",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -35241,35 +35227,35 @@
         "lib/net6.0-android31.0/SQLitePCLRaw.lib.e_sqlite3.android.aar",
         "lib/net6.0-android31.0/SQLitePCLRaw.lib.e_sqlite3.android.dll",
         "lib/net6.0-android31.0/SQLitePCLRaw.lib.e_sqlite3.android.xml",
-        "sqlitepclraw.lib.e_sqlite3.android.2.1.10.nupkg.sha512",
+        "sqlitepclraw.lib.e_sqlite3.android.2.1.2.nupkg.sha512",
         "sqlitepclraw.lib.e_sqlite3.android.nuspec"
       ]
     },
-    "SQLitePCLRaw.provider.e_sqlite3/2.1.10": {
-      "sha512": "uZVTi02C1SxqzgT0HqTWatIbWGb40iIkfc3FpFCpE/r7g6K0PqzDUeefL6P6HPhDtc6BacN3yQysfzP7ks+wSQ==",
+    "SQLitePCLRaw.provider.e_sqlite3/2.1.2": {
+      "sha512": "lxCZarZdvAsMl2zw9bXHrXK6RxVhB4b23iTFhCOdHFhxfbsxLxWf+ocvswJwR/9Wh/E//ddMi+wJGqUKV7VwoA==",
       "type": "package",
-      "path": "sqlitepclraw.provider.e_sqlite3/2.1.10",
+      "path": "sqlitepclraw.provider.e_sqlite3/2.1.2",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "lib/net6.0-windows7.0/SQLitePCLRaw.provider.e_sqlite3.dll",
         "lib/net6.0/SQLitePCLRaw.provider.e_sqlite3.dll",
         "lib/netstandard2.0/SQLitePCLRaw.provider.e_sqlite3.dll",
-        "sqlitepclraw.provider.e_sqlite3.2.1.10.nupkg.sha512",
+        "sqlitepclraw.provider.e_sqlite3.2.1.2.nupkg.sha512",
         "sqlitepclraw.provider.e_sqlite3.nuspec"
       ]
     },
-    "SQLitePCLRaw.provider.sqlite3/2.1.10": {
-      "sha512": "fpEk5fgB5v2hYW406yrQVA7+IcuJ6NG4uwIzoU9TsZlmX64TIfpuRfp/mfMyF6uVb/sPGg2EVaehO6ORLx8+1w==",
+    "SQLitePCLRaw.provider.sqlite3/2.1.2": {
+      "sha512": "RIo4C3+tuhp886uaff1Z8AIBVGUgMampd9YNSlAFS/SgP7kZEoH2SnLHN117RBFW0YLrJyVluZtve8mv1fQrKg==",
       "type": "package",
-      "path": "sqlitepclraw.provider.sqlite3/2.1.10",
+      "path": "sqlitepclraw.provider.sqlite3/2.1.2",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "lib/net6.0-windows7.0/SQLitePCLRaw.provider.sqlite3.dll",
         "lib/net6.0/SQLitePCLRaw.provider.sqlite3.dll",
         "lib/netstandard2.0/SQLitePCLRaw.provider.sqlite3.dll",
-        "sqlitepclraw.provider.sqlite3.2.1.10.nupkg.sha512",
+        "sqlitepclraw.provider.sqlite3.2.1.2.nupkg.sha512",
         "sqlitepclraw.provider.sqlite3.nuspec"
       ]
     },
@@ -35358,32 +35344,6 @@
         "ref/net6.0/System.Runtime.InteropServices.xml",
         "system.runtime.interopservices.nfloat.internal.6.0.1.nupkg.sha512",
         "system.runtime.interopservices.nfloat.internal.nuspec",
-        "useSharedDesignerContext.txt"
-      ]
-    },
-    "System.Speech/8.0.0": {
-      "sha512": "CNuiA6vb95Oe5PRjClZEBiaju31vwB8OIeCgeSBXyZL6+MS4RVVB2X/C11z0xCkooHE3Vy91nM2z76emIzR+sg==",
-      "type": "package",
-      "path": "system.speech/8.0.0",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "Icon.png",
-        "LICENSE.TXT",
-        "PACKAGE.md",
-        "THIRD-PARTY-NOTICES.TXT",
-        "buildTransitive/net6.0/_._",
-        "buildTransitive/netcoreapp2.0/System.Speech.targets",
-        "lib/net462/_._",
-        "lib/net6.0/System.Speech.dll",
-        "lib/net7.0/System.Speech.dll",
-        "lib/net8.0/System.Speech.dll",
-        "lib/netstandard2.0/System.Speech.dll",
-        "runtimes/win/lib/net6.0/System.Speech.dll",
-        "runtimes/win/lib/net7.0/System.Speech.dll",
-        "runtimes/win/lib/net8.0/System.Speech.dll",
-        "system.speech.8.0.0.nupkg.sha512",
-        "system.speech.nuspec",
         "useSharedDesignerContext.txt"
       ]
     },
@@ -37168,6 +37128,28 @@
         "xamarin.androidx.window.extensions.core.core.nuspec"
       ]
     },
+    "Xamarin.Build.Download/0.11.4": {
+      "sha512": "u2ROt0h6P7mfs0jbmgvmTrqU/YEpEZcf16xcHa78GSEp7fOZunNtJLCZxooeI1V5p+lrr9kYdg3Pa8FoTbgcXQ==",
+      "type": "package",
+      "path": "xamarin.build.download/0.11.4",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "THIRD-PARTY-NOTICE.txt",
+        "build/Microsoft.Win32.Registry.dll",
+        "build/Newtonsoft.Json.dll",
+        "build/Xamarin.Build.Download.dll",
+        "build/Xamarin.Build.Download.props",
+        "build/Xamarin.Build.Download.targets",
+        "buildTransitive/Microsoft.Win32.Registry.dll",
+        "buildTransitive/Newtonsoft.Json.dll",
+        "buildTransitive/Xamarin.Build.Download.dll",
+        "buildTransitive/Xamarin.Build.Download.props",
+        "buildTransitive/Xamarin.Build.Download.targets",
+        "xamarin.build.download.0.11.4.nupkg.sha512",
+        "xamarin.build.download.nuspec"
+      ]
+    },
     "Xamarin.Google.Android.Material/1.9.0.2": {
       "sha512": "sLmA5Kff8m4CjjUqYc8SZKjXpOF9xIAFJc2eNNfd8T0NY9bb6tbl6YL2rjUxCNI1qfs4qHaDHm/cDrEwI5DGfQ==",
       "type": "package",
@@ -37268,6 +37250,101 @@
         "lib/net6.0-android31.0/Xamarin.Google.Guava.ListenableFuture.xml",
         "xamarin.google.guava.listenablefuture.1.0.0.14.nupkg.sha512",
         "xamarin.google.guava.listenablefuture.nuspec"
+      ]
+    },
+    "Xamarin.GooglePlayServices.Base/118.1.0.1": {
+      "sha512": "c48g/7O/xe5WsE1kiWZK5v4hxBtPxBdhBQsy2hVOYMsIkama5Qa5UmM1GJs4ckAfk26o9z0Vg7kPT1a4jbASUg==",
+      "type": "package",
+      "path": "xamarin.googleplayservices.base/118.1.0.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "build/MonoAndroid12.0/Xamarin.GooglePlayServices.Base.targets",
+        "build/net6.0-android31.0/Xamarin.GooglePlayServices.Base.targets",
+        "buildTransitive/MonoAndroid12.0/Xamarin.GooglePlayServices.Base.targets",
+        "buildTransitive/net6.0-android31.0/Xamarin.GooglePlayServices.Base.targets",
+        "lib/monoandroid12.0/Xamarin.GooglePlayServices.Base.dll",
+        "lib/monoandroid12.0/Xamarin.GooglePlayServices.Base.pdb",
+        "lib/monoandroid12.0/Xamarin.GooglePlayServices.Base.xml",
+        "lib/net6.0-android31.0/Xamarin.GooglePlayServices.Base.dll",
+        "lib/net6.0-android31.0/Xamarin.GooglePlayServices.Base.pdb",
+        "lib/net6.0-android31.0/Xamarin.GooglePlayServices.Base.xml",
+        "lib/net6.0-android31.0/play-services-base.aar",
+        "proguard/proguard.txt",
+        "xamarin.googleplayservices.base.118.1.0.1.nupkg.sha512",
+        "xamarin.googleplayservices.base.nuspec"
+      ]
+    },
+    "Xamarin.GooglePlayServices.Basement/118.1.0.2": {
+      "sha512": "bSjK1mpfnmsomEZ16iyooeifaGZYOuJE8/fFl1+zCx3/ZBBoYywtadAzedFtRPdTsLHgWzO+a2jmn1RXOtkBLQ==",
+      "type": "package",
+      "path": "xamarin.googleplayservices.basement/118.1.0.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "build/MonoAndroid12.0/Xamarin.GooglePlayServices.Basement.targets",
+        "build/MonoAndroid12.0/Xamarin.GooglePlayServices.Tasks.dll",
+        "build/net6.0-android31.0/Xamarin.GooglePlayServices.Basement.targets",
+        "build/net6.0-android31.0/Xamarin.GooglePlayServices.Tasks.dll",
+        "buildTransitive/MonoAndroid12.0/Xamarin.GooglePlayServices.Basement.targets",
+        "buildTransitive/MonoAndroid12.0/Xamarin.GooglePlayServices.Tasks.dll",
+        "buildTransitive/net6.0-android31.0/Xamarin.GooglePlayServices.Basement.targets",
+        "buildTransitive/net6.0-android31.0/Xamarin.GooglePlayServices.Tasks.dll",
+        "lib/monoandroid12.0/Xamarin.GooglePlayServices.Basement.dll",
+        "lib/monoandroid12.0/Xamarin.GooglePlayServices.Basement.pdb",
+        "lib/monoandroid12.0/Xamarin.GooglePlayServices.Basement.xml",
+        "lib/net6.0-android31.0/Xamarin.GooglePlayServices.Basement.dll",
+        "lib/net6.0-android31.0/Xamarin.GooglePlayServices.Basement.pdb",
+        "lib/net6.0-android31.0/Xamarin.GooglePlayServices.Basement.xml",
+        "lib/net6.0-android31.0/play-services-basement.aar",
+        "proguard/proguard.txt",
+        "xamarin.googleplayservices.basement.118.1.0.2.nupkg.sha512",
+        "xamarin.googleplayservices.basement.nuspec"
+      ]
+    },
+    "Xamarin.GooglePlayServices.Location/120.0.0.1": {
+      "sha512": "uiw9ZVQKZVLcrrLFjWcdNegWCgg96gAKQNkEz/KhaZWBXv/HC2HxE5p0j1dFliZ9jfVk3QNoWvwg20FNc9drkg==",
+      "type": "package",
+      "path": "xamarin.googleplayservices.location/120.0.0.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "build/MonoAndroid12.0/Xamarin.GooglePlayServices.Location.targets",
+        "build/net6.0-android31.0/Xamarin.GooglePlayServices.Location.targets",
+        "buildTransitive/MonoAndroid12.0/Xamarin.GooglePlayServices.Location.targets",
+        "buildTransitive/net6.0-android31.0/Xamarin.GooglePlayServices.Location.targets",
+        "lib/monoandroid12.0/Xamarin.GooglePlayServices.Location.dll",
+        "lib/monoandroid12.0/Xamarin.GooglePlayServices.Location.pdb",
+        "lib/monoandroid12.0/Xamarin.GooglePlayServices.Location.xml",
+        "lib/net6.0-android31.0/Xamarin.GooglePlayServices.Location.dll",
+        "lib/net6.0-android31.0/Xamarin.GooglePlayServices.Location.pdb",
+        "lib/net6.0-android31.0/Xamarin.GooglePlayServices.Location.xml",
+        "lib/net6.0-android31.0/play-services-location.aar",
+        "xamarin.googleplayservices.location.120.0.0.1.nupkg.sha512",
+        "xamarin.googleplayservices.location.nuspec"
+      ]
+    },
+    "Xamarin.GooglePlayServices.Tasks/118.0.2.1": {
+      "sha512": "glgAu/Oq/ByYuMzPEHtAYbFCDxXGIER7zmwaqDEsZXPLQ0QBL5PKymyuRDqq46vX9AffM8D4hUCdR/JqoOx9/w==",
+      "type": "package",
+      "path": "xamarin.googleplayservices.tasks/118.0.2.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "build/MonoAndroid12.0/Xamarin.GooglePlayServices.Tasks.targets",
+        "build/net6.0-android31.0/Xamarin.GooglePlayServices.Tasks.targets",
+        "buildTransitive/MonoAndroid12.0/Xamarin.GooglePlayServices.Tasks.targets",
+        "buildTransitive/net6.0-android31.0/Xamarin.GooglePlayServices.Tasks.targets",
+        "lib/monoandroid12.0/Xamarin.GooglePlayServices.Tasks.dll",
+        "lib/monoandroid12.0/Xamarin.GooglePlayServices.Tasks.pdb",
+        "lib/monoandroid12.0/Xamarin.GooglePlayServices.Tasks.xml",
+        "lib/net6.0-android31.0/Xamarin.GooglePlayServices.Tasks.dll",
+        "lib/net6.0-android31.0/Xamarin.GooglePlayServices.Tasks.pdb",
+        "lib/net6.0-android31.0/Xamarin.GooglePlayServices.Tasks.xml",
+        "lib/net6.0-android31.0/play-services-tasks.aar",
+        "proguard/proguard.txt",
+        "xamarin.googleplayservices.tasks.118.0.2.1.nupkg.sha512",
+        "xamarin.googleplayservices.tasks.nuspec"
       ]
     },
     "Xamarin.Jetbrains.Annotations/24.0.1.3": {
@@ -37427,38 +37504,34 @@
   },
   "projectFileDependencyGroups": {
     "net8.0-android34.0": [
-      "CommunityToolkit.Maui >= 9.1.1",
       "Microsoft.Extensions.Logging.Debug >= 8.0.1",
       "Microsoft.Maui.Controls >= 8.0.100",
       "Microsoft.Maui.Controls.Compatibility >= 8.0.100",
       "Microsoft.NET.ILLink.Tasks >= 8.0.13",
-      "SQLitePCLRaw.bundle_green >= 2.1.10",
+      "Plugin.LocalNotification >= 10.1.8",
       "sqlite-net-pcl >= 1.9.172"
     ],
     "net8.0-ios18.0": [
-      "CommunityToolkit.Maui >= 9.1.1",
       "Microsoft.Extensions.Logging.Debug >= 8.0.1",
       "Microsoft.Maui.Controls >= 8.0.100",
       "Microsoft.Maui.Controls.Compatibility >= 8.0.100",
       "Microsoft.NET.ILLink.Tasks >= 8.0.13",
-      "SQLitePCLRaw.bundle_green >= 2.1.10",
+      "Plugin.LocalNotification >= 10.1.8",
       "sqlite-net-pcl >= 1.9.172"
     ],
     "net8.0-maccatalyst18.0": [
-      "CommunityToolkit.Maui >= 9.1.1",
       "Microsoft.Extensions.Logging.Debug >= 8.0.1",
       "Microsoft.Maui.Controls >= 8.0.100",
       "Microsoft.Maui.Controls.Compatibility >= 8.0.100",
       "Microsoft.NET.ILLink.Tasks >= 8.0.13",
-      "SQLitePCLRaw.bundle_green >= 2.1.10",
+      "Plugin.LocalNotification >= 10.1.8",
       "sqlite-net-pcl >= 1.9.172"
     ],
     "net8.0-windows10.0.19041": [
-      "CommunityToolkit.Maui >= 9.1.1",
       "Microsoft.Extensions.Logging.Debug >= 8.0.1",
       "Microsoft.Maui.Controls >= 8.0.100",
       "Microsoft.Maui.Controls.Compatibility >= 8.0.100",
-      "SQLitePCLRaw.bundle_green >= 2.1.10",
+      "Plugin.LocalNotification >= 10.1.8",
       "sqlite-net-pcl >= 1.9.172"
     ]
   },
@@ -37469,11 +37542,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\crafty\\Desktop\\C971\\TermsApp\\TermsApp.csproj",
+      "projectUniqueName": "C:\\Users\\crafty\\Desktop\\Take3\\TermsApp\\TermsApp.csproj",
       "projectName": "TermsApp",
-      "projectPath": "C:\\Users\\crafty\\Desktop\\C971\\TermsApp\\TermsApp.csproj",
+      "projectPath": "C:\\Users\\crafty\\Desktop\\Take3\\TermsApp\\TermsApp.csproj",
       "packagesPath": "C:\\Users\\crafty\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\crafty\\Desktop\\C971\\TermsApp\\obj\\",
+      "outputPath": "C:\\Users\\crafty\\Desktop\\Take3\\TermsApp\\obj\\",
       "projectStyle": "PackageReference",
       "crossTargeting": true,
       "fallbackFolders": [
@@ -37491,7 +37564,9 @@
         "net8.0-windows10.0.19041.0"
       ],
       "sources": {
-        "C:\\Program Files\\dotnet\\library-packs": {}
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
+        "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net8.0-android34.0": {
@@ -37527,10 +37602,6 @@
       "net8.0-android34.0": {
         "targetAlias": "net8.0-android",
         "dependencies": {
-          "CommunityToolkit.Maui": {
-            "target": "Package",
-            "version": "[9.1.1, )"
-          },
           "Microsoft.Extensions.Logging.Debug": {
             "target": "Package",
             "version": "[8.0.1, )"
@@ -37549,9 +37620,9 @@
             "version": "[8.0.13, )",
             "autoReferenced": true
           },
-          "SQLitePCLRaw.bundle_green": {
+          "Plugin.LocalNotification": {
             "target": "Package",
-            "version": "[2.1.10, )"
+            "version": "[10.1.8, )"
           },
           "sqlite-net-pcl": {
             "target": "Package",
@@ -37604,10 +37675,6 @@
       "net8.0-ios18.0": {
         "targetAlias": "net8.0-ios",
         "dependencies": {
-          "CommunityToolkit.Maui": {
-            "target": "Package",
-            "version": "[9.1.1, )"
-          },
           "Microsoft.Extensions.Logging.Debug": {
             "target": "Package",
             "version": "[8.0.1, )"
@@ -37626,9 +37693,9 @@
             "version": "[8.0.13, )",
             "autoReferenced": true
           },
-          "SQLitePCLRaw.bundle_green": {
+          "Plugin.LocalNotification": {
             "target": "Package",
-            "version": "[2.1.10, )"
+            "version": "[10.1.8, )"
           },
           "sqlite-net-pcl": {
             "target": "Package",
@@ -37669,10 +37736,6 @@
       "net8.0-maccatalyst18.0": {
         "targetAlias": "net8.0-maccatalyst",
         "dependencies": {
-          "CommunityToolkit.Maui": {
-            "target": "Package",
-            "version": "[9.1.1, )"
-          },
           "Microsoft.Extensions.Logging.Debug": {
             "target": "Package",
             "version": "[8.0.1, )"
@@ -37691,9 +37754,9 @@
             "version": "[8.0.13, )",
             "autoReferenced": true
           },
-          "SQLitePCLRaw.bundle_green": {
+          "Plugin.LocalNotification": {
             "target": "Package",
-            "version": "[2.1.10, )"
+            "version": "[10.1.8, )"
           },
           "sqlite-net-pcl": {
             "target": "Package",
@@ -37735,10 +37798,6 @@
       "net8.0-windows10.0.19041": {
         "targetAlias": "net8.0-windows10.0.19041.0",
         "dependencies": {
-          "CommunityToolkit.Maui": {
-            "target": "Package",
-            "version": "[9.1.1, )"
-          },
           "Microsoft.Extensions.Logging.Debug": {
             "target": "Package",
             "version": "[8.0.1, )"
@@ -37751,9 +37810,9 @@
             "target": "Package",
             "version": "[8.0.100, )"
           },
-          "SQLitePCLRaw.bundle_green": {
+          "Plugin.LocalNotification": {
             "target": "Package",
-            "version": "[2.1.10, )"
+            "version": "[10.1.8, )"
           },
           "sqlite-net-pcl": {
             "target": "Package",
