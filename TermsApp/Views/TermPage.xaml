@@ -21,7 +21,7 @@
                 <!-- Term Input Section -->
                 <Frame Padding="10" CornerRadius="5" BackgroundColor="White" Margin="15,0,15,10">
                     <VerticalStackLayout>
-                        <Entry x:Name="TermTitleEntry" Placeholder="Enter Term Title" FontAttributes="Bold" HorizontalOptions="Fill" HorizontalTextAlignment="Center"/>
+                        <Entry x:Name="TermTitle" Placeholder="Enter Term Title" FontAttributes="Bold" HorizontalOptions="Fill" HorizontalTextAlignment="Center"/>
 
                         <Grid ColumnDefinitions="Auto, * , auto" Margin="10,0,10,0">
                             <Label Text="Start Date" VerticalOptions="Center"/>
@@ -38,13 +38,13 @@
 
             <!-- Course List Section -->
             <VerticalStackLayout x:Name="CourseStack"  Margin="15,0,15,0" Spacing="10">
-                <!-- Changed to programatically create Term buttons-->
+                <!-- Programatically create Course buttons-->
             </VerticalStackLayout>
 
-            <!-- Bottom Buttons -->
             
         
         </VerticalStackLayout>
+        <!-- Bottom Buttons -->
         <Grid Grid.Row="2">
             <Grid RowDefinitions="Auto, *">
                 <BoxView HeightRequest="2" BackgroundColor="Black" Margin="0,10,0,5" Grid.Row="0"/>

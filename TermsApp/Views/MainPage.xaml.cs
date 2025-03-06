@@ -8,7 +8,7 @@ namespace TermsApp
 { 
     public partial class MainPage : ContentPage
     {
-        private static Term? selectedTerm;
+        //private static Term? selectedTerm;
         private static List<Term> terms = new List<Term>();
         public static Dictionary<Term, List<Course>> courses = new Dictionary<Term, List<Course>>();
         public static Dictionary<int, Course> courseList = new Dictionary<int, Course>();

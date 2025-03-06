@@ -3,12 +3,12 @@ using Plugin.LocalNotification;
 using TermsApp.Repository;
 
 
+
 namespace TermsApp
 {
 	public partial class TermPage : ContentPage
 	{
         public static List<Course> courses = new List<Course>();
-        //public static Dictionary<int, Course> courseList = new Dictionary<int, Course>();
         public static Term? CurrentTerm;
 
         public TermPage()
@@ -44,7 +44,7 @@ namespace TermsApp
             CourseStack.Children.Clear();
             courses = GetSet.GetAllCoursesByTerm(T.Id);
             CurrentTerm = T;
-            TermTitleEntry.Text = T.Name;
+            TermTitle.Text = T.Name;
             TermStartDate.Date = T.StartDate;
             TermEndDate.Date = T.EndDate;
 
@@ -58,7 +58,9 @@ namespace TermsApp
                     CornerRadius = 5,
                 };
 
-                //button.Clicked += async (sender, args) => await Navigation.PushAsync(new CoursePage(course.Id));
+
+                button.Clicked += async (sender, args) => await Navigation.PushAsync(new CoursePage(course));
+                
                 CourseStack.Children.Add(button);
             }
             if (courses.Count >= 6)
@@ -66,20 +68,23 @@ namespace TermsApp
                 AddCourse.IsEnabled = false;
                 
             }
+            else
+            {
+                AddCourse.IsEnabled = true;
+            }
 
         }
 
         private async void AddCourseClicked(object sender, EventArgs e)
 		{
-            //await Navigation.PushModalAsync(new MainPage());
-            await Navigation.PopModalAsync();
+            await Navigation.PushAsync(new CoursePage(CurrentTerm));
         }
 
         private async void OnSave(object sender, EventArgs e)
         {
             if (CurrentTerm == null)
             {
-                Term TempTerm = new Term(TermTitleEntry.Text, TermStartDate.Date, TermEndDate.Date);
+                Term TempTerm = new Term(TermTitle.Text, TermStartDate.Date, TermEndDate.Date);
 
                 //Verify start date is before end date
                 if (TempTerm.StartDate > TempTerm.EndDate)
@@ -88,11 +93,11 @@ namespace TermsApp
                     return;
                 }
 
-                GetSet.Insert(new Term(TermTitleEntry.Text, TermStartDate.Date, TermEndDate.Date));
+                GetSet.Insert(TempTerm);
             }
             else
             {
-                CurrentTerm.Name = TermTitleEntry.Text;
+                CurrentTerm.Name = TermTitle.Text;
                 CurrentTerm.StartDate = TermStartDate.Date;
                 CurrentTerm.EndDate = TermEndDate.Date;
 
@@ -110,8 +115,13 @@ namespace TermsApp
 
         private async void OnDelete(object sender, EventArgs e)
         {
-            GetSet.Delete(CurrentTerm);
-            await Navigation.PopAsync();
+            var confirm = await DisplayAlert("Delete", "Are you sure you want to delete this course?", "Yes", "No");
+            if (confirm)
+            {
+                GetSet.Delete(CurrentTerm);
+
+                await Navigation.PopAsync();
+            }
         }
     }
 }

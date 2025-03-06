@@ -110,7 +110,7 @@ namespace TermsApp
                 return [];
             }
         }
-        public static bool AddNew(int termId)
+        public static bool AddNewCourse(int termId)
         {
             try
             {
@@ -122,6 +122,57 @@ namespace TermsApp
             catch (Exception)
             {
                 return false;
+            }
+        }
+
+        //Instructors
+        public static List<Instructor> GetAllInstructors()
+        {
+            try
+            {
+                using (SQLiteConnection connection = new(LocalDbService.DBPath))
+                {
+                    return connection.Query<Instructor>("SELECT * FROM Instructors").ToList();
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error retrieving Instructors: {ex.Message}");
+                return [];
+            }
+        }
+
+        //Assessments
+        public static List<Assessment> GetAssessmentsByCourse(int courseId)
+        {
+            try
+            {
+                using (SQLiteConnection connection = new(LocalDbService.DBPath))
+                {
+                    return connection.Query<Assessment>($"SELECT * FROM Assessments WHERE CourseId={courseId}").ToList();
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error retrieving Assessments: {ex.Message}");
+                return [];
+            }
+        }
+
+        //Notes
+        public static List<Note> GetNotesByCourse(int courseId)
+        {
+            try
+            {
+                using (SQLiteConnection connection = new(LocalDbService.DBPath))
+                {
+                    return connection.Query<Note>($"SELECT * FROM Notes WHERE CourseId={courseId}").ToList();
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error retrieving Notes: {ex.Message}");
+                return [];
             }
         }
     }

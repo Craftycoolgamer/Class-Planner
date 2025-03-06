@@ -64,7 +64,7 @@ namespace TermsApp.Repository
 
             }
 
-            courses = GetSet.GetAllCoursesByTerm(1);
+            //courses = GetSet.GetAllCoursesByTerm(1);
             
         }
 
