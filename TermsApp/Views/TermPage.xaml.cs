@@ -77,9 +77,17 @@ namespace TermsApp
 
         private async void OnSave(object sender, EventArgs e)
         {
-            
             if (CurrentTerm == null)
             {
+                Term TempTerm = new Term(TermTitleEntry.Text, TermStartDate.Date, TermEndDate.Date);
+
+                //Verify start date is before end date
+                if (TempTerm.StartDate > TempTerm.EndDate)
+                {
+                    await DisplayAlert("Error", "Start Date is after End Date", "OK");
+                    return;
+                }
+
                 GetSet.Insert(new Term(TermTitleEntry.Text, TermStartDate.Date, TermEndDate.Date));
             }
             else
@@ -87,6 +95,14 @@ namespace TermsApp
                 CurrentTerm.Name = TermTitleEntry.Text;
                 CurrentTerm.StartDate = TermStartDate.Date;
                 CurrentTerm.EndDate = TermEndDate.Date;
+
+                //Verify start date is before end date
+                if (CurrentTerm.StartDate > CurrentTerm.EndDate)
+                {
+                    await DisplayAlert("Error", "Start Date is after End Date", "OK");
+                    return;
+                }
+
                 GetSet.Update(CurrentTerm);
             }
             await Navigation.PopAsync();
