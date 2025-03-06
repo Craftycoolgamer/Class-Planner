@@ -40,9 +40,21 @@ namespace TermsApp.Repository
             // Insert Courses
             List<Course> courses = new List<Course>
             {
+                //term1
                 new Course(1, 1, "Course 1", DateTime.Now, DateTime.Now.AddMonths(4), "In Progress", "Enter Course Details Here:"),
+                new Course(1, 1, "Course 2", DateTime.Now, DateTime.Now.AddMonths(4), "In Progress", "Enter Course Details Here:"),
+                new Course(1, 1, "Course 3", DateTime.Now, DateTime.Now.AddMonths(4), "In Progress", "Enter Course Details Here:"),
+                new Course(1, 1, "Course 4", DateTime.Now, DateTime.Now.AddMonths(4), "In Progress", "Enter Course Details Here:"),
+                new Course(1, 1, "Course 5", DateTime.Now, DateTime.Now.AddMonths(4), "In Progress", "Enter Course Details Here:"),
+                new Course(1, 1, "Course 6", DateTime.Now, DateTime.Now.AddMonths(4), "In Progress", "Enter Course Details Here:"),
+
+                //term2
                 new Course(2, 1, "Course 1", DateTime.Now, DateTime.Now.AddMonths(4), "In Progress", "Enter Course Details Here:"),
                 new Course(2, 1, "Course 2", DateTime.Now, DateTime.Now.AddMonths(4), "In Progress", "Enter Course Details Here:"),
+                new Course(2, 1, "Course 3", DateTime.Now, DateTime.Now.AddMonths(4), "In Progress", "Enter Course Details Here:"),
+                new Course(2, 1, "Course 4", DateTime.Now, DateTime.Now.AddMonths(4), "In Progress", "Enter Course Details Here:"),
+                new Course(2, 1, "Course 5", DateTime.Now, DateTime.Now.AddMonths(4), "In Progress", "Enter Course Details Here:"),
+                new Course(2, 1, "Course 6", DateTime.Now, DateTime.Now.AddMonths(4), "In Progress", "Enter Course Details Here:"),
             };
             foreach (var course in courses)
             {

@@ -17,8 +17,9 @@ namespace TermsApp
                 }
                 return true;
             }
-            catch (Exception)
+            catch (Exception ex)
             {
+                Console.WriteLine($"Error Inserting Data: {ex.Message}");
                 return false;
             }
         }
@@ -32,8 +33,26 @@ namespace TermsApp
                 }
                 return true;
             }
-            catch (Exception)
+            catch (Exception ex)
             {
+                Console.WriteLine($"Error Updating Data: {ex.Message}");
+                return false;
+            }
+        }
+
+        public static bool Delete<TEntity>(TEntity entity)
+        {
+            try
+            {
+                using (SQLiteConnection connection = new(LocalDbService.DBPath))
+                {
+                    connection.Delete(entity);
+                }
+                return true;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error Deleting Data: {ex.Message}");
                 return false;
             }
         }
@@ -65,12 +84,12 @@ namespace TermsApp
             {
                 using (SQLiteConnection connection = new(LocalDbService.DBPath))
                 {
-                    return [.. connection.Query<Term>("SELECT * FROM Terms")];
-                    //TODO fix this: returning a list of lists and displaying the first by default?
+                    return connection.Query<Term>("SELECT * FROM Terms").ToList();
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
+                Console.WriteLine($"Error retrieving terms: {ex.Message}");
                 return [];
             }
         }
@@ -82,11 +101,12 @@ namespace TermsApp
             {
                 using (SQLiteConnection connection = new(LocalDbService.DBPath))
                 {
-                    return [.. connection.Query<Course>($"SELECT * FROM Courses WHERE TermId={termId}")];
+                    return connection.Query<Course>($"SELECT * FROM Courses WHERE TermId={termId}").ToList();
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
+                Console.WriteLine($"Error retrieving Courses: {ex.Message}");
                 return [];
             }
         }

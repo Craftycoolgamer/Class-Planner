@@ -25,19 +25,19 @@
 
                         <Grid ColumnDefinitions="Auto, * , auto" Margin="10,0,10,0">
                             <Label Text="Start Date" VerticalOptions="Center"/>
-                            <DatePicker Grid.Column="2"/>
+                            <DatePicker Grid.Column="2" x:Name="TermStartDate"/>
                         </Grid>
 
                         <Grid ColumnDefinitions="Auto, * , auto" Margin="10,0,10,0">
                             <Label Text="End Date" VerticalOptions="Center" Grid.Column="0"/>
-                            <DatePicker Grid.Column="2"/>
+                            <DatePicker Grid.Column="2" x:Name="TermEndDate"/>
                         </Grid>
                     </VerticalStackLayout>
                 </Frame>
             </StackLayout>
 
             <!-- Course List Section -->
-            <VerticalStackLayout x:Name="CourseStack"  Margin="15,0,15,0">
+            <VerticalStackLayout x:Name="CourseStack"  Margin="15,0,15,0" Spacing="10">
                 <!-- Changed to programatically create Term buttons-->
             </VerticalStackLayout>
 
@@ -50,7 +50,7 @@
                 <BoxView HeightRequest="2" BackgroundColor="Black" Margin="0,10,0,5" Grid.Row="0"/>
                 <Grid ColumnDefinitions="*, *" Margin="15,0,15,10" Grid.Row="1">
                     <Button Text="SAVE" Grid.Column="0" Margin="0,0,5,0" BackgroundColor="White" CornerRadius="5" Clicked="OnSave" TextColor="Black"/>
-                    <Button Text="DELETE" Grid.Column="1" Margin="5,0,0,0" BackgroundColor="White" CornerRadius="5" Clicked="OnDelete" TextColor="Black"/>
+                    <Button x:Name="DeleteTerm" Text="DELETE" Grid.Column="1" Margin="5,0,0,0" BackgroundColor="White" CornerRadius="5" Clicked="OnDelete" TextColor="Black"/>
                 </Grid>
             </Grid>
         </Grid>

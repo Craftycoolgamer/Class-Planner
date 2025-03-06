@@ -19,7 +19,7 @@
             <BoxView HeightRequest="2" BackgroundColor="Black" Margin="0,0,0,10"/>
 
             <!-- Terms List -->
-            <VerticalStackLayout x:Name="TermStack"  Margin="15,0,15,0">
+            <VerticalStackLayout x:Name="TermStack"  Margin="15,0,15,0" Spacing="10">
                 <!-- Changed to programatically create Term buttons-->
             </VerticalStackLayout>
             

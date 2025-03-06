@@ -15,21 +15,31 @@ namespace TermsApp
         public static Dictionary<int, Instructor> instructors = new Dictionary<int, Instructor>();
         public static IList<NotificationRequest> notificationRequests = new List<NotificationRequest>();
 
+        //TODO: pull everthing from database and delete and reupload everthing when saving? or do it properly?
+
         public MainPage()
         {
             InitializeComponent();
 
-            terms.Clear();
-            terms = GetSet.GetAllTerms();
+            
 
             LocalDbService.CreateTables();
             LocalDbService.SeedData();
             LoadTermsUIData();
 
         }
-        
+
+        protected override void OnAppearing()
+        {
+            LoadTermsUIData();
+
+            //TODO: Refresh Notifications
+        }
+
         private void LoadTermsUIData()
         {
+            terms.Clear();
+            terms = GetSet.GetAllTerms();
             TermStack.Children.Clear();
             
             foreach (Term term in terms)
@@ -43,14 +53,14 @@ namespace TermsApp
                     CornerRadius = 5,
                 };
                 
-                button.Clicked += async (sender, args) => await Navigation.PushAsync(new TermPage(term.Id));
+                button.Clicked += async (sender, args) => await Navigation.PushAsync(new TermPage(term));
                 TermStack.Children.Add(button);
             }
         }
 
         private async void AddTermClicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new TermPage(terms.Count +1));
+            await Navigation.PushAsync(new TermPage());
         }
 
     }
