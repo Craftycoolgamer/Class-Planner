@@ -22,10 +22,10 @@
                     <!-- Course Info Section -->
                     <Frame Padding="10" CornerRadius="5" BackgroundColor="White" Margin="15,0,15,10">
                         <VerticalStackLayout>
-                            <Grid ColumnDefinitions=" * , Auto">
-                                <Entry x:Name="CourseName" Placeholder="Enter Course Name" HorizontalOptions="Fill" FontAttributes="Bold" HorizontalTextAlignment="Center"/>
-                                <!--<Label Text="Course Status:" FontAttributes="Bold"/>
-                                <Picker />-->
+                            <Grid Grid.Column="2" ColumnDefinitions=" * , Auto">
+                                <Entry x:Name="CourseName" Placeholder="Enter Course Name" Grid.Column="0" FontAttributes="Bold" HorizontalTextAlignment="Center"/>
+                                <Label Text="Course Status:  " Grid.Column="1" FontAttributes="Bold"/>
+                                <Picker x:Name="StatusPicker" Grid.Column="1" VerticalTextAlignment="End"/>
                             </Grid>
                             <Entry x:Name="CourseDescription" Placeholder="Enter Course Description" HorizontalOptions="Fill" HorizontalTextAlignment="Start" Margin="0,0,0,15"/>
 

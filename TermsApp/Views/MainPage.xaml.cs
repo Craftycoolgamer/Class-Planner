@@ -15,8 +15,6 @@ namespace TermsApp
         public static Dictionary<int, Instructor> instructors = new Dictionary<int, Instructor>();
         public static IList<NotificationRequest> notificationRequests = new List<NotificationRequest>();
 
-        //TODO: pull everthing from database and delete and reupload everthing when saving? or do it properly?
-
         public MainPage()
         {
             InitializeComponent();

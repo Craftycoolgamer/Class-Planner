@@ -1,5 +1,6 @@
 using TermsApp.Entities;
 using Plugin.LocalNotification;
+using static AndroidX.Concurrent.Futures.CallbackToFutureAdapter;
 
 namespace TermsApp 
 { 
@@ -12,17 +13,28 @@ namespace TermsApp
         public static Course? CurrentCourse;
         public static Instructor? CurrentInstructor;
 
+        public List<string> Stat = new List<string>
+        {
+            "In Progress",
+            "Completed",
+            "Dropped",
+            "Plan To Take"
+        };
+
 	    public CoursePage(Term Term)
 	    {
             CurrentTerm = Term;
 		    CurrentCourse = null;
-		    InitializeComponent();
-	    }
+            CurrentInstructor = null;
+            InitializeComponent();
+            StatusPicker.ItemsSource = Stat;
+        }
 	    public CoursePage(Course Course)
 	    {
 		    InitializeComponent();
 		    CurrentCourse = Course;
             LoadCoursesUIData(Course);
+            StatusPicker.ItemsSource = Stat;
         }
         protected override void OnAppearing()
         {
@@ -70,13 +82,11 @@ namespace TermsApp
             InstructorPhone.Text = CurrentInstructor.Phone;
             CourseStartDate.Date = Course.StartDate;
             CourseEndDate.Date = Course.EndDate;
+            StatusPicker.SelectedItem = Course.Status;
 
             //TODO: IDK whats wrong with this
             ////NoteDetails.Text = Notes[Notes.Count-1].Content;
             //NoteDetails.Text = ;
-
-            //TODO: Add picker for status (in progress, completed, dropped, plan to take)
-            //      Add saving validation to prevent null values
 
 
             foreach (Assessment Assess in Assessments)
@@ -122,22 +132,36 @@ namespace TermsApp
 
         private async void OnSave(object sender, EventArgs e)
         {
+            //Validate Instructor Info is not Empty
+            if (InstructorName.Text == null || InstructorEmail.Text == null || InstructorPhone.Text == null)
+            {
+                await DisplayAlert("Error", "Instructor Info is Empty", "OK");
+                return;
+            }
+
             if (CurrentCourse == null)
             {
-                //TODO: Check through all the instructors for names matching and fill in the ID from that
-                //              Just make a new Instructor for every new course?
-
-                Course TempCourse = new Course(CurrentTerm.Id, CurrentInstructor.Id, CourseName.Text, 
-                                               CourseStartDate.Date, CourseEndDate.Date, "In Progress", CourseDescription.Text);
+                //Check through all the Instructors to see if any names match, if not create new instructor
+                foreach (Instructor person in Instructors)
+                {
+                    if (person.Name == InstructorName.Text)
+                    {
+                        CurrentInstructor = person;
+                    }
+                }
+                if(CurrentInstructor == null)
+                {
+                    CurrentInstructor = new Instructor(InstructorName.Text, InstructorPhone.Text, InstructorEmail.Text);
+                }
 
                 //Verify start date is before end date
-                if (TempCourse.StartDate > TempCourse.EndDate)
+                if (CourseStartDate.Date > CourseEndDate.Date)
                 {
                     await DisplayAlert("Error", "Start Date is after End Date", "OK");
                     return;
                 }
 
-                GetSet.Insert(TempCourse);
+                GetSet.Insert(new Course(CurrentTerm.Id, CurrentInstructor.Id, CourseName.Text, CourseStartDate.Date, CourseEndDate.Date, "In Progress", CourseDescription.Text));
             }
             else
             {
@@ -145,7 +169,7 @@ namespace TermsApp
                 CurrentCourse.StartDate = CourseStartDate.Date;
                 CurrentCourse.EndDate = CourseEndDate.Date;
                 CurrentCourse.Details = CourseDescription.Text;
-                //CurrentCourse.Status = "Active";
+                CurrentCourse.Status = StatusPicker.SelectedItem.ToString();
 
                 //Verify start date is before end date
                 if (CurrentCourse.StartDate > CurrentCourse.EndDate)
