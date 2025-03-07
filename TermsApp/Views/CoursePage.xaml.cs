@@ -1,6 +1,6 @@
 using TermsApp.Entities;
 using Plugin.LocalNotification;
-using static AndroidX.Concurrent.Futures.CallbackToFutureAdapter;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace TermsApp 
 { 
@@ -83,10 +83,7 @@ namespace TermsApp
             CourseStartDate.Date = Course.StartDate;
             CourseEndDate.Date = Course.EndDate;
             StatusPicker.SelectedItem = Course.Status;
-
-            //TODO: IDK whats wrong with this
-            ////NoteDetails.Text = Notes[Notes.Count-1].Content;
-            //NoteDetails.Text = ;
+            try{NoteDetails.Text = Notes[Notes.Count - 1].Content;}catch (Exception) { }
 
 
             foreach (Assessment Assess in Assessments)
@@ -119,14 +116,13 @@ namespace TermsApp
         }
         private async void SaveNoteClicked(object sender, EventArgs e)
         {
-            //await Navigation.PushModalAsync(new MainPage());
-            await Navigation.PopAsync();
+            GetSet.Insert(new Note(CurrentCourse.Id, NoteDetails.Text));
+            await DisplayAlert("Note", "Note Successfully Added", "OK");
         }
 
         private async void ShareNoteClicked(object sender, EventArgs e)
         {
-            //await Navigation.PushModalAsync(new MainPage());
-            await Navigation.PopAsync();
+            await Share.Default.RequestAsync(new ShareTextRequest { Text = NoteDetails.Text });
         }
 
 

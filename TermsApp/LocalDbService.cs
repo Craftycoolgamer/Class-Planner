@@ -41,31 +41,39 @@ namespace TermsApp.Repository
             List<Course> courses = new List<Course>
             {
                 //term1
-                new Course(1, 1, "Course 1", DateTime.Now, DateTime.Now.AddMonths(4), "In Progress", "Enter Course Details Here:"),
-                new Course(1, 1, "Course 2", DateTime.Now, DateTime.Now.AddMonths(4), "In Progress", "Enter Course Details Here:"),
-                new Course(1, 1, "Course 3", DateTime.Now, DateTime.Now.AddMonths(4), "In Progress", "Enter Course Details Here:"),
-                new Course(1, 1, "Course 4", DateTime.Now, DateTime.Now.AddMonths(4), "In Progress", "Enter Course Details Here:"),
-                new Course(1, 1, "Course 5", DateTime.Now, DateTime.Now.AddMonths(4), "In Progress", "Enter Course Details Here:"),
-                new Course(1, 1, "Course 6", DateTime.Now, DateTime.Now.AddMonths(4), "In Progress", "Enter Course Details Here:"),
+                new Course(1, 1, "Course 1", DateTime.Now, DateTime.Now.AddMonths(4), "Completed", "Enter Course Details Here:"),
+                new Course(1, 1, "Course 2", DateTime.Now, DateTime.Now.AddMonths(5), "Dropped", "Enter Course Details Here:"),
+                new Course(1, 1, "Course 3", DateTime.Now, DateTime.Now.AddMonths(3), "In Progress", "Enter Course Details Here:"),
+                new Course(1, 1, "Course 4", DateTime.Now, DateTime.Now.AddMonths(2), "In Progress", "Enter Course Details Here:"),
+                new Course(1, 1, "Course 5", DateTime.Now, DateTime.Now.AddMonths(6), "Plan To Take", "Enter Course Details Here:"),
+                new Course(1, 1, "Course 6", DateTime.Now, DateTime.Now.AddMonths(9), "Plan To Take", "Enter Course Details Here:"),
 
                 //term2
-                new Course(2, 1, "Course 1", DateTime.Now, DateTime.Now.AddMonths(4), "In Progress", "Enter Course Details Here:"),
-                new Course(2, 1, "Course 2", DateTime.Now, DateTime.Now.AddMonths(4), "In Progress", "Enter Course Details Here:"),
-                new Course(2, 1, "Course 3", DateTime.Now, DateTime.Now.AddMonths(4), "In Progress", "Enter Course Details Here:"),
-                new Course(2, 1, "Course 4", DateTime.Now, DateTime.Now.AddMonths(4), "In Progress", "Enter Course Details Here:"),
-                new Course(2, 1, "Course 5", DateTime.Now, DateTime.Now.AddMonths(4), "In Progress", "Enter Course Details Here:"),
-                new Course(2, 1, "Course 6", DateTime.Now, DateTime.Now.AddMonths(4), "In Progress", "Enter Course Details Here:"),
+                new Course(2, 1, "Course 1", DateTime.Now, DateTime.Now.AddMonths(7), "Plan To Take", "Enter Course Details Here:"),
+                new Course(2, 1, "Course 2", DateTime.Now, DateTime.Now.AddMonths(3), "Plan To Take", "Enter Course Details Here:"),
+                new Course(2, 1, "Course 3", DateTime.Now, DateTime.Now.AddMonths(4), "Plan To Take", "Enter Course Details Here:"),
+                new Course(2, 1, "Course 4", DateTime.Now, DateTime.Now.AddMonths(6), "Plan To Take", "Enter Course Details Here:"),
+                new Course(2, 1, "Course 5", DateTime.Now, DateTime.Now.AddMonths(2), "Dropped", "Enter Course Details Here:"),
+                new Course(2, 1, "Course 6", DateTime.Now, DateTime.Now.AddMonths(1), "In Progress", "Enter Course Details Here:"),
             };
             foreach (var course in courses)
             {
                 GetSet.Insert(course);
-
-                //TODO: Add assessments here and notes
-
             }
 
-            //courses = GetSet.GetAllCoursesByTerm(1);
-            
+            courses = GetSet.GetAllCoursesByTerm(1);
+
+            foreach (var course in courses)
+            {
+                //Assessments
+                GetSet.Insert(new Assessment(1, "Performance Assessment #1", DateTime.Now, DateTime.Now.AddMonths(3), "Enter details about assessment here:", course.Id));
+                GetSet.Insert(new Assessment(0, "Objective Assessment #1", DateTime.Now, DateTime.Now.AddMonths(3), "Enter details about assessment here:", course.Id));
+                
+                //Notes
+                GetSet.Insert(new Note(course.Id, "Test note"));
+                GetSet.Insert(new Note(course.Id, "Test note 2"));
+            }
+
         }
 
         public static void CreateTables()

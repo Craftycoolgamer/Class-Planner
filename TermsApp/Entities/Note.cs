@@ -8,8 +8,8 @@ namespace TermsApp.Entities
         public Note() { }
         public Note(int courseId, string content)
         {
-            this.CourseId = courseId;
-            this.Content = content;
+            CourseId = courseId;
+            Content = content;
         }
         [PrimaryKey, AutoIncrement]
         public int Id { get; set; }

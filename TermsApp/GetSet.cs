@@ -158,6 +158,21 @@ namespace TermsApp
                 return [];
             }
         }
+        public static List<Assessment> GetAllAssessments()
+        {
+            try
+            {
+                using (SQLiteConnection connection = new(LocalDbService.DBPath))
+                {
+                    return connection.Query<Assessment>("SELECT * FROM Assessments").ToList();
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error retrieving All Assessments: {ex.Message}");
+                return [];
+            }
+        }
 
         //Notes
         public static List<Note> GetNotesByCourse(int courseId)
