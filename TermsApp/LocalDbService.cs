@@ -11,6 +11,7 @@ namespace TermsApp.Repository
             "TermsDatabase.db"
         );
 
+        //Requirement C6
         public static void SeedData()
         {
             File.Delete(DBPath);
@@ -21,7 +22,7 @@ namespace TermsApp.Repository
             List<Term> terms = new List<Term>
             {
                 new Term("Term 1", DateTime.Now, DateTime.Now.AddMonths(6)),
-                new Term("Term 2", DateTime.Now.AddMonths(6), DateTime.Now.AddMonths(12)),
+                //new Term("Term 2", DateTime.Now.AddMonths(6), DateTime.Now.AddMonths(12)),
             };
             foreach (var term in terms)
             {
@@ -43,19 +44,19 @@ namespace TermsApp.Repository
             {
                 //term1
                 new Course(1, 1, "Course 1", DateTime.Now, DateTime.Now.AddMonths(4), "Completed", "Enter Course Details Here:"),
-                new Course(1, 1, "Course 2", DateTime.Now, DateTime.Now.AddMonths(5), "Dropped", "Enter Course Details Here:"),
-                new Course(1, 1, "Course 3", DateTime.Now, DateTime.Now.AddMonths(3), "In Progress", "Enter Course Details Here:"),
-                new Course(1, 1, "Course 4", DateTime.Now, DateTime.Now.AddMonths(2), "In Progress", "Enter Course Details Here:"),
-                new Course(1, 1, "Course 5", DateTime.Now, DateTime.Now.AddMonths(6), "Plan To Take", "Enter Course Details Here:"),
-                new Course(1, 1, "Course 6", DateTime.Now, DateTime.Now.AddMonths(9), "Plan To Take", "Enter Course Details Here:"),
+                //new Course(1, 1, "Course 2", DateTime.Now, DateTime.Now.AddMonths(5), "Dropped", "Enter Course Details Here:"),
+                //new Course(1, 1, "Course 3", DateTime.Now, DateTime.Now.AddMonths(3), "In Progress", "Enter Course Details Here:"),
+                //new Course(1, 1, "Course 4", DateTime.Now, DateTime.Now.AddMonths(2), "In Progress", "Enter Course Details Here:"),
+                //new Course(1, 1, "Course 5", DateTime.Now, DateTime.Now.AddMonths(6), "Plan To Take", "Enter Course Details Here:"),
+                //new Course(1, 1, "Course 6", DateTime.Now, DateTime.Now.AddMonths(9), "Plan To Take", "Enter Course Details Here:"),
 
-                //term2
-                new Course(2, 1, "Course 1", DateTime.Now, DateTime.Now.AddMonths(7), "Plan To Take", "Enter Course Details Here:"),
-                new Course(2, 1, "Course 2", DateTime.Now, DateTime.Now.AddMonths(3), "Plan To Take", "Enter Course Details Here:"),
-                new Course(2, 1, "Course 3", DateTime.Now, DateTime.Now.AddMonths(4), "Plan To Take", "Enter Course Details Here:"),
-                new Course(2, 1, "Course 4", DateTime.Now, DateTime.Now.AddMonths(6), "Plan To Take", "Enter Course Details Here:"),
-                new Course(2, 1, "Course 5", DateTime.Now, DateTime.Now.AddMonths(2), "Dropped", "Enter Course Details Here:"),
-                new Course(2, 1, "Course 6", DateTime.Now, DateTime.Now.AddMonths(1), "In Progress", "Enter Course Details Here:"),
+                ////term2
+                //new Course(2, 1, "Course 1", DateTime.Now, DateTime.Now.AddMonths(7), "Plan To Take", "Enter Course Details Here:"),
+                //new Course(2, 1, "Course 2", DateTime.Now, DateTime.Now.AddMonths(3), "Plan To Take", "Enter Course Details Here:"),
+                //new Course(2, 1, "Course 3", DateTime.Now, DateTime.Now.AddMonths(4), "Plan To Take", "Enter Course Details Here:"),
+                //new Course(2, 1, "Course 4", DateTime.Now, DateTime.Now.AddMonths(6), "Plan To Take", "Enter Course Details Here:"),
+                //new Course(2, 1, "Course 5", DateTime.Now, DateTime.Now.AddMonths(2), "Dropped", "Enter Course Details Here:"),
+                //new Course(2, 1, "Course 6", DateTime.Now, DateTime.Now.AddMonths(1), "In Progress", "Enter Course Details Here:"),
             };
             foreach (var course in courses)
             {
