@@ -37,10 +37,9 @@ namespace TermsApp
             //Handle Notifications
             var requests = new List<NotificationRequest>();
             var cancelledRequests = new List<int>();
-            DateTime currentDateTime = DateTime.Now;
 
-            ProcessCourses(courses.Values, requests, cancelledRequests, currentDateTime);
-            ProcessAssessments(GetSet.GetAllAssessments(), requests, cancelledRequests, currentDateTime);
+            ProcessCourses(courses.Values, requests, cancelledRequests, DateTime.Now);
+            ProcessAssessments(GetSet.GetAllAssessments(), requests, cancelledRequests, DateTime.Now);
 
             CancelNotifications(cancelledRequests, notificationRequests.ToList());
             await ShowNotifications(requests);
@@ -57,22 +56,22 @@ namespace TermsApp
         }
         private void AddCourseNotifications(Course course, List<NotificationRequest> requests, List<int> cancelledRequests, DateTime currentDateTime)
         {
-            if (course.StartNotification == 0)
+            if (!course.StartNotification)
             {
                 cancelledRequests.Add(course.Id + 1000);
             }
             else
             {
-                requests.Add(CreateNotificationRequest(course.Id + 1000, "Course Starting Reminder", course.Name, course.StartDate, course.StartNotification, currentDateTime));
+                requests.Add(CreateNotificationRequest(course.Id + 1000, "Course Starting Reminder", course.Name, course.StartDate, currentDateTime));
             }
 
-            if (course.EndNotification == 0)
+            if (!course.EndNotification)
             {
                 cancelledRequests.Add(course.Id + 2000);
             }
             else
             {
-                requests.Add(CreateNotificationRequest(course.Id + 2000, "Course Ending Reminder", course.Name, course.EndDate, course.EndNotification, currentDateTime));
+                requests.Add(CreateNotificationRequest(course.Id + 2000, "Course Ending Reminder", course.Name, course.EndDate, currentDateTime));
             }
         }
         private void ProcessAssessments(IEnumerable<Assessment> assessments, List<NotificationRequest> requests, List<int> cancelledRequests, DateTime currentDateTime)
@@ -84,34 +83,34 @@ namespace TermsApp
         }
         private void AddAssessmentNotifications(Assessment assessment, List<NotificationRequest> requests, List<int> cancelledRequests, DateTime currentDateTime)
         {
-            if (assessment.StartNotification == 0)
+            if (!assessment.StartNotification)
             {
                 cancelledRequests.Add(assessment.Id + 3000);
             }
             else
             {
-                requests.Add(CreateNotificationRequest(assessment.Id + 3000, "Assessment Starting Reminder", assessment.Name, assessment.StartDate, assessment.StartNotification, currentDateTime));
+                requests.Add(CreateNotificationRequest(assessment.Id + 3000, "Assessment Starting Reminder", assessment.Name, assessment.StartDate, currentDateTime));
             }
 
-            if (assessment.EndNotification == 0)
+            if (!assessment.EndNotification)
             {
                 cancelledRequests.Add(assessment.Id + 4000);
             }
             else
             {
-                requests.Add(CreateNotificationRequest(assessment.Id + 4000, "Assessment Ending Reminder", assessment.Name, assessment.EndDate, assessment.EndNotification, currentDateTime));
+                requests.Add(CreateNotificationRequest(assessment.Id + 4000, "Assessment Ending Reminder", assessment.Name, assessment.EndDate, currentDateTime));
             }
         }
-        private NotificationRequest CreateNotificationRequest(int notificationId, string title, string description, DateTime date, int notificationDaysBefore, DateTime currentDateTime)
+        private NotificationRequest CreateNotificationRequest(int notificationId, string title, string description, DateTime date, DateTime currentDateTime)
         {
             return new NotificationRequest
             {
                 NotificationId = notificationId,
                 Title = title,
-                Description = description + " Starting soon",
+                Description = description + " Starting Tomorrow",
                 Schedule = new NotificationRequestSchedule
                 {
-                    NotifyTime = date.AddDays(-notificationDaysBefore).AddHours(currentDateTime.Hour).AddMinutes(currentDateTime.Minute + 1),
+                    NotifyTime = date.AddDays(currentDateTime.Day+1).AddHours(currentDateTime.Hour).AddMinutes(currentDateTime.Minute),
                     RepeatType = NotificationRepeat.Daily
                 }
             };
@@ -135,10 +134,11 @@ namespace TermsApp
 
         protected override void OnAppearing()
         {
-            if (terms.Count > 0)
-            {
-                LoadTermsUIData();
-            }
+            LoadTermsUIData();
+            //if (terms.Count > 0)
+            //{
+            //    LoadTermsUIData();
+            //}
 
             HandleNotifications();
         }

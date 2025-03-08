@@ -2,6 +2,15 @@ using TermsApp.Entities;
 using Plugin.LocalNotification;
 using static System.Net.Mime.MediaTypeNames;
 
+
+//
+//
+//TODO: Course instructor cant be updated (bug)
+//      
+//
+//
+
+
 namespace TermsApp 
 { 
     public partial class CoursePage : ContentPage
@@ -28,6 +37,7 @@ namespace TermsApp
             CurrentInstructor = null;
             InitializeComponent();
             StatusPicker.ItemsSource = Stat;
+            StatusPicker.SelectedItem = "Plan To Take";
         }
 	    public CoursePage(Course Course)
 	    {
@@ -41,6 +51,12 @@ namespace TermsApp
             if (CurrentCourse != null)
             {
                 LoadCoursesUIData(CurrentCourse);
+                
+                DeleteAssessment.IsEnabled = true;
+                NoteDetails.IsEnabled = true;
+                ShareNotes.IsEnabled = true;
+                SaveNotes.IsEnabled = true;
+                CourseStartNotify.IsEnabled = true;
             }
             else
             {
@@ -49,6 +65,8 @@ namespace TermsApp
                 NoteDetails.IsEnabled = false;
                 ShareNotes.IsEnabled = false;
                 SaveNotes.IsEnabled = false;
+                CourseStartNotify.IsEnabled = false;
+                CourseEndNotify.IsEnabled = false;
             }
 
             //TODO: Refresh Notifications
@@ -77,6 +95,8 @@ namespace TermsApp
             //Fill out Course Info
             CourseName.Text = Course.Name;
             CourseDescription.Text = Course.Details;
+            CourseStartNotify.IsChecked = Course.StartNotification;
+            CourseEndNotify.IsChecked = Course.EndNotification;
             InstructorName.Text = CurrentInstructor.Name;
             InstructorEmail.Text = CurrentInstructor.Email;
             InstructorPhone.Text = CurrentInstructor.Phone;
@@ -96,7 +116,7 @@ namespace TermsApp
                     CornerRadius = 5,
                 };
 
-                //button.Clicked += async (sender, args) => await Navigation.PushAsync(new AssessmentPage(Assess.Id));
+                button.Clicked += async (sender, args) => await Navigation.PushAsync(new AssessmentPage(Assess));
                 AssessmentStack.Children.Add(button);
             }
             if (Assessments.Count >= 2)
@@ -111,8 +131,7 @@ namespace TermsApp
 
         private async void AddAssessmentClicked(object sender, EventArgs e)
         {
-            //await Navigation.PushModalAsync(new MainPage());
-            await Navigation.PopAsync();
+            await Navigation.PushAsync(new AssessmentPage(CurrentCourse));
         }
         private async void SaveNoteClicked(object sender, EventArgs e)
         {
@@ -134,21 +153,24 @@ namespace TermsApp
                 await DisplayAlert("Error", "Instructor Info is Empty", "OK");
                 return;
             }
-
+            Instructors = GetSet.GetAllInstructors();
             if (CurrentCourse == null)
             {
                 //Check through all the Instructors to see if any names match, if not create new instructor
+                CurrentInstructor = null;
                 foreach (Instructor person in Instructors)
                 {
-                    if (person.Name == InstructorName.Text)
+                    if (person.Name == InstructorName.Text || person.Email == InstructorEmail.Text || person.Phone == InstructorPhone.Text)
                     {
                         CurrentInstructor = person;
+                        break;
                     }
                 }
-                if(CurrentInstructor == null)
+                if (CurrentInstructor == null)
                 {
                     CurrentInstructor = new Instructor(InstructorName.Text, InstructorPhone.Text, InstructorEmail.Text);
                 }
+
 
                 //Verify start date is before end date
                 if (CourseStartDate.Date > CourseEndDate.Date)
@@ -157,7 +179,8 @@ namespace TermsApp
                     return;
                 }
 
-                GetSet.Insert(new Course(CurrentTerm.Id, CurrentInstructor.Id, CourseName.Text, CourseStartDate.Date, CourseEndDate.Date, "In Progress", CourseDescription.Text));
+                GetSet.Insert(CurrentInstructor);
+                GetSet.Insert(new Course(CurrentTerm.Id, CurrentInstructor.Id, CourseName.Text, CourseStartDate.Date, CourseEndDate.Date, StatusPicker.SelectedItem.ToString(), CourseDescription.Text));
             }
             else
             {
@@ -166,6 +189,26 @@ namespace TermsApp
                 CurrentCourse.EndDate = CourseEndDate.Date;
                 CurrentCourse.Details = CourseDescription.Text;
                 CurrentCourse.Status = StatusPicker.SelectedItem.ToString();
+                CurrentCourse.StartNotification = CourseStartNotify.IsChecked;
+                CurrentCourse.EndNotification = CourseEndNotify.IsChecked;
+
+                //Update Instructor Info
+                CurrentInstructor = null;
+                foreach (Instructor person in Instructors)
+                {
+                    if (person.Name == InstructorName.Text || person.Email == InstructorEmail.Text || person.Phone == InstructorPhone.Text)
+                    {
+                        CurrentInstructor = person;
+                        break;
+                    }
+                }
+                if(CurrentInstructor == null)
+                {
+                    CurrentInstructor = new Instructor(InstructorName.Text, InstructorPhone.Text, InstructorEmail.Text);
+                    GetSet.Insert(CurrentInstructor);
+                }
+                CurrentCourse.InstructorId = CurrentInstructor.Id;
+
 
                 //Verify start date is before end date
                 if (CurrentCourse.StartDate > CurrentCourse.EndDate)

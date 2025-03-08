@@ -22,13 +22,20 @@
                     <VerticalStackLayout>
                         <Entry x:Name="AssessmentName" Placeholder="Assessment Name" FontAttributes="Bold" HorizontalOptions="Fill" HorizontalTextAlignment="Center"/>
 
+                        <Grid ColumnDefinitions=" * , Auto">
+                            <Label Text="Course Status:  " Grid.Column="0" FontAttributes="Bold"  Margin="18,0,0,0" VerticalTextAlignment="Center"/>
+                            <Picker x:Name="TypePicker" Grid.Column="1" VerticalTextAlignment="Center" WidthRequest="200"/>
+                        </Grid>
+
                         <Grid ColumnDefinitions="Auto, * , auto" Margin="10,0,10,0">
-                            <Label Text="Start Date" VerticalOptions="Center"/>
+                            <CheckBox x:Name="AssessmentStartNotify" IsChecked="False" Grid.Column="0" WidthRequest="30"/>
+                            <Label Text="Notify         Start Date" VerticalOptions="Center" Grid.Column="1"/>
                             <DatePicker Grid.Column="2" x:Name="AssessmentStartDate"/>
                         </Grid>
 
                         <Grid ColumnDefinitions="Auto, * , auto" Margin="10,0,10,0">
-                            <Label Text="End Date" VerticalOptions="Center" Grid.Column="0"/>
+                            <CheckBox x:Name="AssessmentEndNotify" IsChecked="False" Grid.Column="0" WidthRequest="30"/>
+                            <Label Text="Notify         End Date" VerticalOptions="Center" Grid.Column="1"/>
                             <DatePicker Grid.Column="2" x:Name="AssessmentEndDate"/>
                         </Grid>
                     </VerticalStackLayout>

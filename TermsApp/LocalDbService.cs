@@ -1,4 +1,5 @@
 ﻿using SQLite;
+using System.Security.AccessControl;
 using TermsApp.Entities;
 
 namespace TermsApp.Repository
@@ -66,8 +67,8 @@ namespace TermsApp.Repository
             foreach (var course in courses)
             {
                 //Assessments
-                GetSet.Insert(new Assessment(1, "Performance Assessment #1", DateTime.Now, DateTime.Now.AddMonths(3), "Enter details about assessment here:", course.Id));
-                GetSet.Insert(new Assessment(0, "Objective Assessment #1", DateTime.Now, DateTime.Now.AddMonths(3), "Enter details about assessment here:", course.Id));
+                GetSet.Insert(new Assessment("Performance", "Performance Assessment #1", DateTime.Now, DateTime.Now.AddMonths(3), "Enter details about assessment here:", course.Id));
+                GetSet.Insert(new Assessment("Objective", "Objective Assessment #1", DateTime.Now, DateTime.Now.AddMonths(4), "Enter details about assessment here:", course.Id));
                 
                 //Notes
                 GetSet.Insert(new Note(course.Id, "Test note"));

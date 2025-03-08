@@ -26,8 +26,8 @@ namespace TermsApp.Entities
         public DateTime EndDate { get; set; }
         public string Status { get; set; }
         public string Details { get; set; }
-        public int StartNotification { get; set; }
-        public int EndNotification { get; set; }
+        public bool StartNotification { get; set; }
+        public bool EndNotification { get; set; }
 
     }
 }

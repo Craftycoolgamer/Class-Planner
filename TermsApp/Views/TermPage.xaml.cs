@@ -84,16 +84,14 @@ namespace TermsApp
         {
             if (CurrentTerm == null)
             {
-                Term TempTerm = new Term(TermTitle.Text, TermStartDate.Date, TermEndDate.Date);
-
                 //Verify start date is before end date
-                if (TempTerm.StartDate > TempTerm.EndDate)
+                if (TermStartDate.Date > TermEndDate.Date)
                 {
                     await DisplayAlert("Error", "Start Date is after End Date", "OK");
                     return;
                 }
 
-                GetSet.Insert(TempTerm);
+                GetSet.Insert(new Term(TermTitle.Text, TermStartDate.Date, TermEndDate.Date));
             }
             else
             {
