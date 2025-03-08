@@ -1,4 +1,3 @@
-using Android.Hardware.Camera2.Params;
 using Microsoft.Maui.Controls;
 using TermsApp.Entities;
 
