@@ -8,7 +8,7 @@
     <Shell.TitleView>
         <Grid>
             <Label Text="TERMS" VerticalOptions="Center" FontSize="18" TextColor="Black"/>
-            <Button Text="ADD" Clicked="AddTermClicked" HeightRequest="40" WidthRequest="80" HorizontalOptions="End" Margin="0,0,10,0"/>
+            <Button Text="ADD TERM" Clicked="AddTermClicked" HeightRequest="40"  HorizontalOptions="End" Margin="0,0,10,0" Padding="10"/>
         </Grid>
     </Shell.TitleView>
 
