@@ -17,19 +17,28 @@ namespace TermsApp
 
         public MainPage()
         {
-            terms = GetSet.GetAllTerms();
             InitializeComponent();
-            LocalDbService.CreateTables();
-            LocalDbService.SeedData();
-            LoadTermsUIData();
+            if (File.Exists(LocalDbService.DBPath))
+            {
+                LoadTermsUIData();
+            }
+            else
+            {
+                LocalDbService.SeedData();
+                LoadTermsUIData();
+            }
+            SyncDatabaseFields();
+            HandleNotifications();
         }
 
+
+
         #region Notifications
-        private async void HandleNotifications()
+        public async void HandleNotifications()
         {
             //Request Notification Permission
             notificationRequests = await LocalNotificationCenter.Current.GetPendingNotificationList();
-            if (!await LocalNotificationCenter.Current.AreNotificationsEnabled())
+            if (!(await LocalNotificationCenter.Current.AreNotificationsEnabled()))
             {
                 await LocalNotificationCenter.Current.RequestNotificationPermission();
             }
@@ -62,7 +71,7 @@ namespace TermsApp
             }
             else
             {
-                requests.Add(CreateNotificationRequest(course.Id + 1000, "Course Starting Reminder", course.Name, course.StartDate, currentDateTime));
+                requests.Add(CreateNotificationRequest(course.Id + 1000, "Course Starting Reminder", course.Name + " Starting", course.StartDate, currentDateTime));
             }
 
             if (!course.EndNotification)
@@ -71,7 +80,7 @@ namespace TermsApp
             }
             else
             {
-                requests.Add(CreateNotificationRequest(course.Id + 2000, "Course Ending Reminder", course.Name, course.EndDate, currentDateTime));
+                requests.Add(CreateNotificationRequest(course.Id + 2000, "Course Ending Reminder", course.Name + " Ending", course.EndDate, currentDateTime));
             }
         }
         private void ProcessAssessments(IEnumerable<Assessment> assessments, List<NotificationRequest> requests, List<int> cancelledRequests, DateTime currentDateTime)
@@ -89,7 +98,7 @@ namespace TermsApp
             }
             else
             {
-                requests.Add(CreateNotificationRequest(assessment.Id + 3000, "Assessment Starting Reminder", assessment.Name, assessment.StartDate, currentDateTime));
+                requests.Add(CreateNotificationRequest(assessment.Id + 3000, "Assessment Starting Reminder", assessment.Name + " Starting", assessment.StartDate, currentDateTime));
             }
 
             if (!assessment.EndNotification)
@@ -98,7 +107,7 @@ namespace TermsApp
             }
             else
             {
-                requests.Add(CreateNotificationRequest(assessment.Id + 4000, "Assessment Ending Reminder", assessment.Name, assessment.EndDate, currentDateTime));
+                requests.Add(CreateNotificationRequest(assessment.Id + 4000, "Assessment Ending Reminder", assessment.Name + " Ending", assessment.EndDate, currentDateTime));
             }
         }
         private NotificationRequest CreateNotificationRequest(int notificationId, string title, string description, DateTime date, DateTime currentDateTime)
@@ -107,10 +116,11 @@ namespace TermsApp
             {
                 NotificationId = notificationId,
                 Title = title,
-                Description = description + " Starting Tomorrow",
+                Description = description + " Tomorrow",
                 Schedule = new NotificationRequestSchedule
                 {
-                    NotifyTime = date.AddDays(currentDateTime.Day+1).AddHours(currentDateTime.Hour).AddMinutes(currentDateTime.Minute),
+                    NotifyTime = date.AddDays(-3),
+                    //NotifyTime = currentDateTime.AddSeconds(10),
                     RepeatType = NotificationRepeat.Daily
                 }
             };
@@ -132,14 +142,13 @@ namespace TermsApp
         }
         #endregion
 
+
+
         protected override void OnAppearing()
         {
             LoadTermsUIData();
-            //if (terms.Count > 0)
-            //{
-            //    LoadTermsUIData();
-            //}
 
+            SyncDatabaseFields();
             HandleNotifications();
         }
 
@@ -156,7 +165,7 @@ namespace TermsApp
                     Text = term.Name,
                     Padding = 5,
                     //BackgroundColor = Colors.LightGreen,
-                    TextColor = Colors.Black,
+                    TextColor = Colors.White,
                     CornerRadius = 5,
                 };
                 
@@ -169,6 +178,28 @@ namespace TermsApp
         {
             await Navigation.PushAsync(new TermPage());
         }
+
+
+        public static void SyncDatabaseFields()
+        {
+            terms = new List<Term>();
+            courses = new Dictionary<Term, List<Course>>();
+            courseList = new Dictionary<int, Course>();
+            terms = GetSet.GetAllTerms();
+
+            foreach (Term term in terms)
+            {
+                var coursesByTerm = GetSet.GetAllCoursesByTerm(term.Id);
+                List<Course> CourseList = new List<Course>();
+                foreach (Course course in coursesByTerm)
+                {
+                    CourseList.Add(course);
+                    courseList.Add(course.Id, course);
+                }
+                courses.Add(term, CourseList);
+            }
+        }
+
 
     }
 }

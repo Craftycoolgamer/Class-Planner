@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "5JeB3Pd6eRs=",
+  "dgSpecHash": "hriXwRoiMRk=",
   "success": true,
-  "projectFilePath": "C:\\Users\\crafty\\Desktop\\Take3\\TermsApp\\TermsApp.csproj",
+  "projectFilePath": "C:\\Users\\crafty\\Desktop\\C971\\TermsApp\\TermsApp.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\crafty\\.nuget\\packages\\googlegson\\2.10.1.4\\googlegson.2.10.1.4.nupkg.sha512",
     "C:\\Users\\crafty\\.nuget\\packages\\microsoft.extensions.configuration\\8.0.0\\microsoft.extensions.configuration.8.0.0.nupkg.sha512",

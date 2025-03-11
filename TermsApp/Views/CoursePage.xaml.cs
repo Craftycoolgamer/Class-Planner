@@ -21,6 +21,8 @@ namespace TermsApp
         public static Term? CurrentTerm;
         public static Course? CurrentCourse;
         public static Instructor? CurrentInstructor;
+        public static Note? CurrentNote;
+
 
         public List<string> Stat = new List<string>
         {
@@ -35,6 +37,7 @@ namespace TermsApp
             CurrentTerm = Term;
 		    CurrentCourse = null;
             CurrentInstructor = null;
+            CurrentNote = null;
             InitializeComponent();
             StatusPicker.ItemsSource = Stat;
             StatusPicker.SelectedItem = "Plan To Take";
@@ -43,6 +46,7 @@ namespace TermsApp
 	    {
 		    InitializeComponent();
 		    CurrentCourse = Course;
+            CurrentNote = null;
             LoadCoursesUIData(Course);
             StatusPicker.ItemsSource = Stat;
         }
@@ -69,7 +73,7 @@ namespace TermsApp
                 CourseEndNotify.IsEnabled = false;
             }
 
-            //TODO: Refresh Notifications
+            MainPage.SyncDatabaseFields();
         }
 
         private void LoadCoursesUIData(Course Course)
@@ -78,6 +82,7 @@ namespace TermsApp
             Assessments.Clear();
             Notes.Clear();
             AssessmentStack.Children.Clear();
+            NoteStack.Children.Clear();
 
             Instructors = GetSet.GetAllInstructors();
             Assessments = GetSet.GetAssessmentsByCourse(Course.Id);
@@ -103,7 +108,23 @@ namespace TermsApp
             CourseStartDate.Date = Course.StartDate;
             CourseEndDate.Date = Course.EndDate;
             StatusPicker.SelectedItem = Course.Status;
-            try{NoteDetails.Text = Notes[Notes.Count - 1].Content;}catch (Exception) { }
+            //try{NoteDetails.Text = Notes[Notes.Count - 1].Content;}catch (Exception) { }
+
+            foreach (Note N in Notes)
+            {
+                Button button = new Button
+                {
+                    Text = N.Content,
+                    Padding = 5,
+                    TextColor = Colors.White,
+                    CornerRadius = 5,
+                    WidthRequest = 150,
+                    FontSize = 12,
+                };
+
+                button.Clicked += void (sender, args) => NoteClicked(N);
+                NoteStack.Children.Add(button);
+            }
 
 
             foreach (Assessment Assess in Assessments)
@@ -112,11 +133,11 @@ namespace TermsApp
                 {
                     Text = Assess.Name,
                     Padding = 5,
-                    TextColor = Colors.Black,
+                    TextColor = Colors.White,
                     CornerRadius = 5,
                 };
 
-                button.Clicked += async (sender, args) => await Navigation.PushAsync(new AssessmentPage(Assess));
+                button.Clicked += async (sender, args) => await Navigation.PushAsync(new AssessmentPage(Assess, Course));
                 AssessmentStack.Children.Add(button);
             }
             if (Assessments.Count >= 2)
@@ -135,10 +156,30 @@ namespace TermsApp
         }
         private async void SaveNoteClicked(object sender, EventArgs e)
         {
+            if(CurrentNote == null)
+            {
+                GetSet.Insert(new Note(CurrentCourse.Id, NoteDetails.Text));
+                await DisplayAlert("Note", "Note Successfully Added", "OK");
+            }
+            else
+            {
+                CurrentNote.Content = NoteDetails.Text;
+                GetSet.Update(CurrentNote);
+                await DisplayAlert("Note", "Note Successfully Saved", "OK");
+            }
+            LoadCoursesUIData(CurrentCourse);
+        }
+        private async void NewNoteClicked(object sender, EventArgs e)
+        {
             GetSet.Insert(new Note(CurrentCourse.Id, NoteDetails.Text));
             await DisplayAlert("Note", "Note Successfully Added", "OK");
+            LoadCoursesUIData(CurrentCourse);
         }
-
+        private void NoteClicked(Note N)
+        {
+            CurrentNote = N;
+            NoteDetails.Text = N.Content;
+        }
         private async void ShareNoteClicked(object sender, EventArgs e)
         {
             await Share.Default.RequestAsync(new ShareTextRequest { Text = NoteDetails.Text });
@@ -219,6 +260,7 @@ namespace TermsApp
 
                 GetSet.Update(CurrentCourse);
             }
+            MainPage.SyncDatabaseFields();
             await Navigation.PopAsync();
         }
 

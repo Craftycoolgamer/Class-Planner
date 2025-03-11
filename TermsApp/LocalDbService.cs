@@ -8,13 +8,13 @@ namespace TermsApp.Repository
     {
         public static string DBPath = Path.Combine(
             FileSystem.AppDataDirectory,
-            "TermsDatabase.db"
+            "4.db"
         );
 
         //Requirement C6
         public static void SeedData()
         {
-            File.Delete(DBPath);
+            //File.Delete(DBPath);
             CreateTables();
 
 

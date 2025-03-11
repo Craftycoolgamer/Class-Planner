@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\crafty\\Desktop\\Take3\\TermsApp\\TermsApp.csproj": {}
+    "C:\\Users\\crafty\\Desktop\\C971\\TermsApp\\TermsApp.csproj": {}
   },
   "projects": {
-    "C:\\Users\\crafty\\Desktop\\Take3\\TermsApp\\TermsApp.csproj": {
+    "C:\\Users\\crafty\\Desktop\\C971\\TermsApp\\TermsApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\crafty\\Desktop\\Take3\\TermsApp\\TermsApp.csproj",
+        "projectUniqueName": "C:\\Users\\crafty\\Desktop\\C971\\TermsApp\\TermsApp.csproj",
         "projectName": "TermsApp",
-        "projectPath": "C:\\Users\\crafty\\Desktop\\Take3\\TermsApp\\TermsApp.csproj",
+        "projectPath": "C:\\Users\\crafty\\Desktop\\C971\\TermsApp\\TermsApp.csproj",
         "packagesPath": "C:\\Users\\crafty\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\crafty\\Desktop\\Take3\\TermsApp\\obj\\",
+        "outputPath": "C:\\Users\\crafty\\Desktop\\C971\\TermsApp\\obj\\",
         "projectStyle": "PackageReference",
         "crossTargeting": true,
         "fallbackFolders": [

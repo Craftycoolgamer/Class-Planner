@@ -33,9 +33,8 @@ namespace TermsApp
                 AddCourse.IsEnabled = false;
                 DeleteTerm.IsEnabled = false;
             }
-            
 
-            //TODO: Refresh Notifications
+            MainPage.SyncDatabaseFields();
         }
 
         private void LoadCoursesUIData(Term T)
@@ -54,7 +53,7 @@ namespace TermsApp
                 {
                     Text = course.Name,
                     Padding = 5,
-                    TextColor = Colors.Black,
+                    TextColor = Colors.White,
                     CornerRadius = 5,
                 };
 
@@ -108,6 +107,7 @@ namespace TermsApp
 
                 GetSet.Update(CurrentTerm);
             }
+            MainPage.SyncDatabaseFields();
             await Navigation.PopAsync();
         }
 
