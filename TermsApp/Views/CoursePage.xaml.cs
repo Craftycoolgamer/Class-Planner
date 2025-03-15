@@ -175,7 +175,9 @@ namespace TermsApp
         }
         private async void NewNoteClicked(object sender, EventArgs e)
         {
-            GetSet.Insert(new Note(CurrentCourse.Id, NoteDetails.Text));
+            Note N = new Note(CurrentCourse.Id, NoteDetails.Text);
+            GetSet.Insert(N);
+            CurrentNote = N;
             await DisplayAlert("Note", "Note Successfully Added", "OK");
             LoadCoursesUIData(CurrentCourse);
         }
