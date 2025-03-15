@@ -110,6 +110,21 @@ namespace TermsApp
                 return [];
             }
         }
+        public static List<Course> GetAllCourses()
+        {
+            try
+            {
+                using (SQLiteConnection connection = new(LocalDbService.DBPath))
+                {
+                    return connection.Query<Course>("SELECT * FROM Courses").ToList();
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error retrieving Courses: {ex.Message}");
+                return [];
+            }
+        }
         public static bool AddNewCourse(int termId)
         {
             try

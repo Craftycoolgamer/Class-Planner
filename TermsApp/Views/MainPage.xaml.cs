@@ -10,9 +10,9 @@ namespace TermsApp
     {
         //private static Term? selectedTerm;
         private static List<Term> terms = new List<Term>();
-        public static Dictionary<Term, List<Course>> courses = new Dictionary<Term, List<Course>>();
-        public static Dictionary<int, Course> courseList = new Dictionary<int, Course>();
-        public static Dictionary<int, Instructor> instructors = new Dictionary<int, Instructor>();
+        //public static Dictionary<Term, List<Course>> courses = new Dictionary<Term, List<Course>>();
+        //public static Dictionary<int, Course> courseList = new Dictionary<int, Course>();
+        //public static Dictionary<int, Instructor> instructors = new Dictionary<int, Instructor>();
         public static IList<NotificationRequest> notificationRequests = new List<NotificationRequest>();
 
         public MainPage()
@@ -27,14 +27,13 @@ namespace TermsApp
                 LocalDbService.SeedData();
                 LoadTermsUIData();
             }
-            SyncDatabaseFields();
             HandleNotifications();
         }
 
 
 
         #region Notifications
-        public async void HandleNotifications()
+        public static async void HandleNotifications()
         {
             //Request Notification Permission
             notificationRequests = await LocalNotificationCenter.Current.GetPendingNotificationList();
@@ -47,23 +46,33 @@ namespace TermsApp
             var requests = new List<NotificationRequest>();
             var cancelledRequests = new List<int>();
 
-            ProcessCourses(courses.Values, requests, cancelledRequests, DateTime.Now);
-            ProcessAssessments(GetSet.GetAllAssessments(), requests, cancelledRequests, DateTime.Now);
-
-            CancelNotifications(cancelledRequests, notificationRequests.ToList());
-            await ShowNotifications(requests);
-        }
-        private void ProcessCourses(IEnumerable<List<Course>> courseLists, List<NotificationRequest> requests, List<int> cancelledRequests, DateTime currentDateTime)
-        {
-            foreach (var listCourse in courseLists)
+            //Process Courses
+            foreach (var course in GetSet.GetAllCourses())
             {
-                foreach (var course in listCourse)
-                {
-                    AddCourseNotifications(course, requests, cancelledRequests, currentDateTime);
-                }
+                AddCourseNotifications(course, requests, cancelledRequests, DateTime.Now);
+            }
+
+            //Process Assessments
+            foreach (var assessment in GetSet.GetAllAssessments())
+            {
+                AddAssessmentNotifications(assessment, requests, cancelledRequests, DateTime.Now);
+            }
+
+            //Cancel Notifications
+            foreach (var requestId in cancelledRequests)
+            {
+                var notification = notificationRequests.FirstOrDefault(n => n.NotificationId == requestId);
+                notification?.Cancel();
+            }
+            
+            //Show Notifications
+            foreach (var request in requests)
+            {
+                await LocalNotificationCenter.Current.Show(request);
             }
         }
-        private void AddCourseNotifications(Course course, List<NotificationRequest> requests, List<int> cancelledRequests, DateTime currentDateTime)
+        
+        private static void AddCourseNotifications(Course course, List<NotificationRequest> requests, List<int> cancelledRequests, DateTime currentDateTime)
         {
             if (!course.StartNotification)
             {
@@ -83,14 +92,7 @@ namespace TermsApp
                 requests.Add(CreateNotificationRequest(course.Id + 2000, "Course Ending Reminder", course.Name + " Ending", course.EndDate, currentDateTime));
             }
         }
-        private void ProcessAssessments(IEnumerable<Assessment> assessments, List<NotificationRequest> requests, List<int> cancelledRequests, DateTime currentDateTime)
-        {
-            foreach (var assessment in assessments)
-            {
-                AddAssessmentNotifications(assessment, requests, cancelledRequests, currentDateTime);
-            }
-        }
-        private void AddAssessmentNotifications(Assessment assessment, List<NotificationRequest> requests, List<int> cancelledRequests, DateTime currentDateTime)
+        private static void AddAssessmentNotifications(Assessment assessment, List<NotificationRequest> requests, List<int> cancelledRequests, DateTime currentDateTime)
         {
             if (!assessment.StartNotification)
             {
@@ -110,7 +112,7 @@ namespace TermsApp
                 requests.Add(CreateNotificationRequest(assessment.Id + 4000, "Assessment Ending Reminder", assessment.Name + " Ending", assessment.EndDate, currentDateTime));
             }
         }
-        private NotificationRequest CreateNotificationRequest(int notificationId, string title, string description, DateTime date, DateTime currentDateTime)
+        private static NotificationRequest CreateNotificationRequest(int notificationId, string title, string description, DateTime date, DateTime currentDateTime)
         {
             return new NotificationRequest
             {
@@ -120,25 +122,10 @@ namespace TermsApp
                 Schedule = new NotificationRequestSchedule
                 {
                     NotifyTime = date.AddDays(-3),
-                    //NotifyTime = currentDateTime.AddSeconds(10),
+                    //NotifyTime = currentDateTime.AddSeconds(5),
                     RepeatType = NotificationRepeat.Daily
                 }
             };
-        }
-        private void CancelNotifications(List<int> cancelledRequests, List<NotificationRequest> notificationRequests)
-        {
-            foreach (var requestId in cancelledRequests)
-            {
-                var notification = notificationRequests.FirstOrDefault(n => n.NotificationId == requestId);
-                notification?.Cancel();
-            }
-        }
-        private async Task ShowNotifications(List<NotificationRequest> requests)
-        {
-            foreach (var request in requests)
-            {
-                await LocalNotificationCenter.Current.Show(request);
-            }
         }
         #endregion
 
@@ -148,7 +135,6 @@ namespace TermsApp
         {
             LoadTermsUIData();
 
-            SyncDatabaseFields();
             HandleNotifications();
         }
 
@@ -178,28 +164,6 @@ namespace TermsApp
         {
             await Navigation.PushAsync(new TermPage());
         }
-
-
-        public static void SyncDatabaseFields()
-        {
-            terms = new List<Term>();
-            courses = new Dictionary<Term, List<Course>>();
-            courseList = new Dictionary<int, Course>();
-            terms = GetSet.GetAllTerms();
-
-            foreach (Term term in terms)
-            {
-                var coursesByTerm = GetSet.GetAllCoursesByTerm(term.Id);
-                List<Course> CourseList = new List<Course>();
-                foreach (Course course in coursesByTerm)
-                {
-                    CourseList.Add(course);
-                    courseList.Add(course.Id, course);
-                }
-                courses.Add(term, CourseList);
-            }
-        }
-
 
     }
 }

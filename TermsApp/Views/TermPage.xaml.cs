@@ -34,7 +34,7 @@ namespace TermsApp
                 DeleteTerm.IsEnabled = false;
             }
 
-            MainPage.SyncDatabaseFields();
+            MainPage.HandleNotifications();
         }
 
         private void LoadCoursesUIData(Term T)
@@ -107,7 +107,7 @@ namespace TermsApp
 
                 GetSet.Update(CurrentTerm);
             }
-            MainPage.SyncDatabaseFields();
+            MainPage.HandleNotifications();
             await Navigation.PopAsync();
         }
 

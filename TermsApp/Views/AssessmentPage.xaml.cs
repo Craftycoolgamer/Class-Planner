@@ -25,13 +25,13 @@ namespace TermsApp
             TypePicker.SelectedItem = "Performance";
             AssessmentStartNotify.IsEnabled = false;
             AssessmentEndNotify.IsEnabled = false;
-            Assessments = GetSet.GetAssessmentsByCourse(course.Id);
         }
 
         public AssessmentPage(Assessment A, Course course)
         {
             InitializeComponent();
             CurrentAssessment = A;
+            CurrentCourse = course;
             AssessmentName.Text = A.Name;
             AssessmentStartDate.Date = A.StartDate;
             AssessmentEndDate.Date = A.EndDate;
@@ -41,26 +41,34 @@ namespace TermsApp
             TypePicker.SelectedItem = A.Type;
             AssessmentStartNotify.IsEnabled = true;
             AssessmentEndNotify.IsEnabled = true;
-            Assessments = GetSet.GetAssessmentsByCourse(course.Id);
         }
 
         private async void OnSave(object sender, EventArgs e)
         {
             //check assessment type
             List<String> AssessmentTypes = new List<String>();
-            foreach(Assessment Assess in Assessments)
+            Assessments = GetSet.GetAssessmentsByCourse(CurrentCourse.Id);
+
+
+
+            foreach (Assessment Assess in Assessments)
             {
-                if(!(Assess.Id == CurrentAssessment.Id))
+                AssessmentTypes.Add(Assess.Type);
+
+                if(!(CurrentAssessment == null))
                 {
-                    AssessmentTypes.Add(Assess.Type);
+                    AssessmentTypes.Remove(CurrentAssessment.Type);
                 }
             }
 
+
+            
             if (AssessmentTypes.Contains(TypePicker.SelectedItem.ToString()))
             {
                 await DisplayAlert("Error", "Type of Assessment Already Exists", "OK");
                 return;
             }
+
 
 
             if(CurrentAssessment == null)
@@ -96,7 +104,7 @@ namespace TermsApp
 
             //await DisplayAlert("Save", "Assessment details saved!", "OK");
 
-            MainPage.SyncDatabaseFields();
+            MainPage.HandleNotifications();
             await Navigation.PopAsync();
         }
 

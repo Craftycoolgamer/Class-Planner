@@ -58,8 +58,10 @@ namespace TermsApp
                 
                 DeleteAssessment.IsEnabled = true;
                 NoteDetails.IsEnabled = true;
+                NoteDetails.Placeholder = "Enter Note";
                 ShareNotes.IsEnabled = true;
                 SaveNotes.IsEnabled = true;
+                NewNote.IsEnabled = true;
                 CourseStartNotify.IsEnabled = true;
             }
             else
@@ -67,13 +69,15 @@ namespace TermsApp
                 AddAssessment.IsEnabled = false;
                 DeleteAssessment.IsEnabled = false;
                 NoteDetails.IsEnabled = false;
+                NoteDetails.Placeholder = "Please Create Course First";
                 ShareNotes.IsEnabled = false;
                 SaveNotes.IsEnabled = false;
+                NewNote.IsEnabled = false;
                 CourseStartNotify.IsEnabled = false;
                 CourseEndNotify.IsEnabled = false;
             }
 
-            MainPage.SyncDatabaseFields();
+            MainPage.HandleNotifications();
         }
 
         private void LoadCoursesUIData(Course Course)
@@ -250,6 +254,22 @@ namespace TermsApp
                 }
                 CurrentCourse.InstructorId = CurrentInstructor.Id;
 
+                //Save Note
+                if(!(NoteDetails.Text == null))
+                {
+                    if (CurrentNote == null)
+                    {
+                        GetSet.Insert(new Note(CurrentCourse.Id, NoteDetails.Text));
+                        //await DisplayAlert("Note", "Note Successfully Added", "OK");
+                    }
+                    else
+                    {
+                        CurrentNote.Content = NoteDetails.Text;
+                        GetSet.Update(CurrentNote);
+                        //await DisplayAlert("Note", "Note Successfully Saved", "OK");
+                    }
+                }
+
 
                 //Verify start date is before end date
                 if (CurrentCourse.StartDate > CurrentCourse.EndDate)
@@ -260,7 +280,7 @@ namespace TermsApp
 
                 GetSet.Update(CurrentCourse);
             }
-            MainPage.SyncDatabaseFields();
+            MainPage.HandleNotifications();
             await Navigation.PopAsync();
         }
 
