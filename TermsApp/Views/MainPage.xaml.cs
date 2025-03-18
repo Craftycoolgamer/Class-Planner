@@ -118,10 +118,10 @@ namespace TermsApp
             {
                 NotificationId = notificationId,
                 Title = title,
-                Description = description + " Tomorrow",
+                Description = description + " Today",
                 Schedule = new NotificationRequestSchedule
                 {
-                    NotifyTime = date.AddDays(-3),
+                    NotifyTime = date,
                     //NotifyTime = currentDateTime.AddSeconds(5),
                     RepeatType = NotificationRepeat.Daily
                 }

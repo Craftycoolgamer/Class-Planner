@@ -3,14 +3,6 @@ using Plugin.LocalNotification;
 using static System.Net.Mime.MediaTypeNames;
 
 
-//
-//
-//TODO: Course instructor cant be updated (bug)
-//      
-//
-//
-
-
 namespace TermsApp 
 { 
     public partial class CoursePage : ContentPage

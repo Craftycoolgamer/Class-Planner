@@ -8,7 +8,7 @@ namespace TermsApp.Repository
     {
         public static string DBPath = Path.Combine(
             FileSystem.AppDataDirectory,
-            "4.db"
+            "5.db"
         );
 
         //Requirement C6
