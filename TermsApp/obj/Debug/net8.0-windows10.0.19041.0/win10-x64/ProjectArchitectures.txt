@@ -1,1 +1,0 @@
-C:\Users\crafty\Desktop\Take3\TermsApp\TermsApp.csproj;x64
